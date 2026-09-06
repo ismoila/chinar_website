@@ -1,0 +1,3517 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-22 13:03+0500\n"
+"PO-Revision-Date: 2026-07-21 13:00+0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Uzbek <LL@li.org>\n"
+"Language: uz\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\config\settings.py:131
+msgid "English"
+msgstr "Ingliz"
+
+#: .\config\settings.py:132
+msgid "Uzbek"
+msgstr "O'zbek"
+
+#: .\config\settings.py:133
+msgid "Russian"
+msgstr "Rus"
+
+#: .\templates\about.html:9 .\templates\category.html:10
+#: .\templates\delivery.html:9 .\templates\home.html:10
+msgid "Chinar — Your comfort is our goal!"
+msgstr "Chinar — Sizning qulayligingiz bizning maqsadimiz!"
+
+#: .\templates\about.html:70 .\templates\category.html:58
+#: .\templates\category_detail.html:58 .\templates\checkout.html:93
+#: .\templates\delivery.html:56 .\templates\discounts.html:57
+#: .\templates\home.html:60 .\templates\idea.html:57
+#: .\templates\location.html:57 .\templates\order.html:57
+#: .\templates\projects.html:57 .\templates\reviews.html:56
+#: .\templates\search.html:60 .\templates\services.html:57
+#: .\templates\settings.html:57 .\templates\shop_details.html:60
+#: .\templates\shopping_cart.html:58 .\templates\wishlist.html:58
+#: .\templates\workers.html:57
+msgid "About the company"
+msgstr "Kompaniya haqida"
+
+#: .\templates\about.html:71 .\templates\category.html:59
+#: .\templates\category_detail.html:59 .\templates\checkout.html:94
+#: .\templates\delivery.html:57 .\templates\discounts.html:58
+#: .\templates\home.html:61 .\templates\idea.html:58
+#: .\templates\location.html:58 .\templates\order.html:58
+#: .\templates\projects.html:58 .\templates\reviews.html:57
+#: .\templates\search.html:62 .\templates\services.html:59
+#: .\templates\settings.html:59 .\templates\shop_details.html:62
+#: .\templates\shopping_cart.html:60 .\templates\wishlist.html:60
+#: .\templates\workers.html:59
+msgid "Store addresses"
+msgstr "Do'kon manzillari"
+
+#: .\templates\about.html:72 .\templates\category.html:60
+#: .\templates\category_detail.html:60 .\templates\checkout.html:95
+#: .\templates\delivery.html:58 .\templates\discounts.html:59
+#: .\templates\home.html:62 .\templates\idea.html:59
+#: .\templates\location.html:59 .\templates\order.html:59
+#: .\templates\projects.html:59 .\templates\reviews.html:58
+#: .\templates\search.html:63 .\templates\services.html:60
+#: .\templates\settings.html:60 .\templates\shop_details.html:63
+#: .\templates\shopping_cart.html:61 .\templates\wishlist.html:61
+#: .\templates\workers.html:60
+msgid "Designers and architects"
+msgstr "Dizaynerlar va me'morlar"
+
+#: .\templates\about.html:73 .\templates\category.html:61
+#: .\templates\category_detail.html:61 .\templates\checkout.html:96
+#: .\templates\delivery.html:59 .\templates\discounts.html:60
+#: .\templates\home.html:63 .\templates\idea.html:60
+#: .\templates\location.html:60 .\templates\order.html:60
+#: .\templates\projects.html:60 .\templates\reviews.html:59
+#: .\templates\search.html:63 .\templates\services.html:60
+#: .\templates\settings.html:60 .\templates\shop_details.html:63
+#: .\templates\shopping_cart.html:61 .\templates\wishlist.html:61
+#: .\templates\workers.html:60
+msgid "Delivery and payment"
+msgstr "Yetkazib berish va to'lov"
+
+#: .\templates\about.html:85
+msgid " Catalog"
+msgstr " Katalog"
+
+#: .\templates\about.html:88
+msgid "News"
+msgstr "Yangiliklar"
+
+#: .\templates\about.html:89
+msgid "Ideas"
+msgstr "G'oyalar"
+
+#: .\templates\about.html:90
+msgid "Projects"
+msgstr "Loyihalar"
+
+#: .\templates\about.html:91
+msgid "Services"
+msgstr "Xizmatlar"
+
+#: .\templates\about.html:115
+msgid "Recent searches"
+msgstr "So'nggi qidiruvlar"
+
+#: .\templates\about.html:116
+msgid "Clear all"
+msgstr "Hammasini tozalash"
+
+#: .\templates\about.html:121
+msgid "Frequently searched"
+msgstr "Ko'p qidirilganlar"
+
+#: .\templates\about.html:129
+msgid "Found"
+msgstr "Topildi"
+
+#: .\templates\about.html:190
+msgid "Favorites"
+msgstr "Sevimlilar"
+
+#: .\templates\about.html:199
+msgid "Profile"
+msgstr "Profil"
+
+#: .\templates\about.html:206
+msgid "Login"
+msgstr "Kirish"
+
+#: .\templates\about.html:218
+msgid "Cart"
+msgstr "Savat"
+
+#: .\templates\about.html:227
+msgid "Home"
+msgstr "Bosh sahifa"
+
+#: .\templates\about.html:234
+msgid "Catalog"
+msgstr "Katalog"
+
+#: .\templates\about.html:286
+#, python-format
+msgid "%% Monthly discounts"
+msgstr "%% Oylik chegirmalar"
+
+#: .\templates\about.html:301
+msgid "About Us"
+msgstr "Biz haqimizda"
+
+#: .\templates\about.html:302
+msgid ""
+"Our company, Firdavs Mebel LLC, has been successfully operating in the "
+"furniture market since 2008, and over these years, we have accumulated "
+"invaluable practical experience. We have meticulously refined all "
+"technological and production processes, honing every detail."
+msgstr ""
+"Kompaniyamiz «Firdavs Mebel» MChJ 2008-yildan buyon mebel bozorida "
+"muvaffaqiyatli faoliyat yuritib kelmoqda va shu yillar davomida bebaho "
+"amaliy tajriba to'pladik. Barcha texnologik va ishlab chiqarish "
+"jarayonlarini puxta takomillashtirib, har bir detalni sayqallab chiqdik."
+
+#: .\templates\about.html:303
+msgid ""
+"We offer a wide selection of artificial rattan furniture under the CHINAR "
+"brand, and our collection is constantly expanding."
+msgstr ""
+"Biz CHINAR brendi ostida sun'iy rotangdan yasalgan mebellarning keng "
+"tanlovini taklif etamiz va kolleksiyamiz doimiy ravishda kengayib bormoqda."
+
+#: .\templates\about.html:311
+msgid "employees"
+msgstr "xodimlar"
+
+#: .\templates\about.html:320
+msgid "countries for export"
+msgstr "eksport davlatlari"
+
+#: .\templates\about.html:331
+msgid "years of experience"
+msgstr "yillik tajriba"
+
+#: .\templates\about.html:336
+msgid "satisfied customers"
+msgstr "mamnun mijozlar"
+
+#: .\templates\about.html:341
+msgid "types of products"
+msgstr "mahsulot turlari"
+
+#: .\templates\about.html:397
+msgid "For Partners"
+msgstr "Hamkorlar uchun"
+
+#: .\templates\about.html:398
+msgid "Company benefits"
+msgstr "Kompaniya imtiyozlari"
+
+#: .\templates\about.html:402
+msgid "Inspiration"
+msgstr "Ilhom"
+
+#: .\templates\about.html:403
+msgid "Chinar Blog"
+msgstr "Chinar blogi"
+
+#: .\templates\about.html:404
+msgid "Ideas for Inspiration"
+msgstr "Ilhom uchun g'oyalar"
+
+#: .\templates\about.html:408
+msgid "About Chinar"
+msgstr "Chinar haqida"
+
+#: .\templates\about.html:409
+msgid "About Company"
+msgstr "Kompaniya haqida"
+
+#: .\templates\about.html:410
+msgid "Operating rules"
+msgstr "Ishlash qoidalari"
+
+#: .\templates\about.html:411
+msgid "Copyright"
+msgstr "Mualliflik huquqi"
+
+#: .\templates\about.html:412
+msgid "Public offer"
+msgstr "Ommaviy oferta"
+
+#: .\templates\about.html:416
+msgid "Our Services"
+msgstr "Bizning xizmatlar"
+
+#: .\templates\about.html:417
+msgid "Delivery and Pickup"
+msgstr "Yetkazib berish va olib ketish"
+
+#: .\templates\about.html:418
+msgid "Payment and Installment"
+msgstr "To'lov va bo'lib to'lash"
+
+#: .\templates\about.html:419
+msgid "Return and Exchange"
+msgstr "Qaytarish va almashtirish"
+
+#: .\templates\about.html:420
+msgid "All Services"
+msgstr "Barcha xizmatlar"
+
+#: .\templates\about.html:421
+msgid "Chinar Warranty"
+msgstr "Chinar kafolati"
+
+#: .\templates\about.html:433
+msgid "Contact Us"
+msgstr "Biz bilan bog'lanish"
+
+#: .\templates\about.html:434
+msgid "Contacts"
+msgstr "Kontaktlar"
+
+#: .\templates\about.html:435
+msgid "Store Addresses"
+msgstr "Do'kon manzillari"
+
+#: .\templates\about.html:439
+msgid "Useful from Chinar"
+msgstr "Chinardan foydali"
+
+#: .\templates\about.html:440
+msgid "Product Catalog"
+msgstr "Mahsulotlar katalogi"
+
+#: .\templates\about.html:441
+msgid "How to Create Order"
+msgstr "Buyurtma qanday beriladi"
+
+#: .\templates\about.html:442
+msgid "Gift Certificates"
+msgstr "Sovg'a sertifikatlari"
+
+#: .\templates\about.html:443
+msgid "Brandbook"
+msgstr "Brendbuk"
+
+#: .\templates\about.html:447
+msgid "Contact Information"
+msgstr "Aloqa ma'lumotlari"
+
+#: .\templates\about.html:461
+msgid "Working hours daily from 10:00 to 20:00"
+msgstr "Ish vaqti har kuni 10:00 dan 20:00 gacha"
+
+#: .\templates\about.html:488
+msgid "© CHINAR, 2008—2026. All rights reserved."
+msgstr "© CHINAR, 2008—2026. Barcha huquqlar himoyalangan."
+
+#: .\templates\about.html:490
+msgid "Privacy Policy"
+msgstr "Maxfiylik siyosati"
+
+#: .\templates\about.html:491
+msgid "User Agreement"
+msgstr "Foydalanuvchi shartnomasi"
+
+#: .\templates\category_detail.html:294 .\templates\discounts.html:290
+#: .\templates\search.html:298
+msgid "products"
+msgstr "mahsulotlar"
+
+#: .\templates\category_detail.html:305 .\templates\category_detail.html:503
+#: .\templates\search.html:308
+msgid "Only in stock"
+msgstr "Faqat mavjud"
+
+#: .\templates\category_detail.html:322 .\templates\category_detail.html:510
+msgid "Price"
+msgstr "Narx"
+
+#: .\templates\category_detail.html:341 .\templates\category_detail.html:517
+#: .\templates\search.html:339
+msgid "from"
+msgstr "dan"
+
+#: .\templates\category_detail.html:347 .\templates\category_detail.html:518
+#: .\templates\search.html:344
+msgid "to"
+msgstr "gacha"
+
+#: .\templates\category_detail.html:354 .\templates\category_detail.html:523
+#: .\templates\search.html:350
+msgid "Apply"
+msgstr "Qo'llash"
+
+#: .\templates\category_detail.html:369
+msgid " By newness"
+msgstr " Yangiligi bo'yicha"
+
+#: .\templates\category_detail.html:373
+msgid " Lowest first"
+msgstr " Avval arzonlari"
+
+#: .\templates\category_detail.html:377
+msgid " Highest first"
+msgstr " Avval qimmatlari"
+
+#: .\templates\category_detail.html:381
+msgid "  On sale"
+msgstr "  Chegirmada"
+
+#: .\templates\category_detail.html:389 .\templates\discounts.html:307
+msgid "Filters"
+msgstr "Filtrlar"
+
+#: .\templates\category_detail.html:395 .\templates\discounts.html:298
+#: .\templates\discounts.html:313 .\templates\search.html:360
+msgid "By newness"
+msgstr "Yangiligi bo'yicha"
+
+#: .\templates\category_detail.html:396 .\templates\discounts.html:299
+#: .\templates\discounts.html:314 .\templates\search.html:361
+msgid "Lowest first"
+msgstr "Avval arzonlari"
+
+#: .\templates\category_detail.html:397 .\templates\discounts.html:300
+#: .\templates\discounts.html:315 .\templates\search.html:362
+msgid "Highest first"
+msgstr "Avval qimmatlari"
+
+#: .\templates\category_detail.html:398 .\templates\search.html:363
+msgid "On sale"
+msgstr "Chegirmada"
+
+#: .\templates\category_detail.html:416 .\templates\home.html:639
+#: .\templates\search.html:371 .\templates\shop_details.html:346
+#: .\templates\shop_details.html:821 .\templates\shop_details.html:885
+#: .\templates\wishlist.html:295
+msgid "New"
+msgstr "Yangi"
+
+#: .\templates\category_detail.html:460 .\templates\discounts.html:349
+#: .\templates\home.html:353 .\templates\home.html:670
+#: .\templates\search.html:417 .\templates\shop_details.html:356
+#: .\templates\shop_details.html:852 .\templates\shop_details.html:916
+#: .\templates\wishlist.html:323
+msgid "reviews"
+msgstr "sharhlarim"
+
+#: .\templates\category_detail.html:464 .\templates\discounts.html:352
+#: .\templates\search.html:421
+msgid "Manufacturer:"
+msgstr "Ishlab chiqaruvchi:"
+
+#: .\templates\category_detail.html:465
+msgid "Chinar"
+msgstr "Chinar"
+
+#: .\templates\category_detail.html:481 .\templates\discounts.html:361
+#: .\templates\search.html:433
+msgid "Remove from cart"
+msgstr "Savatdan olib tashlash"
+
+#: .\templates\category_detail.html:483 .\templates\discounts.html:363
+#: .\templates\search.html:435 .\templates\shop_details.html:854
+#: .\templates\shop_details.html:918 .\templates\wishlist.html:329
+msgid "Add to cart"
+msgstr "Savatga qo'shish"
+
+#: .\templates\category_detail.html:524
+msgid "Reset"
+msgstr "Tozalash"
+
+#: .\templates\checkout.html:309
+#, python-format
+msgid " %% Monthly discounts"
+msgstr " %% Oylik chegirmalar"
+
+#: .\templates\checkout.html:331
+msgid "Your Data"
+msgstr "Ma'lumotlaringiz"
+
+#: .\templates\checkout.html:335 .\templates\settings.html:386
+msgid "Phone "
+msgstr "Telefon "
+
+#: .\templates\checkout.html:346
+msgid "First Name"
+msgstr "Ism"
+
+#: .\templates\checkout.html:355 .\templates\settings.html:362
+msgid "Last Name "
+msgstr "Familiya "
+
+#: .\templates\checkout.html:374
+msgid "Delivery Method"
+msgstr "Yetkazib berish usuli"
+
+#: .\templates\checkout.html:385 .\templates\checkout.html:628
+#: .\templates\shop_details.html:578
+msgid "Delivery"
+msgstr "Yetkazib berish"
+
+#: .\templates\checkout.html:386
+msgid "Delivery to address"
+msgstr "Manzilga yetkazib berish"
+
+#: .\templates\checkout.html:399 .\templates\delivery.html:309
+#: .\templates\shop_details.html:548
+msgid "Pickup"
+msgstr "Olib ketish"
+
+#: .\templates\checkout.html:400
+msgid "Pick up from store"
+msgstr "Do'kondan olib ketish"
+
+#: .\templates\checkout.html:410
+msgid "Delivery Address"
+msgstr "Yetkazib berish manzili"
+
+#: .\templates\checkout.html:414
+msgid "Region / Oblast "
+msgstr "Viloyat "
+
+#: .\templates\checkout.html:416
+msgid "Select region"
+msgstr "Viloyatni tanlang"
+
+#: .\templates\checkout.html:426
+msgid "City / District "
+msgstr "Shahar / tuman "
+
+#: .\templates\checkout.html:447
+msgid "Address "
+msgstr "Manzil "
+
+#: .\templates\checkout.html:456
+msgid "Floor"
+msgstr "Qavat"
+
+#: .\templates\checkout.html:464
+msgid "Store Information"
+msgstr "Do'kon ma'lumotlari"
+
+#: .\templates\checkout.html:470
+msgid "Chinar Factory"
+msgstr "Chinar fabrikasi"
+
+#: .\templates\checkout.html:471
+msgid ""
+"Mahalla Cho'pon-ota, Uchtepa hokimyatligi, 100123, Tashkent, Uzbekistan"
+msgstr ""
+"Cho'pon-ota mahallasi, Uchtepa hokimligi, 100123, Toshkent, O'zbekiston"
+
+#: .\templates\checkout.html:476
+msgid "Working Hours"
+msgstr "Ish vaqti"
+
+#: .\templates\checkout.html:486
+msgid "Select Another Store"
+msgstr "Boshqa do'konni tanlash"
+
+#: .\templates\checkout.html:490
+msgid "Delivery Conditions"
+msgstr "Yetkazib berish shartlari"
+
+#: .\templates\checkout.html:495
+msgid "Tomorrow or later"
+msgstr "Ertaga yoki keyinroq"
+
+#: .\templates\checkout.html:496
+msgid "Delivery within 3-5 days — 30.000sum"
+msgstr "3–5 kun ichida yetkazib berish — 30 000 so'm"
+
+#: .\templates\checkout.html:508
+msgid "Fast delivery"
+msgstr "Tezkor yetkazib berish"
+
+#: .\templates\checkout.html:509
+msgid "Delivery within 1-2 days — 100 000 sum"
+msgstr "1–2 kun ichida yetkazib berish — 100 000 so'm"
+
+#: .\templates\checkout.html:523
+msgid ""
+"Exact delivery time and cost will be communicated by the operator after "
+"order placement"
+msgstr ""
+"Yetkazib berishning aniq vaqti va narxi buyurtma rasmiylashtirilgandan so'ng"
+" operator tomonidan ma'lum qilinadi"
+
+#: .\templates\checkout.html:535
+msgid "Select Payment Method"
+msgstr "To'lov usulini tanlang"
+
+#: .\templates\checkout.html:558
+msgid "Cash on Delivery"
+msgstr "Yetkazib berilganda naqd pul"
+
+#: .\templates\checkout.html:565 .\templates\shop_details.html:419
+msgid "Installment"
+msgstr "Bo'lib to'lash"
+
+#: .\templates\checkout.html:570
+msgid "Order Comment"
+msgstr "Buyurtmaga izoh"
+
+#: .\templates\checkout.html:581
+msgid "By confirming the order, I accept the terms of the"
+msgstr "Buyurtmani tasdiqlash orqali men quyidagi shartlarni qabul qilaman"
+
+#: .\templates\checkout.html:597 .\templates\shopping_cart.html:362
+msgid "Your Order"
+msgstr "Sizning buyurtmangiz"
+
+#: .\templates\checkout.html:601
+msgid "Order Items"
+msgstr "Buyurtma tarkibi"
+
+#: .\templates\checkout.html:606
+msgid "Edit"
+msgstr "Tahrirlash"
+
+#: .\templates\checkout.html:624 .\templates\shopping_cart.html:364
+msgid "items for"
+msgstr "ta mahsulot,"
+
+#: .\templates\checkout.html:635 .\templates\shopping_cart.html:373
+msgid "Total"
+msgstr "Jami"
+
+#: .\templates\delivery.html:283
+msgid "Delivery and Payment"
+msgstr "Yetkazib berish va to'lov"
+
+#: .\templates\delivery.html:294
+msgid "Delivery in Tashkent"
+msgstr "Toshkent bo'ylab yetkazib berish"
+
+#: .\templates\delivery.html:295
+msgid ""
+"As soon as the order is processed, our manager will call you back to confirm"
+" the order and clarify details. Please note that if the operator cannot "
+"contact you within two days, we will be forced to cancel the order. Delivery"
+" within 24 hours from the moment of order confirmation, provided the goods "
+"are in stock. Delivery is carried out from 09:00 to 18:00. If you need to "
+"make a purchase on the same day, we advise you to check with our manager or "
+"come to one of the stores and buy on the spot. Note that the courier waiting"
+" time is limited. You can add your wishes for the order in the \"comment\" "
+"field. Any information can be obtained by phone"
+msgstr ""
+"Buyurtma qayta ishlanishi bilanoq menejerimiz buyurtmani tasdiqlash va "
+"tafsilotlarni aniqlashtirish uchun sizga qayta qo'ng'iroq qiladi. E'tibor "
+"bering, agar operator ikki kun ichida siz bilan bog'lana olmasa, biz "
+"buyurtmani bekor qilishga majbur bo'lamiz. Yetkazib berish, mahsulot mavjud "
+"bo'lsa, buyurtma tasdiqlangan paytdan boshlab 24 soat ichida amalga "
+"oshiriladi. Yetkazib berish 09:00 dan 18:00 gacha bajariladi. Agar xaridni "
+"o'sha kuni amalga oshirishingiz kerak bo'lsa, menejerimiz bilan "
+"maslahatlashishingizni yoki do'konlarimizdan biriga kelib joyida sotib "
+"olishingizni tavsiya qilamiz. E'tibor bering, kuryerning kutish vaqti "
+"cheklangan. Buyurtma bo'yicha istaklaringizni \"izoh\" maydoniga "
+"qo'shishingiz mumkin. Har qanday ma'lumotni telefon orqali olishingiz mumkin"
+
+#: .\templates\delivery.html:295
+msgid ""
+"We will answer any questions from 9:00 to 21:00 on all working days. Please "
+"note that delivery is carried out within Tashkent."
+msgstr ""
+"Barcha ish kunlari 9:00 dan 21:00 gacha har qanday savolga javob beramiz. "
+"E'tibor bering, yetkazib berish Toshkent shahri doirasida amalga oshiriladi."
+
+#: .\templates\delivery.html:299
+msgid "Furniture Lifting"
+msgstr "Mebelni ko'tarish"
+
+#: .\templates\delivery.html:300
+msgid "Furniture lifting is free of charge!"
+msgstr "Mebelni ko'tarish bepul!"
+
+#: .\templates\delivery.html:304
+msgid "Delivery in Uzbekistan"
+msgstr "O'zbekiston bo'ylab yetkazib berish"
+
+#: .\templates\delivery.html:305
+msgid ""
+"Free delivery only within Tashkent city. Delivery to regions is negotiated "
+"individually."
+msgstr ""
+"Bepul yetkazib berish faqat Toshkent shahri doirasida. Viloyatlarga yetkazib"
+" berish alohida kelishiladi."
+
+#: .\templates\delivery.html:310
+msgid ""
+"As soon as your order is collected, our managers will definitely contact you"
+" to clarify the date of your arrival at the warehouse. Direct order "
+"formation takes place within one day and, as a rule, the order can be picked"
+" up the very next day."
+msgstr ""
+"Buyurtmangiz to'planishi bilanoq menejerlarimiz omborga kelish sanangizni "
+"aniqlashtirish uchun siz bilan albatta bog'lanadi. Buyurtmani bevosita "
+"shakllantirish bir kun ichida amalga oshiriladi va, qoida tariqasida, "
+"buyurtmani ertasi kuniyoq olib ketish mumkin."
+
+#: .\templates\delivery.html:314
+msgid "In case of questions or comments, feel free to contact us by phone"
+msgstr ""
+"Savol yoki takliflar bo'lsa, telefon orqali biz bilan bemalol bog'laning"
+
+#: .\templates\discounts.html:285
+msgid "Monthly Discounts"
+msgstr "Oylik chegirmalar"
+
+#: .\templates\discounts.html:289
+#, python-format
+msgid " %% Monthly Discounts"
+msgstr " %% Oylik chegirmalar"
+
+#: .\templates\home.html:294
+msgid "Order Now"
+msgstr "Hozir buyurtma bering"
+
+#: .\templates\home.html:310
+msgid "Hot Discounts"
+msgstr "Qaynoq chegirmalar"
+
+#: .\templates\home.html:360 .\templates\home.html:681
+#: .\templates\shop_details.html:390
+msgid "Remove From Cart"
+msgstr "Savatdan olib tashlash"
+
+#: .\templates\home.html:362 .\templates\home.html:683
+#: .\templates\shop_details.html:392
+msgid "Add To Cart"
+msgstr "Savatga qo'shish"
+
+#: .\templates\home.html:394
+msgid "Popular Categories"
+msgstr "Ommabop kategoriyalar"
+
+#: .\templates\home.html:412
+msgid "All Categories"
+msgstr "Barcha kategoriyalar"
+
+#: .\templates\home.html:423 .\templates\idea.html:284
+msgid "Inspirational ideas"
+msgstr "Ilhomlantiruvchi g'oyalar"
+
+#: .\templates\home.html:476
+msgid "CHINAR Interiors"
+msgstr "CHINAR interyerlari"
+
+#: .\templates\home.html:502
+msgid "View project"
+msgstr "Loyihani ko'rish"
+
+#: .\templates\home.html:549 .\templates\services.html:293
+msgid "Furniture Repair and Reupholstering"
+msgstr "Mebel ta'miri va qoplamasini yangilash"
+
+#: .\templates\home.html:550 .\templates\services.html:294
+msgid ""
+"We restore your furniture to its original beauty and comfort. We provide "
+"quality repairs, upholstery replacement, reupholstering and restoration so "
+"your beloved pieces can serve you for many more years."
+msgstr ""
+"Biz mebelingizni asl go'zalligi va qulayligiga qaytaramiz. Sifatli "
+"ta'mirlash, qoplamani almashtirish, qayta qoplash va tiklash xizmatlarini "
+"taqdim etamiz — sevimli buyumlaringiz sizga yana ko'p yillar xizmat qilishi "
+"uchun."
+
+#: .\templates\home.html:551 .\templates\home.html:562
+#: .\templates\home.html:573 .\templates\services.html:295
+#: .\templates\services.html:306 .\templates\services.html:317
+#: .\templates\shop_details.html:451
+#: .\venv\Lib\site-packages\django\forms\formsets.py:484
+#: .\venv\Lib\site-packages\django\forms\formsets.py:491
+msgid "Order"
+msgstr "Buyurtma berish"
+
+#: .\templates\home.html:560 .\templates\services.html:304
+msgid "Custom Orders and Projects"
+msgstr "Maxsus buyurtmalar va loyihalar"
+
+#: .\templates\home.html:561 .\templates\services.html:305
+msgid ""
+"We create furniture that reflects your style and fits perfectly into your "
+"space. From unique design ideas to ready-made solutions — every detail is "
+"developed with your wishes in mind."
+msgstr ""
+"Biz sizning uslubingizni aks ettiruvchi va makoningizga mukammal mos "
+"keladigan mebel yaratamiz. Noyob dizayn g'oyalaridan tayyor yechimlargacha —"
+" har bir detal sizning istaklaringizni inobatga olgan holda ishlab "
+"chiqiladi."
+
+#: .\templates\home.html:571 .\templates\services.html:315
+msgid "Kitchen Furniture"
+msgstr "Oshxona mebeli"
+
+#: .\templates\home.html:572 .\templates\services.html:316
+msgid ""
+"Functional, stylish and durable kitchens for any size and interior. We "
+"design and manufacture kitchen furniture that will make your home cozy and "
+"comfortable for living."
+msgstr ""
+"Har qanday o'lcham va interyer uchun funksional, zamonaviy va mustahkam "
+"oshxonalar. Biz uyingizni yashash uchun shinam va qulay qiladigan oshxona "
+"mebelini loyihalaymiz va ishlab chiqaramiz."
+
+#: .\templates\home.html:584
+msgid "Chinar Stories"
+msgstr "Chinar hikoyalari"
+
+#: .\templates\home.html:593
+msgid "New collection"
+msgstr "Yangi kolleksiya"
+
+#: .\templates\home.html:595
+msgid ""
+"Discover our latest collection of rattan furniture - style, comfort and "
+"natural beauty in every piece"
+msgstr ""
+"Rotangdan yasalgan eng so'nggi mebel kolleksiyamiz bilan tanishing — har bir"
+" buyumda uslub, qulaylik va tabiiy go'zallik"
+
+#: .\templates\home.html:603
+msgid "Our orders"
+msgstr "Bizning buyurtmalarimiz"
+
+#: .\templates\home.html:605
+msgid ""
+"We delivered CHINAR furniture to the renowned GEYSER complex – see how our "
+"furniture transforms the space."
+msgstr ""
+"Biz CHINAR mebelini mashhur GEYSER majmuasiga yetkazib berdik — mebelimiz "
+"makonni qanday o'zgartirishini ko'ring."
+
+#: .\templates\home.html:613
+msgid "Collection 2026"
+msgstr "2026 kolleksiyasi"
+
+#: .\templates\home.html:615
+msgid ""
+"Meet the 2025 collection – new shapes, fresh colours and contemporary design"
+" for your home and garden"
+msgstr ""
+"2025 kolleksiyasi bilan tanishing — uyingiz va bog'ingiz uchun yangi "
+"shakllar, yangi ranglar va zamonaviy dizayn"
+
+#: .\templates\home.html:626
+msgid "May Be of Interest"
+msgstr "Sizni qiziqtirishi mumkin"
+
+#: .\templates\home.html:629 .\templates\projects.html:291
+msgid "All"
+msgstr "Hammasi"
+
+#: .\templates\home.html:694
+msgid "Show more"
+msgstr "Ko'proq ko'rsatish"
+
+#: .\templates\order.html:302 .\templates\reviews.html:300
+#: .\templates\settings.html:306
+msgid "Orders"
+msgstr "Buyurtmalar"
+
+#: .\templates\order.html:312 .\templates\reviews.html:310
+#: .\templates\settings.html:316 .\templates\shop_details.html:576
+msgid "Reviews"
+msgstr "Sharhlar"
+
+#: .\templates\order.html:334
+msgid "My Orders"
+msgstr "Mening buyurtmalarim"
+
+#: .\templates\order.html:338
+msgid "All orders"
+msgstr "Barcha buyurtmalar"
+
+#: .\templates\order.html:339
+msgid "Unpaid"
+msgstr "To'lanmagan"
+
+#: .\templates\order.html:340
+msgid "Active"
+msgstr "Faol"
+
+#: .\templates\order.html:353
+msgid "No orders yet"
+msgstr "Buyurtmalar yo'q"
+
+#: .\templates\order.html:354
+msgid "You have no orders at the moment. Start shopping!"
+msgstr "Ayni paytda sizda buyurtmalar yo'q. Xarid qilishni boshlang!"
+
+#: .\templates\order.html:356
+msgid "Go to shopping"
+msgstr "Xaridga o'tish"
+
+#: .\templates\order.html:357
+msgid "Back to home"
+msgstr "Bosh sahifaga qaytish"
+
+#: .\templates\projects.html:285
+msgid "Our projects"
+msgstr "Bizning loyihalarimiz"
+
+#: .\templates\projects.html:286
+msgid "Ready solutions for any space"
+msgstr "Har qanday makon uchun tayyor yechimlar"
+
+#: .\templates\projects.html:292
+msgid "Restaurant"
+msgstr "Restoran"
+
+#: .\templates\projects.html:293
+msgid "Cafe"
+msgstr "Kafe"
+
+#: .\templates\projects.html:294
+msgid "Hotel"
+msgstr "Mehmonxona"
+
+#: .\templates\projects.html:295
+msgid "Other"
+msgstr "Boshqa"
+
+#: .\templates\reviews.html:333
+msgid "My Reviews"
+msgstr "Mening sharhlarim"
+
+#: .\templates\reviews.html:336
+msgid "All reviews"
+msgstr "Barcha sharhlar"
+
+#: .\templates\reviews.html:337
+msgid "Pending"
+msgstr "Kutilmoqda"
+
+#: .\templates\reviews.html:338
+msgid "Published"
+msgstr "E'lon qilingan"
+
+#: .\templates\search.html:288 .\templates\shop_details.html:285
+msgid "Back"
+msgstr "Orqaga"
+
+#: .\templates\search.html:292
+msgid "Search Results"
+msgstr "Qidiruv natijalari"
+
+#: .\templates\search.html:297
+msgid "Search results for"
+msgstr "Qidiruv natijalari:"
+
+#: .\templates\search.html:321
+msgid " Price"
+msgstr " Narx"
+
+#: .\templates\settings.html:342
+msgid "Personal information"
+msgstr "Shaxsiy ma'lumotlar"
+
+#: .\templates\settings.html:350
+msgid "First Name "
+msgstr "Ism "
+
+#: .\templates\settings.html:374
+msgid "Email "
+msgstr "Email "
+
+#: .\templates\settings.html:398
+msgid "Date of Birth "
+msgstr "Tug'ilgan sana "
+
+#: .\templates\settings.html:409
+msgid "Gender"
+msgstr "Jins"
+
+#: .\templates\settings.html:415
+msgid "Select gender"
+msgstr "Jinsni tanlang"
+
+#: .\templates\settings.html:416
+msgid "Male"
+msgstr "Erkak"
+
+#: .\templates\settings.html:417
+msgid "Female"
+msgstr "Ayol"
+
+#: .\templates\settings.html:424
+msgid "Save"
+msgstr "Saqlash"
+
+#: .\templates\settings.html:435
+msgid "Sign out of account"
+msgstr "Hisobdan chiqish"
+
+#: .\templates\settings.html:437
+msgid "Sign out of your account on this device"
+msgstr "Ushbu qurilmada hisobingizdan chiqing"
+
+#: .\templates\settings.html:442
+msgid "Sign out"
+msgstr "Chiqish"
+
+#: .\templates\shop_details.html:359
+msgid "In stock"
+msgstr "Mavjud"
+
+#: .\templates\shop_details.html:370
+msgid "Colors:"
+msgstr "Ranglar:"
+
+#: .\templates\shop_details.html:398
+msgid "Buy in 1 click"
+msgstr "1 klikda xarid qilish"
+
+#: .\templates\shop_details.html:402
+msgid "Courier delivery:"
+msgstr "Kuryer yetkazib berish:"
+
+#: .\templates\shop_details.html:403 .\templates\shop_details.html:407
+msgid "Free"
+msgstr "Bepul"
+
+#: .\templates\shop_details.html:406
+msgid "Pickup:"
+msgstr "Olib ketish:"
+
+#: .\templates\shop_details.html:410
+msgid "Warranty:"
+msgstr "Kafolat:"
+
+#: .\templates\shop_details.html:411
+msgid "2 years"
+msgstr "2 yil"
+
+#: .\templates\shop_details.html:435
+msgid "Total for 12 months:"
+msgstr "12 oy uchun jami:"
+
+#: .\templates\shop_details.html:447
+msgid "Available"
+msgstr "Mavjud"
+
+#: .\templates\shop_details.html:456
+msgid "Main specifications"
+msgstr "Asosiy xususiyatlar"
+
+#: .\templates\shop_details.html:460
+msgid "Article:"
+msgstr "Artikul:"
+
+#: .\templates\shop_details.html:464
+msgid "Category:"
+msgstr "Kategoriya:"
+
+#: .\templates\shop_details.html:468
+msgid "Rating:"
+msgstr "Reyting:"
+
+#: .\templates\shop_details.html:473 .\templates\shop_details.html:669
+msgid "Sizes:"
+msgstr "O'lchamlar:"
+
+#: .\templates\shop_details.html:483
+msgid "Discount:"
+msgstr "Chegirma:"
+
+#: .\templates\shop_details.html:489
+msgid "Delivery information"
+msgstr "Yetkazib berish haqida ma'lumot"
+
+#: .\templates\shop_details.html:504
+msgid "Courier delivery"
+msgstr "Kuryer yetkazib berish"
+
+#: .\templates\shop_details.html:511
+msgid "Delivery right to your apartment door"
+msgstr "To'g'ridan-to'g'ri kvartirangiz eshigigacha yetkazib berish"
+
+#: .\templates\shop_details.html:513
+msgid "Delivery within 2 days"
+msgstr "2 kun ichida yetkazib berish"
+
+#: .\templates\shop_details.html:514
+msgid "Delivery from 10:00 to 20:00"
+msgstr "Yetkazib berish 10:00 dan 20:00 gacha"
+
+#: .\templates\shop_details.html:515
+msgid "Warning call one hour ago"
+msgstr "Bir soat oldin ogohlantirish qo'ng'irog'i"
+
+#: .\templates\shop_details.html:516
+msgid "Floor lifting service"
+msgstr "Qavatga ko'tarish xizmati"
+
+#: .\templates\shop_details.html:534
+msgid "Furniture assembly"
+msgstr "Mebelni yig'ish"
+
+#: .\templates\shop_details.html:535
+msgid "Floor lifting"
+msgstr "Qavatga ko'tarish"
+
+#: .\templates\shop_details.html:536
+msgid "Furniture packaging"
+msgstr "Mebelni qadoqlash"
+
+#: .\templates\shop_details.html:549 .\templates\shop_details.html:558
+msgid "Ready for pickup: within 2 days"
+msgstr "Olib ketishga tayyor: 2 kun ichida"
+
+#: .\templates\shop_details.html:556
+msgid "Pick up the item from the pickup point"
+msgstr "Mahsulotni olib ketish punktidan oling"
+
+#: .\templates\shop_details.html:559
+msgid "Working hours: 10:00 - 20:00"
+msgstr "Ish vaqti: 10:00 - 20:00"
+
+#: .\templates\shop_details.html:560
+msgid "Storage for 1 week"
+msgstr "1 hafta saqlash"
+
+#: .\templates\shop_details.html:577
+msgid "Specifications"
+msgstr "Xususiyatlar"
+
+#: .\templates\shop_details.html:579
+msgid "Instructions"
+msgstr "Yo'riqnoma"
+
+#: .\templates\shop_details.html:586
+msgid "Reviews "
+msgstr "Sharhlar "
+
+#: .\templates\shop_details.html:588 .\templates\shop_details.html:725
+msgid "Write a review"
+msgstr "Sharh yozish"
+
+#: .\templates\shop_details.html:621
+msgid "Reply"
+msgstr "Javob berish"
+
+#: .\templates\shop_details.html:658
+msgid "No reviews yet. Be the first to write one!"
+msgstr "Hali sharhlar yo'q. Birinchi bo'lib sharh yozing!"
+
+#: .\templates\shop_details.html:678
+msgid "Material"
+msgstr "Material"
+
+#: .\templates\shop_details.html:682
+msgid "Frame"
+msgstr "Karkas"
+
+#: .\templates\shop_details.html:683
+msgid "Metal"
+msgstr "Metall"
+
+#: .\templates\shop_details.html:698
+msgid "Weight"
+msgstr "Og'irlik"
+
+#: .\templates\shop_details.html:702
+msgid "Article"
+msgstr "Artikul"
+
+#: .\templates\shop_details.html:710
+msgid ""
+"Delivery across Tashkent — Free. Delivery to other cities of Uzbekistan is "
+"discussed individually. Delivery is carried out by our employees who will "
+"also help lift and assemble the furniture."
+msgstr ""
+"Toshkent bo'ylab yetkazib berish — bepul. O'zbekistonning boshqa "
+"shaharlariga yetkazib berish alohida kelishiladi. Yetkazib berish "
+"xodimlarimiz tomonidan amalga oshiriladi, ular mebelni ko'tarish va "
+"yig'ishda ham yordam beradi."
+
+#: .\templates\shop_details.html:715
+msgid ""
+"Assembly instructions will be included in the package. You can also download"
+" the PDF guide below."
+msgstr ""
+"Yig'ish bo'yicha yo'riqnoma qadoqqa qo'shib beriladi. Shuningdek, quyida PDF"
+" qo'llanmani yuklab olishingiz mumkin."
+
+#: .\templates\shop_details.html:741
+msgid "Rating "
+msgstr "Reyting "
+
+#: .\templates\shop_details.html:758
+msgid "Your name "
+msgstr "Ismingiz "
+
+#: .\templates\shop_details.html:765
+msgid "Phone number "
+msgstr "Telefon raqami "
+
+#: .\templates\shop_details.html:772
+msgid "Review "
+msgstr "Sharh "
+
+#: .\templates\shop_details.html:783
+msgid "Click to upload images or drag here"
+msgstr "Rasmlarni yuklash uchun bosing yoki bu yerga tashlang"
+
+#: .\templates\shop_details.html:790
+msgid "Cancel"
+msgstr "Bekor qilish"
+
+#: .\templates\shop_details.html:793
+msgid "Submit"
+msgstr "Yuborish"
+
+#: .\templates\shop_details.html:806
+msgid "Similar Products"
+msgstr "O'xshash mahsulotlar"
+
+#: .\templates\shop_details.html:870
+msgid "Recently Viewed"
+msgstr "Yaqinda ko'rilganlar"
+
+#: .\templates\shopping_cart.html:295
+msgid "Select all"
+msgstr "Hammasini tanlash"
+
+#: .\templates\shopping_cart.html:368
+msgid "Discount"
+msgstr "Chegirma"
+
+#: .\templates\shopping_cart.html:387
+msgid "Delivery Service"
+msgstr "Yetkazib berish xizmati"
+
+#: .\templates\shopping_cart.html:388
+msgid "Learn more"
+msgstr "Batafsil"
+
+#: .\templates\shopping_cart.html:392
+msgid "Checkout"
+msgstr "Rasmiylashtirish"
+
+#: .\templates\shopping_cart.html:407
+msgid "Your cart is empty"
+msgstr "Savatingiz bo'sh"
+
+#: .\templates\shopping_cart.html:408
+msgid "Add products to your cart to start shopping"
+msgstr "Xaridni boshlash uchun savatga mahsulotlar qo'shing"
+
+#: .\templates\shopping_cart.html:410 .\templates\wishlist.html:348
+msgid "Continue shopping"
+msgstr "Xaridni davom ettirish"
+
+#: .\templates\shopping_cart.html:411 .\templates\wishlist.html:349
+msgid "Go to catalog"
+msgstr "Katalogga o'tish"
+
+#: .\templates\shopping_cart.html:415
+msgid "Need help? "
+msgstr "Yordam kerakmi? "
+
+#: .\templates\shopping_cart.html:415 .\templates\wishlist.html:353
+msgid "Contact our support service"
+msgstr "Qo'llab-quvvatlash xizmatiga murojaat qiling"
+
+#: .\templates\wishlist.html:288
+msgid " items"
+msgstr " ta mahsulot"
+
+#: .\templates\wishlist.html:345
+msgid "Your wishlist is empty"
+msgstr "Sevimlilar ro'yxatingiz bo'sh"
+
+#: .\templates\wishlist.html:346
+msgid "Add products to your wishlist to save them for future purchases"
+msgstr ""
+"Kelgusi xaridlar uchun saqlab qo'yish maqsadida sevimlilar ro'yxatiga "
+"mahsulotlar qo'shing"
+
+#: .\templates\wishlist.html:353
+msgid "Need help?"
+msgstr "Yordam kerakmi?"
+
+#: .\templates\workers.html:287
+msgid "Collaboration with designers"
+msgstr "Dizaynerlar bilan hamkorlik"
+
+#: .\templates\workers.html:287
+msgid "and architects"
+msgstr "me'morlar uchun"
+
+#: .\templates\workers.html:288
+msgid ""
+"Chinar invites professional designers, decorators and architects to join the"
+" new Chinar Design program"
+msgstr ""
+"Chinar professional dizaynerlar, dekoratorlar va me'morlarni yangi Chinar "
+"Design dasturiga qo'shilishga taklif qiladi"
+
+#: .\templates\workers.html:297
+msgid "The production program includes:"
+msgstr "Ishlab chiqarish dasturi quyidagilarni o'z ichiga oladi:"
+
+#: .\templates\workers.html:299
+msgid ""
+"Convenient location of branded salons, where you can meet with a client in a"
+" comfortable environment;"
+msgstr ""
+"Mijoz bilan qulay muhitda uchrashishingiz mumkin bo'lgan brend salonlarning "
+"qulay joylashuvi;"
+
+#: .\templates\workers.html:300
+msgid "Agency agreement, valid for all salons;"
+msgstr "Barcha salonlar uchun amal qiluvchi agentlik shartnomasi;"
+
+#: .\templates\workers.html:301
+msgid "One-stop-shop principle (contract, closing payments);"
+msgstr "Yagona darcha tamoyili (shartnoma, yakuniy to'lovlar);"
+
+#: .\templates\workers.html:302
+msgid "Promotions and contests for Partners;"
+msgstr "Hamkorlar uchun aksiyalar va tanlovlar;"
+
+#: .\templates\workers.html:303
+msgid "Closed events for partners;"
+msgstr "Hamkorlar uchun yopiq tadbirlar;"
+
+#: .\templates\workers.html:304
+msgid "Online sales;"
+msgstr "Onlayn savdo;"
+
+#: .\templates\workers.html:305
+msgid "Regular update of collections/assortment;"
+msgstr "Kolleksiyalar/assortimentning muntazam yangilanishi;"
+
+#: .\templates\workers.html:306
+msgid ""
+"Wide selection of furniture and accessories for bedrooms, living rooms and "
+"children's rooms;"
+msgstr ""
+"Yotoqxonalar, mehmonxonalar va bolalar xonalari uchun keng mebel va "
+"aksessuarlar tanlovi;"
+
+#: .\templates\workers.html:307
+msgid "Monthly update of promotions for clients."
+msgstr "Mijozlar uchun aksiyalarning oylik yangilanishi."
+
+#: .\templates\workers.html:313
+msgid "Contact us"
+msgstr "Biz bilan bog'laning"
+
+#: .\templates\workers.html:314
+msgid "Send us your request and we will promptly respond to you."
+msgstr "Bizga so'rovingizni yuboring va biz sizga tezda javob beramiz."
+
+#: .\templates\workers.html:319
+msgid "First name:"
+msgstr "Ism:"
+
+#: .\templates\workers.html:323
+msgid "Last name:"
+msgstr "Familiya:"
+
+#: .\templates\workers.html:327
+msgid "Phone:"
+msgstr "Telefon:"
+
+#: .\venv\Lib\site-packages\django\contrib\messages\apps.py:16
+msgid "Messages"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\sitemaps\apps.py:8
+msgid "Site Maps"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\staticfiles\apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\syndication\apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: .\venv\Lib\site-packages\django\core\paginator.py:33
+msgid "…"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:35
+msgid "That page number is not an integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:36
+msgid "That page number is less than 1"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:37
+msgid "That page contains no results"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:22
+msgid "Enter a valid value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:70
+msgid "Enter a valid domain name."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:153
+#: .\venv\Lib\site-packages\django\forms\fields.py:773
+msgid "Enter a valid URL."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:200
+msgid "Enter a valid integer."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:211
+msgid "Enter a valid email address."
+msgstr ""
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: .\venv\Lib\site-packages\django\core\validators.py:289
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:297
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or"
+" hyphens."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:309
+#: .\venv\Lib\site-packages\django\core\validators.py:318
+#: .\venv\Lib\site-packages\django\core\validators.py:332
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2220
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:311
+msgid "IPv4"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:320
+#: .\venv\Lib\site-packages\django\utils\ipv6.py:43
+msgid "IPv6"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:334
+msgid "IPv4 or IPv6"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:375
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:381
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:416
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:425
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:434
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:441
+#, python-format
+msgid ""
+"Ensure this value is a multiple of step size %(limit_value)s, starting from "
+"%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:473
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:491
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:514
+#: .\venv\Lib\site-packages\django\forms\fields.py:364
+#: .\venv\Lib\site-packages\django\forms\fields.py:403
+msgid "Enter a number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:516
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:521
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:526
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:597
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:659
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\base.py:1633
+#: .\venv\Lib\site-packages\django\forms\models.py:932
+msgid "and"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\base.py:1635
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\constraints.py:20
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:134
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:135
+msgid "This field cannot be null."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:136
+msgid "This field cannot be blank."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:137
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:141
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:180
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1161
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1162
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1164
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1214
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1216
+msgid "String (unlimited)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1325
+msgid "Comma-separated integers"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1426
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1430
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1565
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1434
+msgid "Date (without time)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1561
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1569
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1574
+msgid "Date (with time)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1701
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1703
+msgid "Decimal number"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1864
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1868
+msgid "Duration"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1920
+msgid "Email address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1945
+msgid "File path"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2023
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2025
+msgid "Floating point number"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2065
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2067
+msgid "Integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2163
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2180
+msgid "Small integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2188
+msgid "IPv4 address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2219
+msgid "IP address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2310
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2311
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2313
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2364
+msgid "Positive big integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2379
+msgid "Positive integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2394
+msgid "Positive small integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2410
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2446
+msgid "Text"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2526
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2530
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2534
+msgid "Time"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2642
+msgid "URL"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2666
+msgid "Raw binary data"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2731
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2733
+msgid "Universally unique identifier"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:244
+msgid "File"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:420
+msgid "Image"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\json.py:24
+msgid "A JSON object"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\json.py:26
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:974
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r is not a valid choice."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:977
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1271
+msgid "One-to-one relationship"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1328
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1330
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1378
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to
+#. the label
+#: .\venv\Lib\site-packages\django\forms\boundfield.py:188
+msgid ":?.!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:91
+msgid "This field is required."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:313
+msgid "Enter a whole number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:484
+#: .\venv\Lib\site-packages\django\forms\fields.py:1241
+msgid "Enter a valid date."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:507
+#: .\venv\Lib\site-packages\django\forms\fields.py:1242
+msgid "Enter a valid time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:534
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:568
+msgid "Enter a valid duration."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:569
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:638
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:639
+msgid "No file was submitted."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:640
+msgid "The submitted file is empty."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:642
+#, python-format
+msgid ""
+"Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:647
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:715
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:862
+#: .\venv\Lib\site-packages\django\forms\fields.py:949
+#: .\venv\Lib\site-packages\django\forms\models.py:1621
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:951
+#: .\venv\Lib\site-packages\django\forms\fields.py:1070
+#: .\venv\Lib\site-packages\django\forms\models.py:1619
+msgid "Enter a list of values."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1071
+msgid "Enter a complete value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1313
+msgid "Enter a valid UUID."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1343
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: .\venv\Lib\site-packages\django\forms\forms.py:97
+msgid ":"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\forms.py:239
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:61
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:65
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:70
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:499
+msgid "Delete"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:925
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:930
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:937
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:946
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1383
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1474
+msgid ""
+"Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1623
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\utils.py:229
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:528
+msgid "Clear"
+msgstr "Tozalash"
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:529
+msgid "Currently"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:530
+msgid "Change"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:869
+msgid "Unknown"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:870
+msgid "Yes"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:871
+msgid "No"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\tasks\base.py:34
+msgctxt "Task"
+msgid "Ready"
+msgstr "Tayyor"
+
+#: .\venv\Lib\site-packages\django\tasks\base.py:36
+msgctxt "Task"
+msgid "Running"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\tasks\base.py:38
+msgctxt "Task"
+msgid "Failed"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\tasks\base.py:40
+msgctxt "Task"
+msgid "Successful"
+msgstr ""
+
+#. Translators: Please do not add spaces around commas.
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:878
+msgid "yes,no,maybe"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:908
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:925
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:927
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:929
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:931
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:933
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:935
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:74
+msgid "p.m."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:75
+msgid "a.m."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:80
+msgid "PM"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:81
+msgid "AM"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:153
+msgid "midnight"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:155
+msgid "noon"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:7
+msgid "Monday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:8
+msgid "Tuesday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:9
+msgid "Wednesday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Thursday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:11
+msgid "Friday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:12
+msgid "Saturday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:13
+msgid "Sunday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:16
+msgid "Mon"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:17
+msgid "Tue"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:18
+msgid "Wed"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "Thu"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:20
+msgid "Fri"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:21
+msgid "Sat"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:22
+msgid "Sun"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:25
+msgid "January"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:26
+msgid "February"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:27
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:28
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:29
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:30
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:31
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:32
+msgid "August"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:33
+msgid "September"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:34
+msgid "October"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:35
+msgid "November"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:36
+msgid "December"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:39
+msgid "jan"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:40
+msgid "feb"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:41
+msgid "mar"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:42
+msgid "apr"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:43
+msgid "may"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:44
+msgid "jun"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:45
+msgid "jul"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:46
+msgid "aug"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:47
+msgid "sep"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:48
+msgid "oct"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:49
+msgid "nov"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:50
+msgid "dec"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:55
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:69
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:75
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:77
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:78
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\ipv6.py:20
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\text.py:76
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\text.py:282
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: .\venv\Lib\site-packages\django\utils\text.py:301
+#: .\venv\Lib\site-packages\django\utils\timesince.py:135
+msgid ", "
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:8
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:9
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:10
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:11
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:12
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:13
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:29
+msgid "Forbidden"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:30
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:34
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:40
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:45
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
+" including the “Referrer-Policy: no-referrer” header, please remove them. "
+"The CSRF protection requires the “Referer” header to do strict referer "
+"checking. If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:54
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:60
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:66
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:44
+msgid "No year specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:64
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:115
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:214
+msgid "Date out of range"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:94
+msgid "No month specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:147
+msgid "No day specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:194
+msgid "No week specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:353
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:384
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:680
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:720
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:173
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:49
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:51
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:68
+#: .\venv\Lib\site-packages\django\views\templates\directory_index.html:8
+#: .\venv\Lib\site-packages\django\views\templates\directory_index.html:11
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:7
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:204
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:208
+#, python-format
+msgid ""
+"You are seeing this page because <a "
+"href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+"target=\"_blank\" rel=\"noopener\">DEBUG=True</a> is in your settings file "
+"and you have not configured any URLs."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:217
+msgid "Django Documentation"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:218
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:226
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:227
+msgid "Get started with Django"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:235
+msgid "Django Community"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:236
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:14
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:94
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:102
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:112
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:122
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:126
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:158
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:177
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:406
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:411
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:421
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:441
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:458
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:477
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:483
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:500
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:512
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:520
+msgid "title"
+msgstr ""
+
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:18
+msgid "password"
+msgstr ""
+
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:287
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:306
+msgid "title a"
+msgstr ""
+
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:291
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:317
+msgid "title b"
+msgstr ""
+
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:295
+msgid "title c"
+msgstr ""
+
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:299
+msgid "title d"
+msgstr ""
+
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:422
+msgid "visits"
+msgstr ""
+
+#: .\venv\Lib\site-packages\modeltranslation\tests\translation.py:74
+msgid "Sorry, translation is not available."
+msgstr ""
+
+#: .\venv\Lib\site-packages\modeltranslation\widgets.py:32
+msgid "None"
+msgstr ""
+
+msgid "FREE DELIVERY IN TASHKENT"
+msgstr "TOSHKENT BO'YLAB BEPUL YETKAZIB BERISH"
+
+msgid "2 YEAR WARRANTY"
+msgstr "2 YIL KAFOLAT"
+
+msgid "INSTALLMENT AVAILABLE"
+msgstr "BO'LIB TO'LASH MUMKIN"
+
+msgid "Garden and patio furniture"
+msgstr "Bog' va hovli mebellari"
+
+msgid "Live in harmony"
+msgstr "Tabiat bilan"
+
+msgid "with nature"
+msgstr "uyg'un yashang"
+
+msgid ""
+"Chinar — handwoven furniture that withstands sun, rain and years. We turn "
+"your garden into a living space."
+msgstr ""
+"Chinar — quyoshga, yomg'irga va yillarga bardosh beradigan qo'lda to'qilgan "
+"mebellar. Bog'ingizni yashash maskaniga aylantiramiz."
+
+msgid "View catalog"
+msgstr "Katalogni ko'rish"
+
+msgid "and thousands of clients"
+msgstr "va minglab mijozlar"
+
+msgid "Free delivery"
+msgstr "Bepul yetkazish"
+
+msgid "Across Tashkent"
+msgstr "Toshkent bo'ylab"
+
+msgid "2 year warranty"
+msgstr "2 yil kafolat"
+
+msgid "On all products"
+msgstr "Barcha mahsulotlarga"
+
+msgid "Up to 24 months"
+msgstr "24 oygacha muddatli"
+
+msgid "Weather resistant"
+msgstr "Ob-havoga chidamli"
+
+msgid "Outdoors all year round"
+msgstr "Yil davomida tashqarida"
+
+msgid "What are you"
+msgstr "Nimani"
+
+msgid "looking for?"
+msgstr "izlayapsiz?"
+
+msgid "See all"
+msgstr "Barchasi"
+
+msgid "Customer"
+msgstr "Eng sevimli"
+
+msgid "favorites"
+msgstr "mahsulotlar"
+
+msgid "Monthly"
+msgstr "Oyning"
+
+msgid "discounts"
+msgstr "chegirmalari"
+
+msgid "View all"
+msgstr "Hammasini ko'rish"
+
+msgid "Picked"
+msgstr "Siz uchun"
+
+msgid "for you"
+msgstr "tanladik"
+
+msgid "Crafted with love"
+msgstr "Har bir to'qimada"
+
+msgid "in every weave"
+msgstr "ustalar mehri"
+
+msgid ""
+"Chinar furniture is handwoven by experienced craftsmen from quality "
+"artificial rattan and durable fabrics. Weather-resistant materials mean your"
+" furniture serves for years like new."
+msgstr ""
+"Chinar mebellari sifatli sun'iy ratan va chidamli matolardan, tajribali "
+"ustalar qo'lida to'qiladi. Quyosh, yomg'ir va sovuqqa bardoshli materiallar "
+"— mebelingiz yillar davomida xuddi yangidek xizmat qiladi."
+
+msgid "product types"
+msgstr "mahsulot turi"
+
+msgid "happy clients"
+msgstr "mamnun mijoz"
+
+msgid ""
+"Your comfort is our goal. 15 years of experience in garden and patio "
+"furniture."
+msgstr ""
+"Sizning qulayligingiz — bizning maqsadimiz. Bog' va hovli mebellari bo'yicha"
+" 15 yillik tajriba."
+
+msgid "Contact"
+msgstr "Aloqa"
+
+msgid "All rights reserved."
+msgstr "Barcha huquqlar himoyalangan."
+
+msgid "items"
+msgstr "ta mahsulot"
+
+msgid "Newest"
+msgstr "Yangi kelganlar"
+
+msgid "Cheapest first"
+msgstr "Arzonroq"
+
+msgid "Expensive first"
+msgstr "Qimmatroq"
+
+msgid "Empty for now"
+msgstr "Hozircha bo'sh"
+
+msgid "No products found in this category."
+msgstr "Bu kategoriyada mahsulotlar topilmadi."
+
+msgid "Back to catalog"
+msgstr "Katalogga qaytish"
+
+msgid "Open catalog"
+msgstr "Katalogni ochish"
+
+msgid "arrivals"
+msgstr "kelganlar"
+
+msgid "Nothing new yet"
+msgstr "Hozircha yangiliklar yo'q"
+
+msgid "New products are coming soon."
+msgstr "Tez orada yangi mahsulotlar keladi."
+
+msgid "No discounts right now"
+msgstr "Hozircha chegirma yo'q"
+
+msgid "New promotions are coming soon!"
+msgstr "Tez orada yangi aksiyalar boshlanadi!"
+
+msgid "results found"
+msgstr "ta natija topildi"
+
+msgid "Nothing found"
+msgstr "Hech narsa topilmadi"
+
+msgid "no products found. Try another word."
+msgstr "bo'yicha mahsulot topilmadi. Boshqa so'z bilan urinib ko'ring."
+
+msgid "Favorite"
+msgstr "Sevimli"
+
+msgid "Favorites are empty"
+msgstr "Sevimlilar bo'sh"
+
+msgid "Save products you like with the heart icon."
+msgstr "Yoqqan mahsulotlaringizni yurak belgisi bilan saqlang."
+
+msgid "Your order"
+msgstr "Buyurtma"
+
+msgid "Products"
+msgstr "Mahsulotlar"
+
+msgid "Cart is empty"
+msgstr "Savat bo'sh"
+
+msgid "Choose furniture you like from the catalog."
+msgstr "Katalogdan yoqqan mebellaringizni tanlang."
+
+msgid "Remove"
+msgstr "O'chirish"
+
+msgid "Free (Tashkent)"
+msgstr "Bepul (Toshkent)"
+
+msgid "Warranty"
+msgstr "Kafolat"
+
+msgid "Payment"
+msgstr "To'lov"
+
+msgid "Cash / card / installment"
+msgstr "Naqd / karta / bo'lib to'lash"
+
+msgid "Category"
+msgstr "Kategoriya"
+
+msgid "Description"
+msgstr "Tavsif"
+
+msgid "Similar"
+msgstr "O'xshash"
+
+msgid "Go to cart"
+msgstr "Savatga o'tish"
+
+msgid "Journal"
+msgstr "Jurnal"
+
+msgid "Track order status in Telegram"
+msgstr "Buyurtma holatini Telegram'da kuzating"
+
+msgid "Place your"
+msgstr "Buyurtmani"
+
+msgid "order"
+msgstr "rasmiylashtirish"
+
+msgid "Contact details"
+msgstr "Aloqa ma'lumotlari"
+
+msgid "Delivery (free)"
+msgstr "Yetkazib berish (bepul)"
+
+msgid "Pickup from store"
+msgstr "Do'kondan olib ketish"
+
+msgid "Choose a district"
+msgstr "Tumanni tanlang"
+
+msgid "For example: Yunusobod 13th block"
+msgstr "Masalan: Yunusobod 13-kvartal"
+
+msgid "Floor / landmark"
+msgstr "Qavat / mo'ljal"
+
+msgid "Payment method"
+msgstr "To'lov usuli"
+
+msgid "Cash"
+msgstr "Naqd pul"
+
+msgid "Place order"
+msgstr "Buyurtma berish"
+
+msgid "Promo code"
+msgstr "Promokod"
+
+msgid "Choose a product before checkout."
+msgstr "Rasmiylashtirish uchun avval mahsulot tanlang."
+
+msgid "My"
+msgstr "Mening"
+
+msgid "orders"
+msgstr "buyurtmalarim"
+
+msgid "Go to the catalog to place your first order."
+msgstr "Birinchi buyurtmangizni berish uchun katalogga o'ting."
+
+msgid "Inspiring"
+msgstr "Ilhomlantiruvchi"
+
+msgid "ideas"
+msgstr "g'oyalar"
+
+msgid "Tap the dots on the photo to see the product"
+msgstr "Rasmdagi nuqtalarni bosib, mahsulotni ko'ring"
+
+msgid "View product"
+msgstr "Mahsulotga o'tish"
+
+msgid "No ideas yet"
+msgstr "Hozircha g'oyalar yo'q"
+
+msgid "New interior ideas are coming soon."
+msgstr "Tez orada yangi interyer g'oyalari qo'shiladi."
+
+msgid "No reviews yet"
+msgstr "Sharhlar yo'q"
+
+msgid "Leave a review for products you bought."
+msgstr "Sotib olgan mahsulotlaringizga sharh qoldiring."
+
+msgid "settings"
+msgstr "sozlamalari"
+
+msgid "Birth date"
+msgstr "Tug'ilgan sana"
+
+msgid "Coming soon"
+msgstr "Tez orada"
+
+msgid "Garden furnishing tips and news will appear here."
+msgstr "Bog' jihozlash bo'yicha maslahatlar va yangiliklar shu yerda bo'ladi."
+
+msgid "Our"
+msgstr "Bizning"
+
+msgid "showroom"
+msgstr "showroom"
+
+msgid "Tashkent city"
+msgstr "Toshkent shahri"
+
+msgid "Daily 9:00 — 19:00"
+msgstr "Har kuni 9:00 — 19:00"
+
+msgid "Call us"
+msgstr "Qo'ng'iroq qilish"
+
+msgid "Completed"
+msgstr "Amalga oshirilgan"
+
+msgid "projects"
+msgstr "loyihalar"
+
+msgid "Your space —"
+msgstr "Sizning hududingiz —"
+
+msgid "our project"
+msgstr "bizning loyihamiz"
+
+msgid "Start a project"
+msgstr "Loyihani boshlash"
+
+msgid "services"
+msgstr "xizmatlar"
+
+msgid "Delivery and installation"
+msgstr "Yetkazib berish va o'rnatish"
+
+msgid "Free delivery across Tashkent, assembled and installed on site."
+msgstr "Toshkent bo'ylab bepul yetkazamiz, joyida yig'ib, o'rnatib beramiz."
+
+msgid "Space design"
+msgstr "Hudud dizayni"
+
+msgid "We plan the furniture layout for your garden or yard for free."
+msgstr ""
+"Bog' yoki hovlingiz uchun mebel joylashuvini bepul rejalashtirib beramiz."
+
+msgid "Custom weaving"
+msgstr "Buyurtma asosida to'qish"
+
+msgid ""
+"Choose the size, shape and color — our craftsmen weave it just for you."
+msgstr ""
+"O'lcham, shakl va rangni o'zingiz tanlang — ustalarimiz aynan siz uchun "
+"to'qiydi."
+
+msgid "Repair"
+msgstr "Ta'mirlash"
+
+msgid "Re-weaving and renewal service for Chinar furniture."
+msgstr "Chinar mebellarini qayta to'qish va yangilash xizmati."
+
+msgid "Installments up to 24 months — arranged with no extra charge."
+msgstr "24 oygacha muddatli to'lov — ortiqcha to'lovsiz rasmiylashtiramiz."
+
+msgid "For business"
+msgstr "Biznes uchun"
+
+msgid "Furnishing for cafes, restaurants and hotels at wholesale prices."
+msgstr "Kafe, restoran va mehmonxonalar uchun ulgurji narxlarda jihozlash."
+
+msgid "For designers"
+msgstr "Dizaynerlar va"
+
+msgid "Let's create"
+msgstr "Keling,"
+
+msgid "a project together"
+msgstr "birgalikda loyiha qilamiz"
+
+msgid "Special prices"
+msgstr "Maxsus narxlar"
+
+msgid "Discounts for regular partners"
+msgstr "Doimiy hamkorlar uchun chegirmalar"
+
+msgid "Tailored to the project"
+msgstr "Loyihaga moslashuv"
+
+msgid "Individual solutions for size and color"
+msgstr "O'lcham va rang bo'yicha individual yechim"
+
+msgid "Delivery to site"
+msgstr "Ob'ektga yetkazish"
+
+msgid "Straight to the project address"
+msgstr "To'g'ridan-to'g'ri loyiha manziliga"
+
+msgid "Contact:"
+msgstr "Bog'lanish:"
+
+msgid "Delivery and"
+msgstr "Yetkazib berish va"
+
+msgid "payment"
+msgstr "to'lov"
+
+msgid "Free across Tashkent."
+msgstr "Toshkent bo'ylab — bepul."
+
+msgid "Delivered within 1–3 business days after confirmation."
+msgstr "Buyurtma tasdiqlangach 1–3 ish kunida yetkazamiz."
+
+msgid "Delivery to regions is priced by distance."
+msgstr "Viloyatlarga yetkazish narxi masofaga qarab kelishiladi."
+
+msgid "The courier will contact you before delivery."
+msgstr "Yetkazishdan oldin kuryer siz bilan bog'lanadi."
+
+msgid ""
+"You can pick up your order from our showroom — free and without queues. "
+"Address: Tashkent, Chinar showroom. Call before visiting: +998 (99) "
+"659-55-55."
+msgstr ""
+"Buyurtmani showroomimizdan o'zingiz olib ketishingiz mumkin — bu bepul va "
+"navbatsiz. Manzil: Toshkent, Chinar showroom. Kelishdan oldin qo'ng'iroq "
+"qiling: +998 (99) 659-55-55."
+
+msgid "Payment methods"
+msgstr "To'lov usullari"
+
+msgid "secure online payment."
+msgstr "onlayn, xavfsiz to'lov."
+
+msgid "upon receiving the order."
+msgstr "qabul qilib olishda."
+
+msgid "payment terms up to 24 months."
+msgstr "24 oygacha muddatli to'lov imkoniyati."
+
+msgid "Warranty and returns"
+msgstr "Kafolat va qaytarish"
+
+msgid ""
+"All products come with a 2-year warranty. If a factory defect is found, we "
+"repair or replace the product for free. Questions: +998 (99) 659-55-55."
+msgstr ""
+"Barcha mahsulotlarga 2 yil kafolat. Zavod nuqsoni aniqlansa, mahsulotni "
+"bepul ta'mirlaymiz yoki almashtiramiz. Savollar uchun: +998 (99) 659-55-55."
+
+msgid "About"
+msgstr "Chinar"
+
+msgid "Creating"
+msgstr "15 yildan beri"
+
+msgid "comfort"
+msgstr "qulaylik"
+
+msgid "for 15 years"
+msgstr "yaratamiz"
+
+msgid ""
+"Chinar is one of the leading garden and patio furniture makers in "
+"Uzbekistan. Every chair, table and sofa is woven by our experienced "
+"craftsmen from quality synthetic rattan and durable fabrics."
+msgstr ""
+"Chinar — O'zbekistondagi bog' va hovli mebellari bo'yicha yetakchi ishlab "
+"chiqaruvchilardan biri. Har bir stul, stol va divan tajribali ustalarimiz "
+"qo'lida, sifatli sun'iy ratan va chidamli matolardan to'qiladi."
+
+msgid ""
+"Our products withstand sun, rain and cold — designed to stay outdoors all "
+"year round. That is why every product comes with a 2-year warranty."
+msgstr ""
+"Mahsulotlarimiz quyoshga, yomg'irga va sovuqqa bardoshli — yil davomida "
+"tashqarida turishga mo'ljallangan. Shuning uchun har bir mahsulotga 2 yil "
+"kafolat beramiz."
+
+msgid "happy customers"
+msgstr "mamnun mijoz"
+
+msgid "Visit our showroom"
+msgstr "Showroomga keling"
+
+msgid "Why"
+msgstr "Nega aynan"
+
+msgid "Handcrafted"
+msgstr "Qo'l mehnati"
+
+msgid "Every weave made by craftsmen"
+msgstr "Har to'qima ustalar qo'lida"
+
+msgid "Weatherproof"
+msgstr "Ob-havoga chidamli"
+
+msgid "Resistant to UV and moisture"
+msgstr "UV va namlikka bardoshli"
+
+msgid "Tashkent, Chinar showroom"
+msgstr "Toshkent, Chinar showroom"
+
+msgid "Your comfort is our goal!"
+msgstr "Sizning qulayligingiz — bizning maqsadimiz!"
+
+msgid "garden and patio furniture"
+msgstr "bog' va hovli mebellari"
+
+msgid "Tap on it"
+msgstr "Ustiga bosib ko'ring"
+
+msgid "Welcome to Chinar"
+msgstr "Chinar'ga xush kelibsiz"
+
+msgid "Enter your"
+msgstr "Telefon raqamingizni"
+
+msgid "phone number"
+msgstr "kiriting"
+
+msgid "We will send a confirmation code via SMS"
+msgstr "SMS orqali tasdiqlash kodini yuboramiz"
+
+msgid "GET CODE"
+msgstr "KOD OLISH"
+
+msgid "Enter the code"
+msgstr "Kodni kiriting"
+
+msgid "We sent a 6-digit code to your phone via SMS"
+msgstr "Telefoningizga SMS orqali 6 xonali kod yubordik"
+
+msgid "CONFIRM"
+msgstr "TASDIQLASH"
+
+msgid "Did not receive the code?"
+msgstr "Kod kelmadimi?"
+
+msgid "Send again"
+msgstr "Qayta yuborish"
+
+msgid ""
+"We have furnished dozens of spaces with Chinar furniture — private yards, "
+"cafes, restaurants and hotels. A project gallery will appear here soon."
+msgstr ""
+"Xususiy hovlilar, kafe-restoranlar va mehmonxonalar uchun o'nlab hududlarni "
+"Chinar mebellari bilan jihozladik. Loyihalar galereyasi tez orada shu yerda "
+"paydo bo'ladi."
+
+msgid ""
+"Want to start your own project? Contact us for a free consultation and a "
+"layout plan."
+msgstr ""
+"O'z loyihangizni boshlamoqchimisiz? Bepul maslahat va hudud rejasi uchun "
+"bog'laning."
+
+msgid "Let's start"
+msgstr "Loyihangizni"
+
+msgid "your project"
+msgstr "boshlaymiz"
+
+msgid ""
+"Our specialist will offer a free consultation, take measurements and prepare"
+" a furniture layout for your space."
+msgstr ""
+"Mutaxassisimiz bepul maslahat beradi, o'lchov oladi va hududingiz uchun "
+"mebel joylashuvi rejasini tayyorlaydi."
+
+msgid "Write on Telegram"
+msgstr "Telegramda yozish"
+
+msgid "journal"
+msgstr "jurnali"
+
+msgid "Flip through our catalog — drag the page corner or use the arrows"
+msgstr ""
+"Katalogimizni varaqlang — sahifa burchagini torting yoki strelkalardan "
+"foydalaning"
+
+msgid "Fullscreen"
+msgstr "To'liq ekran"
+
+msgid "Menu"
+msgstr "Menyu"
+
+msgid "Search furniture..."
+msgstr "Mebel qidirish..."
+
+msgid "Recently"
+msgstr "Yaqinda"
+
+msgid "viewed"
+msgstr "ko'rilganlar"
+
+msgid "Your rating:"
+msgstr "Sizning bahoyingiz:"
+
+msgid "Your name"
+msgstr "Ismingiz"
+
+msgid "Share your experience with this product..."
+msgstr "Mahsulot haqidagi taassurotingizni yozing..."
+
+msgid "Add a photo"
+msgstr "Rasm qo'shish"
+
+msgid "Submit review"
+msgstr "Sharhni yuborish"
+
+msgid "No reviews yet. Be the first to review this product!"
+msgstr "Hozircha sharhlar yo'q. Birinchi bo'lib sharh qoldiring!"
+
+msgid "Phone"
+msgstr "Telefon"
+
+msgid "Click to zoom"
+msgstr "Kattalashtirish uchun bosing"
+
+msgid "Click the image to zoom · scroll to zoom more"
+msgstr ""
+"Rasm ustiga bosing — kattalashadi · g'ildirak bilan yana yaqinlashtiring"
+
+msgid "Cash / card"
+msgstr "Naqd / karta"
+
+msgid ""
+"The product is made to order and will be ready in 6–7 days. You can pick it "
+"up or we will deliver it."
+msgstr ""
+"Mahsulot buyurtma asosida tayyorlanadi — 6–7 kunda tayyor bo'ladi. O'zingiz "
+"olib ketishingiz yoki yetkazib berishimiz mumkin."
+
+msgid "Production time"
+msgstr "Tayyorlanish muddati"
+
+msgid "6–7 days"
+msgstr "6–7 kun"
+
+msgid "Material:"
+msgstr "Material:"
+
+msgid "Cancel order"
+msgstr "Buyurtmani bekor qilish"
+
+msgid "Cancel the order?"
+msgstr "Buyurtmani bekor qilasizmi?"
+
+msgid "Are you sure? This action cannot be undone."
+msgstr "Aminmisiz? Bu amalni qaytarib bo'lmaydi."
+
+msgid "I changed my mind"
+msgstr "Fikrim o'zgardi"
+
+msgid "I chose another product"
+msgstr "Boshqa mahsulot tanladim"
+
+msgid "The price did not suit me"
+msgstr "Narxi to'g'ri kelmadi"
+
+msgid "Waiting time is too long"
+msgstr "Kutish muddati uzoq"
+
+msgid "Other reason"
+msgstr "Boshqa sabab"
+
+msgid "Comment (optional)"
+msgstr "Izoh (ixtiyoriy)"
+
+msgid "Yes, cancel the order"
+msgstr "Ha, bekor qilish"
+
+msgid "No, keep it"
+msgstr "Yo'q, qoldirish"
+
+msgid "Copy"
+msgstr "Nusxalash"
+
+msgid "Our partners"
+msgstr "Hamkorlarimiz"
+
+msgid "Reply to review"
+msgstr "Sharhga javob"
+
+msgid "This will be shown as a reply"
+msgstr "Bu javob sifatida ko'rsatiladi"
+
+msgid "Rating"
+msgstr "Baho"
+
+msgid "Review"
+msgstr "Sharh"
+
+msgid "Phone number"
+msgstr "Telefon raqam"
+
+msgid "Send"
+msgstr "Yuborish"
+
+msgid "Click to upload or drag images here"
+msgstr "Rasm yuklash uchun bosing"
+
+msgid "Pickup point"
+msgstr "Olib ketish manzili"
+
+msgid "Tashkent, CHINAR furniture workshop"
+msgstr "Toshkent, CHINAR mebel sexi"
+
+msgid "Open in Google Maps"
+msgstr "Google Maps'da ochish"
+
+msgid "Working hours"
+msgstr "Ish vaqti"
+
+msgid "Every day 9:00 – 18:00"
+msgstr "Har kuni 9:00 – 18:00"
+
+msgid "Color:"
+msgstr "Rang:"
+
+msgid "First name"
+msgstr "Ism"
+
+msgid "Last name"
+msgstr "Familiya"
+
+msgid "Region"
+msgstr "Viloyat"
+
+msgid "Settings"
+msgstr "Sozlamalar"
+
+msgid "Date"
+msgstr "Sana"
+
+msgid "Delivery address"
+msgstr "Yetkazib berish manzili"
+
+msgid "Log out"
+msgstr "Chiqish"
+
+msgid "Search"
+msgstr "Izlash"
+
+msgid "Size:"
+msgstr "O'lcham:"
+
+msgid "% Monthly discounts"
+msgstr "% Oylik chegirmalar"
+
+msgid "Awaiting confirmation"
+msgstr "Tasdiqlanishi kutilmoqda"
+
+msgid "Confirmed"
+msgstr "Tasdiqlandi"
+
+msgid "In delivery"
+msgstr "Yetkazilmoqda"
+
+msgid "Canceled"
+msgstr "Bekor qilindi"
+
+msgid "Processing"
+msgstr "Qayta ishlanmoqda"
+
+msgid "Paid"
+msgstr "To'landi"
+
+msgid "Not paid"
+msgstr "To'lanmagan"
+
+msgid "Product added to cart"
+msgstr "Mahsulot savatga qo'shildi"
+
+msgid "Product removed from cart"
+msgstr "Mahsulot savatdan olib tashlandi"
+
+msgid "Your order has been received!"
+msgstr "Buyurtmangiz qabul qilindi!"
+
+msgid "Order canceled."
+msgstr "Buyurtma bekor qilindi."
+
+msgid "This order is already confirmed. To cancel it, call +998 99 659 55 55."
+msgstr ""
+"Bu buyurtma allaqachon tasdiqlangan. Bekor qilish uchun +998 99 659 55 55 "
+"raqamiga qo'ng'iroq qiling."
+
+msgid "Your recent searches"
+msgstr "Yaqinda izlaganlaringiz"
+
+msgid "We recommend"
+msgstr "Tavsiya etamiz"
+
+msgid "Leave your number and we will call you back shortly"
+msgstr "Raqamingizni qoldiring — tez orada o'zimiz qo'ng'iroq qilamiz"
+
+msgid "Call me back"
+msgstr "Menga qo'ng'iroq qiling"
+
+msgid "Thank you!"
+msgstr "Rahmat!"
+
+msgid "We received your number and will call you back soon"
+msgstr "Raqamingizni qabul qildik, tez orada qo'ng'iroq qilamiz"
+
+msgid "Enter a valid phone number"
+msgstr "To'g'ri telefon raqam kiriting"
+
+msgid "Enter your phone number — we will call you back and confirm the order"
+msgstr ""
+"Telefon raqamingizni kiriting — o'zimiz qo'ng'iroq qilib, buyurtmani "
+"tasdiqlaymiz"
+
+msgid "Your order has been received — we will call you back shortly"
+msgstr "Buyurtmangiz qabul qilindi — tez orada qo'ng'iroq qilamiz"
+
+msgid "Buy now"
+msgstr "Hozir xarid qilish"
+
+msgid "View"
+msgstr "Ko'rish"
+
+msgid "Drag to rotate"
+msgstr "Aylantirish uchun torting"
+
+msgid "bundles"
+msgstr "to'plamlar"
+
+msgid "Details"
+msgstr "Batafsil"
+
+msgid "Bundle price"
+msgstr "To'plam narxi"
+
+msgid "Ready-made"
+msgstr "Tayyor"
+
+msgid "Choose an option"
+msgstr "Variantni tanlang"
+
+msgid "New arrivals"
+msgstr "Yangi kelganlar"
+
+msgid "Our services"
+msgstr "Xizmatlar"
+
+msgid "Want the same for your space?"
+msgstr "Hududingiz uchun ham shunday bo'lsinmi?"
+
+msgid "Free consultation, measurements and a furniture layout plan."
+msgstr "Bepul maslahat, o'lchov olish va mebel joylashuv rejasi."
+
+msgid "Scroll to zoom · hold and drag to move · 0 to reset"
+msgstr "G'ildirak bilan kattalashtiring · ushlab suring · 0 — qaytarish"
+
+msgid ""
+"Chinar — rattan garden and patio furniture. Made in Tashkent: free delivery,"
+" 2-year warranty, showroom."
+msgstr ""
+"Chinar — bog' va hovli uchun rotang mebellar. Toshkentda: bepul yetkazib "
+"berish, 2 yil kafolat, showroom."
+
+msgid "Free delivery in Tashkent, 2-year warranty."
+msgstr "Toshkent bo'ylab bepul yetkazib berish, 2 yil kafolat."
+
+msgid "Page not found"
+msgstr "Sahifa topilmadi"
+
+msgid ""
+"The page you are looking for doesn't exist or has been moved. But our "
+"furniture is right where it should be."
+msgstr ""
+"Siz izlagan sahifa mavjud emas yoki ko'chirilgan. Lekin mebellarimiz o'z "
+"joyida!"
+
+msgid "Go to home page"
+msgstr "Bosh sahifaga"
+
+msgid "Temporarily out"
+msgstr "Vaqtincha yo'q"
+
+msgid "Temporarily out of stock"
+msgstr "Vaqtincha mavjud emas"
+
+msgid ""
+"This model is not available right now. Leave your number — we will call you "
+"as soon as it arrives."
+msgstr ""
+"Bu model hozircha tugagan. Raqamingizni qoldiring — kelishi bilan qo'ng'iroq"
+" qilamiz."
+
+msgid "Request a call"
+msgstr "Qo'ng'iroq so'rash"
+
+msgid "This product is temporarily out of stock"
+msgstr "Bu mahsulot vaqtincha mavjud emas"
+
+msgctxt "count"
+msgid "reviews"
+msgstr "sharh"

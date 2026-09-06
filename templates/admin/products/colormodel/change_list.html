@@ -1,0 +1,43 @@
+{% extends "admin/change_list.html" %}
+
+{% block content %}
+{% if color_groups %}
+<style>
+.cg-panel { margin: 4px 0 22px; }
+.cg-group { margin-bottom: 18px; }
+.cg-title { font-size: 15px; font-weight: 700; margin: 0 0 8px; color: #333; }
+.cg-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.cg-card {
+    display: flex; flex-direction: column; align-items: center; gap: 5px;
+    padding: 8px 6px 6px; background: #fff; border: 1px solid #e3e3e3;
+    border-radius: 12px; text-decoration: none; min-width: 76px;
+    transition: box-shadow .15s ease, border-color .15s ease;
+}
+.cg-card:hover { border-color: #999; box-shadow: 0 2px 8px rgba(0,0,0,.12); }
+.cg-dot { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(0,0,0,.15); background-size: cover; background-position: center; }
+.cg-name { font-size: 11px; color: #333; text-align: center; max-width: 84px; line-height: 1.2; }
+.cg-code { font-size: 10px; color: #999; }
+</style>
+<div class="cg-panel">
+    {% for grp in color_groups %}
+    <div class="cg-group">
+        <p class="cg-title">{{ grp.label }}:</p>
+        <div class="cg-row">
+            {% for c in grp.colors %}
+            <a class="cg-card" href="{{ c.pk }}/change/" title="{{ c.name }}">
+                {% if c.image %}
+                <span class="cg-dot" style="background-image:url('{{ c.image.url }}');"></span>
+                {% else %}
+                <span class="cg-dot" style="background:{{ c.code }};"></span>
+                {% endif %}
+                <span class="cg-name">{{ c.name }}</span>
+                <span class="cg-code">{{ c.code }}</span>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+{{ block.super }}
+{% endblock %}

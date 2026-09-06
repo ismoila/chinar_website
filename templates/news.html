@@ -1,0 +1,53 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% blocktrans %}News{% endblocktrans %} — Chinar</title>
+    {% include 'cn/meta.html' %}
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'chinar-new.css' %}">
+</head>
+<body>
+{% include 'cn/header.html' %}
+
+<main class="cn-page">
+    <div class="cn-page-head">
+        <div class="cn-crumbs"><a href="{% url 'pages:home' %}">{% trans "Home" %}</a> / {% blocktrans %}News{% endblocktrans %}</div>
+        <h1 class="cn-page-title">{% trans "New" %} <em>{% trans "arrivals" %}</em></h1>
+        <div class="cn-page-meta">
+            <span class="cn-count">{{ count }} {% trans "items" %}</span>
+            <div class="cn-dd">
+                <button type="button" class="cn-dd-btn">
+                    <span>{% if sort == 'cheap' %}{% trans "Cheapest first" %}{% elif sort == 'expensive' %}{% trans "Expensive first" %}{% else %}{% trans "Newest" %}{% endif %}</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="cn-dd-list">
+                    <a href="?sort=new" class="{% if sort == 'new' %}on{% endif %}">{% trans "Newest" %}</a>
+                    <a href="?sort=cheap" class="{% if sort == 'cheap' %}on{% endif %}">{% trans "Cheapest first" %}</a>
+                    <a href="?sort=expensive" class="{% if sort == 'expensive' %}on{% endif %}">{% trans "Expensive first" %}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if products %}
+    <div class="cn-grid">
+        {% for product in products %}
+        {% include 'cn/card.html' %}
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="cn-empty">
+        <h3>{% trans "Nothing new yet" %}</h3>
+        <p>{% trans "New products are coming soon." %}</p>
+        <a href="{% url 'pages:category' %}" class="cn-btn">{% trans "Open catalog" %}</a>
+    </div>
+    {% endif %}
+</main>
+
+{% include 'cn/footer.html' %}
+</body>
+</html>

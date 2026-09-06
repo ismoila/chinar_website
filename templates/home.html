@@ -1,0 +1,816 @@
+{% load static %}{% load rasm %}
+{% load my_tags %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% blocktrans %}Chinar — Your comfort is our goal!{% endblocktrans %}</title>
+    {% include 'cn/meta.html' %}
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'chinar-new.css' %}">
+</head>
+<body>
+
+<!-- E'lon chizig'i -->
+<div class="cn-strip"><div class="cn-strip-track" id="cn-strip">
+    {% trans "FREE DELIVERY IN TASHKENT" %} &nbsp;✦&nbsp; {% trans "2 YEAR WARRANTY" %} &nbsp;✦&nbsp; +998 (99) 659-55-55 &nbsp;✦&nbsp;
+</div></div>
+
+<!-- Header -->
+<header class="cn-header">
+    <div class="cn-header-in">
+        <button type="button" class="cn-burger" title="{% trans "Menu" %}">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <nav class="cn-nav">
+            <a href="{% url 'pages:category' %}">{% blocktrans %}Catalog{% endblocktrans %}</a>
+            
+            <a href="{% url 'pages:news' %}">{% trans "New arrivals" %}</a>
+            <a href="{% url 'pages:idea' %}">{% blocktrans %}Ideas{% endblocktrans %}</a>
+            <!-- <a href="{% url 'pages:projects' %}">{% blocktrans %}Projects{% endblocktrans %}</a> -->
+            <a href="{% url 'pages:about' %}">{% blocktrans %}About the company{% endblocktrans %}</a>
+            <a href="{% url 'blog:post_list' %}" style="position:relative;">
+    {% trans "Blog" %}
+    <span style="position:absolute; top:-10px; right:-28px; background:#e53935; color:#fff; font-size:10px; font-weight:700; padding:2px 6px; border-radius:20px; letter-spacing:.5px;">NEW</span>
+</a>
+        </nav>
+
+        <a class="cn-logo" href="{% url 'pages:home' %}">
+            <img src="{% static 'images/chinar-logo.png' %}" alt="CHINAR — Outdoor Furniture" class="cn-logo-img">
+        </a>
+
+        <div class="cn-icons">
+            <button type="button" class="cn-ic" id="cn-search-toggle" title="{% blocktrans %}Search{% endblocktrans %}">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+            </button>
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'pages:order' %}" class="cn-ic" title="{% blocktrans %}Profile{% endblocktrans %}">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </a>
+            {% else %}
+            <a href="{% url 'pages:send_code' %}" class="cn-ic" title="{% trans "Login" %}">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </a>
+            {% endif %}
+            <a href="{% url 'products:wishlist' %}" class="cn-ic" title="{% blocktrans %}Favorites{% endblocktrans %}">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 20.364l-7.682-7.682a4.5 4.5 0 010-6.364z"/></svg>
+                {% if wishlist_count %}<span class="cn-badge">{{ wishlist_count }}</span>{% endif %}
+            </a>
+            <a href="{% url 'pages:shopping_cart' %}" class="cn-ic" title="{% blocktrans %}Cart{% endblocktrans %}">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.3 2.3c-.6.6-.2 1.7.7 1.7H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                {% if cart_count %}<span class="cn-badge">{{ cart_count }}</span>{% endif %}
+            </a>
+            <div class="cn-lang">
+                {% get_available_languages as LANGUAGES %}
+                {% for lcode, lname in LANGUAGES %}
+                <button type="button" class="{% if lcode == LANGUAGE_CODE %}on{% endif %}" onclick="cnSetLang('{{ lcode }}')">{{ lcode|upper }}</button>
+                {% endfor %}
+            </div>
+            <form action="{% url 'set_language' %}" method="post" id="cn-lang-form" style="display:none;">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ request.path }}">
+                <input type="hidden" name="language" id="cn-lang-input">
+            </form>
+        </div>
+    </div>
+    <div class="cn-search-bar" id="cn-search-bar">
+        <form action="{% url 'products:search_results' %}" method="get">
+            <input type="text" name="q" placeholder="{% blocktrans %}Search furniture...{% endblocktrans %}">
+            <button type="submit">{% blocktrans %}Search{% endblocktrans %}</button>
+        </form>
+        <div class="cn-search-drop" id="cn-search-drop">
+            <div class="cn-sd-recent" style="display:none;">
+                <div class="cn-sd-head">
+                    <b>{% trans "Your recent searches" %}</b>
+                    <button type="button" class="cn-sd-clear">{% trans "Clear" %}</button>
+                </div>
+                <div class="cn-sd-list"></div>
+            </div>
+            <div class="cn-sd-rec" style="display:none;">
+                <b class="cn-sd-title">{% trans "We recommend" %}</b>
+                <div class="cn-sd-grid"></div>
+            </div>
+        </div>
+    </div>
+    <nav class="cn-mobile-menu">
+        <!-- <a href="{% url 'pages:category' %}">{% blocktrans %}Catalog{% endblocktrans %}</a>
+        <a href="{% url 'pages:discounts' %}">{% blocktrans %}% Monthly discounts{% endblocktrans %}</a>
+        <a href="{% url 'pages:news' %}">{% trans "New arrivals" %}</a>
+        <a href="{% url 'pages:idea' %}">{% blocktrans %}Ideas{% endblocktrans %}</a>
+        <a href="{% url 'pages:projects' %}">{% blocktrans %}Projects{% endblocktrans %}</a>
+        <a href="{% url 'pages:services' %}">{% trans "Our services" %}</a>
+        <a href="{% url 'pages:journal' %}" class="cn-journal-link">{% trans "Journal" %}</a>
+        <a href="{% url 'pages:delivery' %}">{% blocktrans %}Delivery and payment{% endblocktrans %}</a>
+        <a href="{% url 'pages:about' %}">{% blocktrans %}About the company{% endblocktrans %}</a>
+        <a href="{% url 'pages:address' %}">{% blocktrans %}Contacts{% endblocktrans %}</a> -->
+            <a href="{% url 'pages:category' %}">{% blocktrans %}Catalog{% endblocktrans %}</a>
+            <a href="{% url 'pages:news' %}">{% trans "New arrivals" %}</a>
+            <a href="{% url 'pages:idea' %}">{% blocktrans %}Ideas{% endblocktrans %}</a>
+            <a href="{% url 'pages:about' %}">{% blocktrans %}About the company{% endblocktrans %}</a>
+            <a href="{% url 'blog:post_list' %}" style="position:relative;">
+    {% trans "Blog" %}
+    <span style="position:absolute; top:-10px; right:-28px; background:#e53935; color:#fff; font-size:10px; font-weight:700; padding:2px 6px; border-radius:20px; letter-spacing:.5px;">NEW</span>
+</a>
+        <div class="cn-mm-lang">
+            {% for lcode, lname in LANGUAGES %}
+            <button type="button" class="{% if lcode == LANGUAGE_CODE %}on{% endif %}" onclick="cnSetLang('{{ lcode }}')">{{ lcode|upper }}</button>
+            {% endfor %}
+        </div>
+    </nav>
+</header>
+
+<!-- Hero -->
+<section class="cn-hero">
+    <div class="cn-hero-left">
+        <span class="cn-kicker">{% trans "Garden and patio furniture" %}</span>
+        <h1 class="cn-h1">{% trans "Live in harmony" %}<br><em>{% trans "with nature" %}</em></h1>
+        <p class="cn-hero-sub">
+            {% trans "Chinar — handwoven furniture that withstands sun, rain and years. We turn your garden into a living space." %}
+        </p>
+        <div class="cn-hero-cta">
+            <a href="{% url 'pages:category' %}" class="cn-btn">{% trans "View catalog" %} →</a>
+            <a href="{% url 'pages:discounts' %}" class="cn-btn ghost">{% trans "% Monthly discounts" %}</a>
+        </div>
+    </div>
+    <div class="cn-hero-right">
+        <div class="cn-dot-grid"></div>
+        <div class="cn-arch">
+            <img src="{% static 'images/viktoriya-web.webp' %}" alt="Chinar — bog' mebellari" fetchpriority="high">
+        </div>
+        <div class="cn-hero-chip">
+            <b>15+</b>
+            <span>{% trans "years of experience" %}<br>{% trans "and thousands of clients" %}</span>
+        </div>
+    </div>
+</section>
+
+<!-- Afzalliklar -->
+<section class="cn-perks">
+    <div class="cn-perk rv"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></i><div><b>{% trans "Free delivery" %}</b><span>{% trans "Across Tashkent" %}</span></div></div>
+    <div class="cn-perk rv"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></i><div><b>{% trans "2 year warranty" %}</b><span>{% trans "On all products" %}</span></div></div>
+    <div class="cn-perk rv"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></i><div><b>{% trans "Handcrafted" %}</b><span>{% trans "Every weave made by craftsmen" %}</span></div></div>
+    <div class="cn-perk rv"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></i><div><b>{% trans "Weather resistant" %}</b><span>{% trans "Outdoors all year round" %}</span></div></div>
+</section>
+
+<!-- Kategoriyalar -->
+{% if categories %}
+<section class="cn-sec">
+    <div class="cn-sec-head rv">
+        <h2>{% trans "What are you" %} <em>{% trans "looking for?" %}</em></h2>
+        <a href="{% url 'pages:category' %}" class="cn-sec-link">{% trans "See all" %} →</a>
+    </div>
+    <div class="cn-cats">
+        {% for cat in categories %}
+        <a class="cn-cat rv" href="{% url 'products:category_detail' cat.id %}">
+            <div class="cn-cat-img"><img src="{% thumb cat.image 600 %}" alt="{{ cat.name }}" loading="lazy"></div>
+            <p>{{ cat.name }}</p>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<!-- Eng ko'p sotilganlar -->
+{% if best_sellers %}
+<section class="cn-sec">
+    <div class="cn-sec-head rv">
+        <h2>{% trans "Customer" %} <em>{% trans "favorites" %}</em></h2>
+        <a href="{% url 'pages:category' %}" class="cn-sec-link">{% trans "Catalog" %} →</a>
+    </div>
+    <div class="cn-grid" id="cn-bs-grid">
+        {% for product in best_sellers %}
+        <div class="cn-bs-item{% if forloop.counter > 8 %} hide{% endif %}">{% include 'cn/card.html' %}</div>
+        {% endfor %}
+    </div>
+    {% if best_sellers|length > 8 %}
+    <div class="cn-more-wrap">
+        <button type="button" class="cn-btn ghost" id="cn-bs-more">{% trans "Show more" %} +8</button>
+    </div>
+    {% endif %}
+</section>
+{% endif %}
+
+<!-- Chegirmalar (yashil bo'lim) -->
+{% if hot_discounts %}
+<section class="cn-deals">
+    <div class="cn-sec">
+        <div class="cn-sec-head rv">
+            <h2>{% trans "Monthly" %} <em>{% trans "discounts" %}</em></h2>
+            <div class="cn-car-nav">
+                <button type="button" class="cn-car-btn" data-dir="-1" data-one="1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+                <button type="button" class="cn-car-btn" data-dir="1" data-one="1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+            </div>
+        </div>
+        <div class="cn-car-track">
+            {% for product in hot_discounts %}
+            <div class="cn-car-item">{% include 'cn/card.html' with card_big=1 %}</div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- To'plamlar (Bundles) -->
+{% if sets %}
+<section class="cn-sec cn-bundles">
+    <div class="cn-sec-head rv">
+        <h2>{% trans "Ready-made" %} <em>{% trans "bundles" %}</em></h2>
+        <a href="{% url 'pages:category' %}" class="cn-sec-link">{% trans "Catalog" %} →</a>
+    </div>
+
+    <div class="cn-bd-tabs" id="cn-bd-tabs">
+        {% for s in sets %}
+        <button type="button" class="cn-bd-tab{% if forloop.first %} on{% endif %}" data-bd="{{ s.pk }}">{{ s.name }}</button>
+        {% endfor %}
+    </div>
+
+    {% for s in sets %}
+    <div class="cn-bd-panel{% if forloop.first %} on{% endif %}" data-bd="{{ s.pk }}">
+        <a href="{% url 'products:product_detail' s.product.slug %}" class="cn-bd-hero">
+            {% thumb s.image 800 as b800 %}{% thumb s.image 1200 as b1200 %}
+            <img src="{{ b800 }}" srcset="{{ b800 }} 800w, {{ b1200 }} 1200w" sizes="(max-width: 1000px) 94vw, 46vw" alt="{{ s.name }}" loading="lazy">
+            <span class="cn-bd-name">{{ s.name }}</span>
+            <span class="cn-bd-more">{% trans "Details" %} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+        </a>
+        <div class="cn-bd-list">
+            {% for sp in s.set_products.all %}
+            <a href="{% url 'products:product_detail' sp.product.slug %}" class="cn-bd-item">
+                <span class="cn-bd-thumb"><img src="{% thumb sp.product.image 200 %}" alt="{{ sp.product.name }}" loading="lazy"></span>
+                <span class="cn-bd-info">
+                    <b>{{ sp.product.name }}</b>
+                    <i>{{ sp.product.get_price_uzs|uzbek_price }}</i>
+                </span>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</section>
+{% endif %}
+
+<!-- Tavsiya etilganlar -->
+{% if recommended %}
+<section class="cn-sec">
+    <div class="cn-sec-head rv">
+        <h2>{% trans "Picked" %} <em>{% trans "for you" %}</em></h2>
+        <div class="cn-car-nav">
+            <button type="button" class="cn-car-btn" data-dir="-1" data-one="1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <button type="button" class="cn-car-btn" data-dir="1" data-one="1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+    </div>
+    <div class="cn-car-track">
+        {% for product in recommended %}
+        <div class="cn-car-item">{% include 'cn/card.html' with card_big=1 %}</div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<!-- Biz haqimizda + materiallar -->
+<section class="cn-about">
+    <div class="cn-about-imgs rv">
+        <img src="{% static 'textures/ratan_toq_jigarrang.jpg' %}" alt="Ratan">
+        <img src="{% static 'textures/mato_latte.jpg' %}" alt="Mato">
+    </div>
+    <div class="rv">
+        <h2>{% trans "Crafted with love" %} <em>{% trans "in every weave" %}</em></h2>
+        <p>
+            {% trans "Chinar furniture is handwoven by experienced craftsmen from quality artificial rattan and durable fabrics. Weather-resistant materials mean your furniture serves for years like new." %}
+        </p>
+        <div class="cn-stats">
+            <div class="cn-stat"><b data-count="140">0</b><span>{% trans "product types" %}</span></div>
+            <div class="cn-stat"><b data-count="15">0</b><span>{% trans "years of experience" %}</span></div>
+            <div class="cn-stat"><b data-count="5000">0</b><span>{% trans "happy clients" %}</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- Hamkorlar -->
+{% partner_logos as partners %}
+{% if partners %}
+<section class="cn-sec">
+    <div class="cn-sec-head" style="justify-content:center;">
+        <h2>{% trans "Our partners" %}</h2>
+    </div>
+    <div class="cn-partners">
+        {% for p in partners %}
+        <div class="cn-partner rv"><img src="{{ p }}" alt="Chinar hamkori" loading="lazy"></div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<!-- Footer -->
+<footer class="cn-footer">
+    <div class="cn-footer-in">
+        <div class="cn-footer-grid">
+            <div>
+                <div class="cn-footer-logo-card"><img src="{% static 'images/chinar-logo-white.png' %}" alt="CHINAR"></div>
+                <p>{% trans "Your comfort is our goal. 15 years of experience in garden and patio furniture." %}</p>
+            </div>
+            <div>
+                <h4>{% blocktrans %}Catalog{% endblocktrans %}</h4>
+                <a href="{% url 'pages:category' %}">{% blocktrans %}Catalog{% endblocktrans %}</a>
+                <a href="{% url 'pages:journal' %}" class="cn-journal-link">{% trans "Journal" %}</a>
+                <a href="{% url 'pages:idea' %}">{% blocktrans %}Ideas{% endblocktrans %}</a>
+                <a href="{% url 'pages:news' %}">{% trans "New arrivals" %}</a>
+                <a href="{% url 'pages:services' %}">{% trans "Our services" %}</a>
+                <!-- <a href="{% url 'pages:projects' %}">{% blocktrans %}Projects{% endblocktrans %}</a> -->
+            </div>
+            <div>
+                <h4>{% blocktrans %}About the company{% endblocktrans %}</h4>
+                <a href="{% url 'pages:about' %}">{% blocktrans %}About the company{% endblocktrans %}</a>
+                <a href="{% url 'pages:address' %}">{% blocktrans %}Store addresses{% endblocktrans %}</a>
+                <a href="{% url 'pages:delivery' %}">{% blocktrans %}Delivery and payment{% endblocktrans %}</a>
+                <a href="{% url 'pages:designers' %}">{% blocktrans %}Designers and architects{% endblocktrans %}</a>
+            </div>
+            <div>
+                <h4>{% trans "Contact" %}</h4>
+                <a href="tel:+998996595555">+998 (99) 659-55-55</a>
+                <a href="https://www.instagram.com/chinar.uz/" target="_blank" rel="noopener">Instagram</a>
+                <a href="{% url 'pages:address' %}">{% trans "Tashkent, Chinar showroom" %}</a>
+            </div>
+        </div>
+        <div class="cn-footer-bottom">
+            <span>© 2026 Chinar. {% trans "All rights reserved." %}</span>
+            <span>{% trans "Your comfort is our goal!" %}</span>
+        </div>
+    </div>
+</footer>
+
+<!-- Mobil pastki navigatsiya -->
+<nav class="cn-bottom-nav">
+    {% with un=request.resolver_match.url_name %}
+    <a href="{% url 'pages:home' %}" class="{% if un == 'home' %}on{% endif %}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>{% trans "Home" %}</span>
+    </a>
+    <a href="{% url 'pages:category' %}" class="{% if un == 'category' or un == 'category_detail' %}on{% endif %}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        <span>{% blocktrans %}Catalog{% endblocktrans %}</span>
+    </a>
+    <a href="{% url 'pages:shopping_cart' %}" class="{% if un == 'shopping_cart' %}on{% endif %}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        {% if cart_count %}<i class="cn-bn-badge">{{ cart_count }}</i>{% endif %}
+        <span>{% blocktrans %}Cart{% endblocktrans %}</span>
+    </a>
+    <a href="{% url 'products:wishlist' %}" class="{% if un == 'wishlist' %}on{% endif %}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 20.364l-7.682-7.682a4.5 4.5 0 010-6.364z"/></svg>
+        {% if wishlist_count %}<i class="cn-bn-badge">{{ wishlist_count }}</i>{% endif %}
+        <span>{% blocktrans %}Favorites{% endblocktrans %}</span>
+    </a>
+    {% if request.user.is_authenticated %}
+    <a href="{% url 'pages:order' %}" class="{% if un == 'order' or un == 'review' or un == 'profile' %}on{% endif %}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>{% blocktrans %}Profile{% endblocktrans %}</span>
+    </a>
+    {% else %}
+    <a href="{% url 'pages:send_code' %}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>{% trans "Login" %}</span>
+    </a>
+    {% endif %}
+    {% endwith %}
+</nav>
+
+<!-- Karta "+" bosilganda: o'lcham/rang tanlash modali -->
+<div class="cn-modal-wrap" id="cn-opt-modal">
+    <div class="cn-modal">
+        <button type="button" class="cn-modal-x" data-close>&times;</button>
+        <h4 class="cn-modal-title">{% trans "Choose an option" %}</h4>
+        <div class="cn-oc-product">
+            <img id="cn-opt-img" src="" alt="">
+            <div>
+                <b id="cn-opt-name"></b>
+                <i id="cn-opt-price"></i>
+            </div>
+        </div>
+        <div id="cn-opt-sizes" style="display:none;">
+            <div class="cn-opt-label">{% trans "Size:" %}</div>
+            <div class="cn-sizes" id="cn-opt-size-list"></div>
+        </div>
+        <div id="cn-opt-colors" style="display:none;"></div>
+        <div class="cn-modal-btns">
+            <button type="button" class="cn-modal-cancel" data-close>{% trans "Cancel" %}</button>
+            <a href="#" class="cn-btn" id="cn-opt-add">{% trans "Add To Cart" %}</a>
+        </div>
+    </div>
+</div>
+
+<!-- Suzuvchi aloqa tugmasi: qo'ng'iroq so'rovi + Telegram -->
+<div class="cn-cb" id="cn-cb">
+    <div class="cn-cb-pop">
+        <div class="cn-cb-body">
+            <b>{% trans "Contact us" %}</b>
+            <p>{% trans "Leave your number and we will call you back shortly" %}</p>
+            <form class="cn-cb-form">
+                <input type="tel" name="phone" placeholder="+998 -- --- -- --" autocomplete="tel">
+                <div class="cn-cb-err">{% trans "Enter a valid phone number" %}</div>
+                <button type="submit" class="cn-cb-send">{% trans "Call me back" %}</button>
+            </form>
+            <a class="cn-cb-tg" href="https://t.me/+998996595555" target="_blank" rel="noopener">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23.91 3.79L20.3 20.84c-.25 1.21-.98 1.5-2 .94l-5.5-4.07-2.66 2.57c-.3.3-.55.56-1.1.56-.72 0-.6-.27-.84-.95L6.3 13.7l-5.45-1.7c-1.18-.35-1.19-1.16.26-1.75l21.26-8.2c.97-.43 1.9.24 1.53 1.73z"/></svg>
+                {% trans "Write on Telegram" %}
+            </a>
+        </div>
+        <div class="cn-cb-ok" style="display:none;">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
+            <b>{% trans "Thank you!" %}</b>
+            <p>{% trans "We received your number and will call you back soon" %}</p>
+        </div>
+    </div>
+    <button type="button" class="cn-cb-btn" title="{% trans "Contact us" %}">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </button>
+</div>
+
+{% if messages %}
+<div class="cn-toasts" id="cn-toasts">
+    {% for m in messages %}
+    <div class="cn-toast {{ m.tags }}">{{ m }}</div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<script>
+(function () {
+    var box = document.getElementById('cn-toasts');
+    if (!box) return;
+    Array.prototype.forEach.call(box.children, function (t, i) {
+        setTimeout(function () { t.classList.add('show'); }, 80 + i * 140);
+        setTimeout(function () { t.classList.add('hide'); }, 4200 + i * 500);
+        setTimeout(function () { t.remove(); }, 4800 + i * 500);
+        t.addEventListener('click', function () { t.remove(); });
+    });
+})();
+// Til almashtirish
+function cnSetLang(code) {
+    document.getElementById('cn-lang-input').value = code;
+    document.getElementById('cn-lang-form').submit();
+}
+// Qidiruv paneli
+document.getElementById('cn-search-toggle').addEventListener('click', function () {
+    var b = document.getElementById('cn-search-bar');
+    b.classList.toggle('open');
+    if (b.classList.contains('open')) b.querySelector('input').focus();
+});
+// Mobil menyu
+document.querySelectorAll('.cn-burger').forEach(function (b) {
+    b.addEventListener('click', function () {
+        var m = document.querySelector('.cn-mobile-menu');
+        if (m) m.classList.toggle('open');
+    });
+});
+// E'lon chizig'i — uzluksiz, bo'sh joysiz aylanadi
+(function () {
+    var t = document.getElementById('cn-strip');
+    if (!t) return;
+    var orig = t.innerHTML;
+    var w = t.scrollWidth || 1;
+    var reps = Math.max(1, Math.ceil(window.innerWidth / w));
+    var half = '';
+    for (var i = 0; i < reps; i++) half += orig;
+    t.innerHTML = half + half;
+    t.style.animationDuration = Math.max(14, Math.round(w * reps / 70)) + 's';
+})();
+// Qidiruv dropdown: yaqinda izlanganlar + tavsiya (Uzum uslubi)
+(function () {
+    var bar = document.querySelector('.cn-search-bar');
+    if (!bar) return;
+    var drop = bar.querySelector('.cn-search-drop');
+    var input = bar.querySelector('input[name="q"]');
+    var form = bar.querySelector('form');
+    if (!drop || !input) return;
+    var loaded = false;
+
+    function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
+
+    function render(data) {
+        var rc = drop.querySelector('.cn-sd-recent');
+        var list = drop.querySelector('.cn-sd-list');
+        if (data.recent && data.recent.length) {
+            list.innerHTML = data.recent.map(function (t) {
+                return '<div class="cn-sd-item" data-term="' + esc(t) + '">' +
+                    '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>' +
+                    '<span>' + esc(t) + '</span>' +
+                    '<button type="button" class="cn-sd-x" title="O\'chirish">&times;</button></div>';
+            }).join('');
+            rc.style.display = '';
+        } else rc.style.display = 'none';
+
+        var rec = drop.querySelector('.cn-sd-rec');
+        var grid = drop.querySelector('.cn-sd-grid');
+        if (data.recommended && data.recommended.length) {
+            grid.innerHTML = data.recommended.map(function (p) {
+                return '<a href="' + p.url + '"><img src="' + p.image + '" loading="lazy" alt="">' +
+                    '<b>' + esc(p.name) + '</b><i>' + p.price + ' UZS</i></a>';
+            }).join('');
+            rec.style.display = '';
+        } else rec.style.display = 'none';
+
+        drop.classList.toggle('open', (data.recent && data.recent.length) || (data.recommended && data.recommended.length));
+    }
+
+    function openDrop() {
+        if (input.value.trim()) { drop.classList.remove('open'); return; }
+        fetch("{% url 'products:search_dropdown_data' %}")
+            .then(function (r) { return r.json(); })
+            .then(render);
+    }
+
+    input.addEventListener('focus', openDrop);
+    input.addEventListener('input', function () {
+        if (input.value.trim()) drop.classList.remove('open');
+        else openDrop();
+    });
+    document.addEventListener('click', function (e) {
+        if (!bar.contains(e.target)) drop.classList.remove('open');
+    });
+
+    drop.addEventListener('click', function (e) {
+        var x = e.target.closest('.cn-sd-x');
+        var item = e.target.closest('.cn-sd-item');
+        if (x && item) {
+            e.stopPropagation();
+            fetch("{% url 'products:remove_recent_search' %}?term=" + encodeURIComponent(item.dataset.term))
+                .then(function () { item.remove();
+                    if (!drop.querySelector('.cn-sd-item')) drop.querySelector('.cn-sd-recent').style.display = 'none';
+                });
+            return;
+        }
+        if (item) { input.value = item.dataset.term; form.submit(); return; }
+        var cl = e.target.closest('.cn-sd-clear');
+        if (cl) {
+            fetch("{% url 'products:clear_recent_searches' %}")
+                .then(function () { drop.querySelector('.cn-sd-recent').style.display = 'none'; });
+        }
+    });
+})();
+// Karta rasm slayderi (Uzum uslubi): sichqoncha o'rniga qarab rasm almashadi
+(function () {
+    document.querySelectorAll('.cn-ci-slider').forEach(function (sl) {
+        var imgs = sl.querySelectorAll('.cn-ci-img');
+        if (imgs.length < 2) return;
+        var dots = sl.querySelector('.cn-ci-dots');
+        dots.classList.add('show');
+        imgs.forEach(function (_, i) {
+            var d = document.createElement('i');
+            if (i === 0) d.classList.add('on');
+            dots.appendChild(d);
+        });
+        var dEls = dots.querySelectorAll('i');
+        function show(i) {
+            imgs.forEach(function (im, k) { im.classList.toggle('on', k === i); });
+            dEls.forEach(function (d, k) { d.classList.toggle('on', k === i); });
+        }
+        sl.addEventListener('mousemove', function (e) {
+            var r = sl.getBoundingClientRect();
+            var i = Math.floor((e.clientX - r.left) / r.width * imgs.length);
+            show(Math.max(0, Math.min(imgs.length - 1, i)));
+        });
+        sl.addEventListener('mouseleave', function () { show(0); });
+    });
+})();
+// "Yana ko'rsatish +8" — bestseller mahsulotlar
+(function () {
+    var btn = document.getElementById('cn-bs-more');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+        var hidden = document.querySelectorAll('#cn-bs-grid .cn-bs-item.hide');
+        for (var i = 0; i < Math.min(8, hidden.length); i++) hidden[i].classList.remove('hide');
+        if (document.querySelectorAll('#cn-bs-grid .cn-bs-item.hide').length === 0) {
+            btn.parentElement.remove();
+        }
+    });
+})();
+// Karusel strelkalari (data-one: bittalab suradi)
+document.querySelectorAll('.cn-car-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+        var sec = btn.closest('.cn-sec');
+        var track = sec && sec.querySelector('.cn-car-track');
+        if (!track) return;
+        var step = track.clientWidth * 0.8;
+        if (btn.dataset.one) {
+            var it = track.querySelector('.cn-car-item');
+            if (it) step = it.getBoundingClientRect().width + 22;
+        }
+        track.scrollBy({ left: parseInt(btn.dataset.dir, 10) * step, behavior: 'smooth' });
+    });
+});
+// To'plamlar: yorliq (tab) almashtirish
+(function () {
+    var tabs = document.getElementById('cn-bd-tabs');
+    if (!tabs) return;
+    tabs.addEventListener('click', function (e) {
+        var b = e.target.closest('.cn-bd-tab');
+        if (!b) return;
+        tabs.querySelectorAll('.cn-bd-tab').forEach(function (t) { t.classList.toggle('on', t === b); });
+        document.querySelectorAll('.cn-bd-panel').forEach(function (p) {
+            p.classList.toggle('on', p.dataset.bd === b.dataset.bd);
+        });
+    });
+})();
+// Hero parallax: sichqonchaga yengil ergashish (3D chuqurlik hissi)
+(function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.innerWidth <= 1000) return;
+    var hero = document.querySelector('.cn-hero');
+    var arch = document.querySelector('.cn-arch');
+    var grid = document.querySelector('.cn-dot-grid');
+    if (!hero || !arch) return;
+    hero.addEventListener('mousemove', function (e) {
+        var r = hero.getBoundingClientRect();
+        var dx = (e.clientX - r.left) / r.width - .5;   // -0.5 .. 0.5
+        var dy = (e.clientY - r.top) / r.height - .5;
+        arch.style.transform = 'translate(' + (dx * 14) + 'px,' + (dy * 10) + 'px)';
+        if (grid) grid.style.transform = 'translate(' + (dx * -22) + 'px,' + (dy * -16) + 'px)';
+    });
+    hero.addEventListener('mouseleave', function () {
+        arch.style.transform = '';
+        if (grid) grid.style.transform = '';
+    });
+})();
+// Karta "+" tugmasi: o'lcham/rang bo'lsa — avval so'raymiz
+(function () {
+    var wrap = document.getElementById('cn-opt-modal');
+    if (!wrap) return;
+    var addBtn = document.getElementById('cn-opt-add');
+    var curSize = '', curColor = '', baseHref = '';
+
+    function open_() { wrap.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function close_() { wrap.classList.remove('open'); document.body.style.overflow = ''; }
+    wrap.addEventListener('click', function (e) {
+        if (e.target === wrap || e.target.closest('[data-close]')) close_();
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close_(); });
+
+    function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
+
+    function rebuild() {
+        var q = [];
+        if (curSize) q.push('size=' + encodeURIComponent(curSize));
+        if (curColor) q.push('color=' + encodeURIComponent(curColor));
+        addBtn.href = baseHref + (q.length ? '?' + q.join('&') : '');
+    }
+
+    function fill(d) {
+        document.getElementById('cn-opt-img').src = d.image || '';
+        document.getElementById('cn-opt-name').textContent = d.name;
+        document.getElementById('cn-opt-price').textContent = d.price + ' UZS';
+        curSize = ''; curColor = '';
+
+        var sBox = document.getElementById('cn-opt-sizes'),
+            sList = document.getElementById('cn-opt-size-list');
+        if (d.sizes && d.sizes.length) {
+            sList.innerHTML = d.sizes.map(function (s, i) {
+                return '<button type="button" class="cn-size' + (i === 0 ? ' on' : '') +
+                       '" data-size="' + esc(s.title) + '" data-price="' + esc(s.price) + '">' + esc(s.title) + '</button>';
+            }).join('');
+            curSize = d.sizes[0].title;
+            document.getElementById('cn-opt-price').textContent = d.sizes[0].price + ' UZS';
+            sBox.style.display = '';
+        } else sBox.style.display = 'none';
+
+        var cBox = document.getElementById('cn-opt-colors');
+        if (d.groups && d.groups.length) {
+            cBox.innerHTML = d.groups.map(function (g) {
+                return '<div class="cn-opt-label">' + esc(g.label) + '</div><div class="cn-colors">' +
+                    g.colors.map(function (c) {
+                        var inner = c.image ? '<img src="' + c.image + '" alt="">'
+                                            : '<span class="cp-fill" style="background:' + esc(c.code) + ';"></span>';
+                        return '<button type="button" class="cn-color" data-color="' + esc(c.name) + '" title="' + esc(c.name) + '">' + inner + '</button>';
+                    }).join('') + '</div>';
+            }).join('');
+            var f = cBox.querySelector('.cn-color');
+            if (f) { f.classList.add('on'); curColor = f.dataset.color; }
+            cBox.style.display = '';
+        } else cBox.style.display = 'none';
+
+        rebuild();
+    }
+
+    // o'lcham / rang tanlash
+    wrap.addEventListener('click', function (e) {
+        var sz = e.target.closest('.cn-size');
+        if (sz) {
+            wrap.querySelectorAll('.cn-size').forEach(function (b) { b.classList.toggle('on', b === sz); });
+            curSize = sz.dataset.size;
+            document.getElementById('cn-opt-price').textContent = sz.dataset.price + ' UZS';
+            rebuild(); return;
+        }
+        var cl = e.target.closest('.cn-color');
+        if (cl) {
+            wrap.querySelectorAll('.cn-color').forEach(function (b) { b.classList.toggle('on', b === cl); });
+            curColor = cl.dataset.color;
+            rebuild();
+        }
+    });
+
+    // kartadagi "+" bosilishi
+    document.addEventListener('click', function (e) {
+        var link = e.target.closest('.cn-addlink');
+        if (!link || !link.dataset.opts) return;
+        if (link.dataset.incart) return;                 // savatdan olib tashlash — o'z yo'li bilan
+        e.preventDefault();
+        baseHref = link.getAttribute('href');
+        fetch(link.dataset.opts)
+            .then(function (r) { return r.json(); })
+            .then(function (d) {
+                if (!d.ok) { window.location = baseHref; return; }
+                var has = (d.sizes && d.sizes.length) || (d.groups && d.groups.length);
+                if (!has) { window.location = baseHref; return; }   // variant yo'q — to'g'ridan savatga
+                fill(d); open_();
+            })
+            .catch(function () { window.location = baseHref; });
+    });
+})();
+// Suzuvchi aloqa tugmasi
+(function () {
+    var cb = document.getElementById('cn-cb');
+    if (!cb) return;
+    cb.querySelector('.cn-cb-btn').addEventListener('click', function () {
+        cb.classList.toggle('open');
+        if (cb.classList.contains('open')) {
+            var inp = cb.querySelector('input[name="phone"]');
+            if (inp) inp.focus();
+        }
+    });
+    document.addEventListener('click', function (e) {
+        if (!cb.contains(e.target)) cb.classList.remove('open');
+    });
+    cb.querySelector('.cn-cb-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var inp = cb.querySelector('input[name="phone"]');
+        var err = cb.querySelector('.cn-cb-err');
+        var digits = (inp.value.match(/\d/g) || []).length;
+        if (digits < 7) { err.style.display = 'block'; return; }
+        err.style.display = 'none';
+        var fd = new FormData();
+        fd.append('phone', inp.value.trim());
+        fetch("{% url 'products:callback_request' %}", { method: 'POST', body: fd })
+            .then(function (r) { return r.json(); })
+            .then(function (d) {
+                if (!d.ok) { err.style.display = 'block'; return; }
+                cb.querySelector('.cn-cb-body').style.display = 'none';
+                cb.querySelector('.cn-cb-ok').style.display = 'block';
+                setTimeout(function () {
+                    cb.classList.remove('open');
+                    setTimeout(function () {
+                        cb.querySelector('.cn-cb-body').style.display = '';
+                        cb.querySelector('.cn-cb-ok').style.display = 'none';
+                        inp.value = '';
+                    }, 300);
+                }, 2600);
+            });
+    });
+})();
+// Header scroll effekti
+(function () {
+    var h = document.querySelector('.cn-header');
+    if (!h) return;
+    function onScroll() { h.classList.toggle('scrolled', window.scrollY > 12); }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+})();
+// Reveal
+(function () {
+    if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('.rv').forEach(function (el) { el.classList.add('in'); });
+        return;
+    }
+    var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+    }, { threshold: .1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.rv').forEach(function (el, i) {
+        el.style.transitionDelay = (i % 4) * 70 + 'ms';
+        io.observe(el);
+    });
+})();
+// Sanagichlar
+(function () {
+    var cs = document.querySelectorAll('[data-count]');
+    if (!cs.length || !('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (es) {
+        es.forEach(function (en) {
+            if (!en.isIntersecting) return;
+            io.unobserve(en.target);
+            var el = en.target, end = parseInt(el.dataset.count, 10), t0 = null;
+            function step(ts) {
+                if (!t0) t0 = ts;
+                var p = Math.min((ts - t0) / 1400, 1);
+                el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))).toLocaleString('ru-RU') + '+';
+                if (p < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        });
+    }, { threshold: .5 });
+    cs.forEach(function (c) { io.observe(c); });
+})();
+</script>
+</body>
+</html>

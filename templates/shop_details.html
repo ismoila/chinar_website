@@ -1,0 +1,876 @@
+{% load static %}{% load rasm %}
+{% load i18n %}
+{% load my_tags %}
+{% load l10n %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if product.meta_title %}{{ product.meta_title }}{% else %}{{ product.name }} — CHINAR FM{% endif %}</title>
+    {% include 'cn/meta.html' %}
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'chinar-new.css' %}">
+</head>
+<body>
+{% include 'cn/header.html' %}
+
+<main class="cn-page">
+    <div class="cn-crumbs" style="margin-bottom:22px;">
+        <a href="{% url 'pages:home' %}">{% trans "Home" %}</a> /
+        <a href="{% url 'pages:category' %}">{% blocktrans %}Catalog{% endblocktrans %}</a> /
+        <a href="{% url 'products:category_detail' product.category.id %}">{{ product.category.name }}</a> /
+        {{ product.name }}
+    </div>
+
+    <div class="cn-product">
+        <!-- Galereya -->
+        <div class="cn-gal">
+            <div class="cn-gal-main" id="cn-gal-main">
+                <button type="button" class="cn-gal-arr prev" id="cn-gal-prev" aria-label="prev">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <img id="cn-main-img" src="{% thumb product.image 1200 %}" alt="{{ product.name }}" title="{% trans 'Click to zoom' %}">
+                <button type="button" class="cn-gal-arr next" id="cn-gal-next" aria-label="next">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </button>
+                <span class="cn-gal-zoom-hint">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg>
+                </span>
+            </div>
+            <div class="cn-gal-thumbs" id="cn-thumbs">
+                <img src="{% thumb product.image 200 %}" data-big="{% thumb product.image 1200 %}" data-full="{% thumb product.image 2000 %}" data-orig="{{ product.image.url }}" class="on" alt="">
+                {% for img in images %}
+                {% if img.image.url != product.image.url %}
+                <img src="{% thumb img.image 200 %}" data-big="{% thumb img.image 1200 %}" data-full="{% thumb img.image 2000 %}" data-orig="{{ img.image.url }}" alt="">
+                {% endif %}
+                {% endfor %}
+            </div>
+
+            {% if spin_frames %}
+            <div class="cn-spin" id="cn-spin">
+                <img id="cn-spin-img" src="{{ spin_frames.0 }}" alt="360°" draggable="false">
+                <div class="cn-spin-hint">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6"/><path d="M2.5 22v-6h6"/><path d="M2 11.5a10 10 0 0 1 18.8-4.3"/><path d="M22 12.5a10 10 0 0 1-18.8 4.2"/></svg>
+                    360° · {% trans "Drag to rotate" %}
+                </div>
+            </div>
+            {{ spin_frames|json_script:"cn-spin-data" }}
+            {% endif %}
+        </div>
+
+        <!-- Ma'lumot -->
+        <div>
+            <div class="cn-p-code">{{ product.code|default:'' }}</div>
+            <h1 class="cn-p-title">{{ product.name }}</h1>
+            <div class="cn-p-rating">
+                {% if product.ortacha_reyting %}
+                    ⭐ {{ product.ortacha_reyting }} · <a href="#reviews">{{ reviews|length }} {% trans "reviews" context "count" %}</a>
+                {% else %}
+                    <span class="cn-p-norating">{% trans "No reviews yet" %}</span>
+                {% endif %}
+            </div>
+
+            <div class="cn-p-price">
+                <span id="cn-price">{{ product.get_price_uzs|uzbek_price }}</span> UZS
+                {% if product.is_discount_active %}
+                <s id="cn-old-price">{{ product.get_original_price_uzs|uzbek_price }}</s>
+                <span class="cn-off" style="position:static; margin-left:8px;">-{{ product.discount }}%</span>
+                {% endif %}
+            </div>
+
+            {% if size_prices %}
+            <div class="cn-opt-label">{% blocktrans %}Size:{% endblocktrans %}</div>
+            <div class="cn-sizes" id="cn-sizes">
+                {% for sp in size_prices %}
+                <button type="button" class="cn-size {% if forloop.first %}on{% endif %}"
+                        data-size="{{ sp.title }}"
+                        data-price="{{ sp.price_uzs }}"
+                        data-price-text="{{ sp.price_uzs|uzbek_price }}">
+                    {{ sp.title }}
+                </button>
+                {% endfor %}
+            </div>
+            <!-- "85x85 (Oyna)" ko'rinishidagi o'lchamlar uchun: material alohida qatorda -->
+            <div class="cn-opt-label" id="cn-variant-label" style="display:none;">{% trans "Material:" %}</div>
+            <div class="cn-sizes" id="cn-variants" style="display:none;"></div>
+            {% endif %}
+
+            {% if color_variants.count > 0 %}
+            <div class="cn-opt-label">{% blocktrans %}Color:{% endblocktrans %} <span id="cn-color-name" style="text-transform:none;">{{ color_variants.first.color.name }}</span></div>
+            <div class="cn-colors" id="cn-colors">
+                {% for cv in color_variants %}
+                <button type="button" class="cn-color {% if forloop.first %}on{% endif %}"
+                        data-color="{{ cv.color.name }}"
+                        data-images="{% for img in cv.images.all %}{% thumb img.image 1200 %}{% if not forloop.last %}|{% endif %}{% empty %}{% thumb product.image 1200 %}{% endfor %}"
+                        data-thumbs="{% for img in cv.images.all %}{% thumb img.image 200 %}{% if not forloop.last %}|{% endif %}{% empty %}{% thumb product.image 200 %}{% endfor %}"
+                        data-fulls="{% for img in cv.images.all %}{% thumb img.image 2000 %}{% if not forloop.last %}|{% endif %}{% empty %}{% thumb product.image 2000 %}{% endfor %}"
+                        data-origs="{% for img in cv.images.all %}{{ img.image.url }}{% if not forloop.last %}|{% endif %}{% empty %}{{ product.image.url }}{% endfor %}">
+                    {% if cv.color.image %}
+                    <img src="{% thumb cv.color.image 200 %}" alt="{{ cv.color.name }}">
+                    {% elif cv.images.first %}
+                    <img src="{% thumb cv.images.first.image 200 %}" alt="{{ cv.color.name }}">
+                    {% else %}
+                    <span style="display:block;width:100%;height:100%;background:{{ cv.color.code }};"></span>
+                    {% endif %}
+                    <span class="cn-color-pop">
+                        {% if cv.color.image %}<img src="{% thumb cv.color.image 200 %}" alt="">
+                        {% elif cv.images.first %}<img src="{% thumb cv.images.first.image 200 %}" alt="">
+                        {% else %}<span class="cp-fill" style="background:{{ cv.color.code }};"></span>{% endif %}
+                        <b>{{ cv.color.name }}</b>
+                    </span>
+                </button>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if color_variants.count == 0 and color_groups %}
+            <div class="cn-opt-label">{% blocktrans %}Color:{% endblocktrans %} <span id="cn-color-name" style="text-transform:none;"></span></div>
+            <div id="cn-colors">
+                {% for g in color_groups %}
+                <div class="cn-color-group-label">{{ g.label }}</div>
+                <div class="cn-colors" style="margin-bottom:10px;">
+                    {% for c in g.colors %}
+                    <button type="button" class="cn-color" data-color="{{ c.name }}">
+                        {% if c.image %}
+                        <img src="{% thumb c.image 200 %}" alt="{{ c.name }}">
+                        {% else %}
+                        <span style="display:block;width:100%;height:100%;background:{{ c.code }};"></span>
+                        {% endif %}
+                        <span class="cn-color-pop">
+                            {% if c.image %}<img src="{% thumb c.image 200 %}" alt="">
+                            {% else %}<span class="cp-fill" style="background:{{ c.code }};"></span>{% endif %}
+                            <b>{{ c.name }}</b>
+                        </span>
+                    </button>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if product.in_stock %}
+            <div class="cn-p-cta">
+                <a href="#" id="cn-cart-link" class="cn-btn">
+                    {% if request|in_cart:product.pk %}− {% blocktrans %}Remove From Cart{% endblocktrans %}{% else %}+ {% blocktrans %}Add To Cart{% endblocktrans %}{% endif %}
+                </a>
+                <a href="{% url 'pages:shopping_cart' %}" class="cn-btn ghost">{% trans "Go to cart" %}</a>
+            </div>
+            <a href="{% url 'products:buy_now' pk=product.pk %}" class="cn-oneclick" id="cn-buynow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+                {% trans "Buy now" %}
+            </a>
+            {% else %}
+            <div class="cn-p-nostock">
+                <b>{% trans "Temporarily out of stock" %}</b>
+                <span>{% trans "This model is not available right now. Leave your number — we will call you as soon as it arrives." %}</span>
+                <button type="button" class="cn-btn" onclick="document.getElementById('cn-cb').classList.add('open');window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});">
+                    {% trans "Request a call" %}
+                </button>
+            </div>
+            {% endif %}
+                <div class="cn-p-ready">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span>{% trans "The product is made to order and will be ready in 6–7 days. You can pick it up or we will deliver it." %}</span>
+                </div>
+            <div class="cn-p-info">
+                <div class="row"><span>{% trans "Delivery" %}</span><span>{% trans "Free (Tashkent)" %}</span></div>
+                <!-- Tayyorlanish muddati haqida eslatma — qatorlar orasida -->
+                <div class="row"><span>{% trans "Warranty" %}</span><span>{% trans "2 years" %}</span></div>
+                <div class="row"><span>{% trans "Payment" %}</span><span>{% trans "Cash / card" %}</span></div>
+                {% if product.material %}<div class="row"><span>{% trans "Material" %}</span><span>{{ product.material }}</span></div>{% endif %}
+                {% if product.category %}<div class="row"><span>{% trans "Category" %}</span><span>{{ product.category.name }}</span></div>{% endif %}
+            </div>
+
+            {% if product.description %}
+            <div class="cn-p-desc rv">
+                <h3>{% trans "Description" %}</h3>
+                <p>{{ product.description }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="cn-reviews" id="reviews">
+        <div class="cn-reviews-head">
+            <h3 style="font-family:var(--serif);font-size:26px;color:var(--c-green);margin:0;">{% trans "Reviews" %} ({{ reviews|length }})</h3>
+            <button type="button" class="cn-rf-toggle" id="cn-rf-toggle">
+                <span class="pl">+</span> {% trans "Write a review" %}
+            </button>
+        </div>
+        {% for r in reviews %}
+        <div class="cn-review rv" id="review-{{ r.id }}">
+            <div class="cn-rev-head">
+                <span class="cn-rev-ava">{{ r.name|default:"C"|first|upper }}</span>
+                <div>
+                    <b>{% if r.name %}{{ r.name }}{% elif r.user %}{{ r.user.username }}{% else %}{% trans "Customer" %}{% endif %}</b>
+                    <div class="cn-rev-meta">
+                        <span class="stars">{% for i in "12345"|slice:r.rating %}★{% endfor %}</span>
+                        <span class="cn-rev-date">{{ r.created_at|date:"d.m.Y" }}</span>
+                    </div>
+                </div>
+            </div>
+            {% if r.text %}<p>{{ r.text }}</p>{% endif %}
+            {% if r.images %}<img src="{{ r.images.url }}" alt="" style="margin-top:10px;width:110px;height:110px;object-fit:cover;border-radius:12px;">{% endif %}
+            {% my_review_vote r.id as myv %}
+            <div class="cn-rev-actions">
+                <button type="button" class="cn-vote{% if myv == 'like' %} done{% endif %}" data-id="{{ r.id }}" data-t="like">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+                    <i>{{ r.likes }}</i>
+                </button>
+                <button type="button" class="cn-vote{% if myv == 'dislike' %} done{% endif %}" data-id="{{ r.id }}" data-t="dislike">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"/></svg>
+                    <i>{{ r.dislikes }}</i>
+                </button>
+               {% if request.user.is_staff %}
+<button type="button" class="cn-rev-reply-btn" data-id="{{ r.id }}"
+        data-name="{% if r.name %}{{ r.name }}{% elif r.user %}{{ r.user.username }}{% else %}{% trans "Customer" %}{% endif %}">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    {% trans "Reply" %}
+</button>
+{% endif %}
+            </div>
+            {% for rp in r.replies.all %}
+            <div class="cn-reply-item">
+                <div class="cn-rev-head">
+                    <span class="cn-rev-ava sm">{{ rp.name|default:"C"|first|upper }}</span>
+                    <div>
+                        <b>{{ rp.name }}</b>
+                        <div class="cn-rev-meta"><span class="cn-rev-date">{{ rp.created_at|date:"d.m.Y" }}</span></div>
+                    </div>
+                </div>
+                <p>{{ rp.text }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% empty %}
+        <p style="color:var(--c-mut);font-size:14.5px;margin-bottom:6px;">{% trans "No reviews yet. Be the first to review this product!" %}</p>
+        {% endfor %}
+
+        <!-- Sharh yozish modali -->
+        <div class="cn-modal-wrap" id="cn-review-modal">
+            <div class="cn-modal">
+                <button type="button" class="cn-modal-x" data-close>&times;</button>
+                <h4 class="cn-modal-title">{% trans "Write a review" %}</h4>
+                <div class="cn-modal-prod">
+                    <img src="{% thumb product.image 200 %}" alt="">
+                    <div><b>{{ product.name }}</b></div>
+                </div>
+                <form method="post" action="{{ request.path }}#reviews" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <label class="cn-modal-label">{% trans "Rating" %} <em>*</em></label>
+                    <div class="cn-rf-stars" id="cn-rf-stars">
+                        <input type="hidden" name="rating" id="cn-rf-rating" value="5">
+                        <button type="button" data-v="1">★</button><button type="button" data-v="2">★</button><button type="button" data-v="3">★</button><button type="button" data-v="4">★</button><button type="button" data-v="5">★</button>
+                    </div>
+                    <label class="cn-modal-label">{% trans "Your name" %} <em>*</em></label>
+                    <input class="cn-modal-input" type="text" name="name" required placeholder="{% trans 'Your name' %}"
+                           value="{% if request.user.is_authenticated %}{{ request.user.first_name }}{% endif %}">
+                    <label class="cn-modal-label">{% trans "Phone number" %}</label>
+                    <input class="cn-modal-input" type="tel" name="phone" placeholder="+998"
+                           value="{% if request.user.is_authenticated %}{{ request.user.username }}{% else %}+998{% endif %}">
+                    <label class="cn-modal-label">{% trans "Review" %} <em>*</em></label>
+                    <div class="cn-modal-tawrap">
+                        <textarea name="text" rows="4" required maxlength="1000" class="cn-count-me"
+                                  placeholder="{% trans 'Share your experience with this product...' %}"></textarea>
+                        <span class="cn-chars">0/1000</span>
+                    </div>
+                    <label class="cn-upload-box">
+                        <input type="file" name="image" accept="image/*">
+                        <span class="plus">+</span>
+                        <span id="cn-rf-fname">{% trans "Click to upload or drag images here" %}</span>
+                    </label>
+                    <div class="cn-modal-btns">
+                        <button type="button" class="cn-modal-cancel" data-close>{% trans "Cancel" %}</button>
+                        <button type="submit" class="cn-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                            {% trans "Send" %}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Sharhga javob modali -->
+        <div class="cn-modal-wrap" id="cn-reply-modal">
+            <div class="cn-modal">
+                <button type="button" class="cn-modal-x" data-close>&times;</button>
+                <h4 class="cn-modal-title">{% trans "Reply to review" %}</h4>
+                <p class="cn-modal-sub">{% trans "This will be shown as a reply" %}</p>
+                <form method="post" id="cn-reply-form" action="">
+    {% csrf_token %}
+    <label class="cn-modal-label">{% trans "Reply" %} <em>*</em></label>
+    <div class="cn-modal-tawrap">
+        <textarea name="text" rows="4" required maxlength="1000" class="cn-count-me" id="cn-reply-text"></textarea>
+        <span class="cn-chars">0/1000</span>
+    </div>
+                    <div class="cn-modal-btns">
+                        <button type="button" class="cn-modal-cancel" data-close>{% trans "Cancel" %}</button>
+                        <button type="submit" class="cn-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                            {% trans "Send" %}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {% if related_products %}
+    <section class="cn-sec" style="margin-top:70px; padding:0;">
+        <div class="cn-sec-head rv">
+            <h2>{% trans "Similar" %} <em>{% trans "products" %}</em></h2>
+            <div class="cn-car-nav">
+                <button type="button" class="cn-car-btn" data-dir="-1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+                <button type="button" class="cn-car-btn" data-dir="1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+            </div>
+        </div>
+        <div class="cn-car-track">
+            {% for product in related_products|slice:":12" %}
+            <div class="cn-car-item">{% include 'cn/card.html' with card_big=1 %}</div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    {% if recently_viewed %}
+    <section class="cn-sec" style="margin-top:60px; padding:0;">
+        <div class="cn-sec-head rv">
+            <h2>{% trans "Recently" %} <em>{% trans "viewed" %}</em></h2>
+            <div class="cn-car-nav">
+                <button type="button" class="cn-car-btn" data-dir="-1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+                <button type="button" class="cn-car-btn" data-dir="1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+            </div>
+        </div>
+        <div class="cn-car-track">
+            {% for product in recently_viewed %}
+            <div class="cn-car-item">{% include 'cn/card.html' with card_big=1 %}</div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+</main>
+
+{% include 'cn/footer.html' %}
+
+<!-- Lightbox: rasmni katta ko'rish va zoom -->
+<div class="cn-lightbox" id="cn-lightbox">
+    <button type="button" class="cn-lb-x" id="cn-lb-x">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <button type="button" class="cn-lb-arr prev" id="cn-lb-prev">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="cn-lb-stage" id="cn-lb-stage">
+        <img id="cn-lb-img" src="" alt="">
+    </div>
+    <button type="button" class="cn-lb-arr next" id="cn-lb-next">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+    <span class="cn-lb-hint">{% trans "Scroll to zoom · hold and drag to move · 0 to reset" %}</span>
+</div>
+
+<script>
+(function () {
+    // ── Galereya holati ──
+    var mainImg = document.getElementById('cn-main-img');
+    var thumbs = document.getElementById('cn-thumbs');
+    var curIdx = 0;
+
+    function thumbList() {
+        return Array.prototype.slice.call(thumbs.querySelectorAll('img'));
+    }
+    function showIdx(i, noWrap) {
+        var list = thumbList();
+        if (!list.length) return;
+        if (i < 0) i = noWrap ? 0 : list.length - 1;
+        if (i >= list.length) i = noWrap ? list.length - 1 : 0;
+        curIdx = i;
+        // MUHIM: kichik (200px) rasm emas, katta nusxa qo'yiladi — aks holda xira ko'rinadi
+        mainImg.src = list[i].getAttribute('data-big') || list[i].src;
+        list.forEach(function (t, j) { t.classList.toggle('on', j === i); });
+        list[i].scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' });
+    }
+    thumbs.addEventListener('click', function (e) {
+        if (e.target.tagName !== 'IMG') return;
+        showIdx(thumbList().indexOf(e.target));
+    });
+    document.getElementById('cn-gal-prev').addEventListener('click', function () { showIdx(curIdx - 1); });
+    document.getElementById('cn-gal-next').addEventListener('click', function () { showIdx(curIdx + 1); });
+
+    // ── Lightbox: katta ko'rish + zoom + sichqoncha bilan surish ──
+    var lb = document.getElementById('cn-lightbox');
+    var lbImg = document.getElementById('cn-lb-img');
+    var lbStage = document.getElementById('cn-lb-stage');
+
+    var zoom = 1, tx = 0, ty = 0;
+    var MIN_Z = 1, MAX_Z = 6;
+
+    // Rasmni stage'dan tashqariga surib yubormaslik uchun chegara
+    function lbChegara() {
+        var bw = lbImg.offsetWidth, bh = lbImg.offsetHeight;   // transformsiz o'lcham
+        var sw = lbStage.clientWidth, sh = lbStage.clientHeight;
+        return {
+            x: Math.max(0, (bw * zoom - sw) / 2),
+            y: Math.max(0, (bh * zoom - sh) / 2)
+        };
+    }
+
+    function lbApply(tez) {
+        var ch = lbChegara();
+        tx = Math.max(-ch.x, Math.min(ch.x, tx));
+        ty = Math.max(-ch.y, Math.min(ch.y, ty));
+        lbStage.classList.toggle('instant', !!tez);
+        lbImg.style.transform = 'translate(' + tx.toFixed(1) + 'px,' + ty.toFixed(1) + 'px) scale(' + zoom.toFixed(3) + ')';
+        lbStage.classList.toggle('zoomed', zoom > 1.01);
+    }
+
+    // Sichqoncha turgan nuqtaga qarab kattalashtirish
+    function zoomAt(cx, cy, yangiZoom, tez) {
+        yangiZoom = Math.max(MIN_Z, Math.min(MAX_Z, yangiZoom));
+        if (Math.abs(yangiZoom - zoom) < 0.001) return;
+        var r = lbImg.getBoundingClientRect();
+        var k = yangiZoom / zoom;
+        tx += (cx - (r.left + r.width / 2)) * (1 - k);
+        ty += (cy - (r.top + r.height / 2)) * (1 - k);
+        zoom = yangiZoom;
+        if (zoom <= 1.001) { zoom = 1; tx = 0; ty = 0; }
+        if (zoom > 1.6) origGaOtish();
+        lbApply(tez);
+    }
+
+    function lbReset(tez) { zoom = 1; tx = 0; ty = 0; lbApply(tez); }
+
+    // ── Chuqur zoom: asl (to'liq o'lchamli) faylga o'tish ──
+    // 2000px nusxa oddiy ko'rish uchun yetadi; mijoz to'qimani ko'rmoqchi
+    // bo'lib kattalashtirsa — asl fayl yuklanadi (pikselgacha aniq).
+    var origHolat = '';           // qaysi rasm uchun asl yuklangani
+    function origGaOtish() {
+        var t = thumbList()[curIdx];
+        var o = t && t.getAttribute('data-orig');
+        if (!o || origHolat === o) return;
+        origHolat = o;
+        var pre = new Image();
+        pre.onload = function () {
+            // foydalanuvchi hali shu rasmda va lightbox ochiq bo'lsa — almashtiramiz
+            var t2 = thumbList()[curIdx];
+            if (lb.classList.contains('open') && t2 && t2.getAttribute('data-orig') === o) {
+                lbImg.src = o;
+            }
+        };
+        pre.src = o;
+    }
+
+    // Lightbox uchun eng katta nusxa (2000px) — zoom qilinganda aniq ko'rinsin
+    function kattaSrc() {
+        var list = thumbList();
+        var t = list[curIdx];
+        return (t && (t.getAttribute('data-full') || t.getAttribute('data-big'))) || mainImg.src;
+    }
+    function lbOpen() {
+        origHolat = '';
+        lbImg.src = kattaSrc();
+        lbImg.style.transformOrigin = '50% 50%';
+        lbReset(true);
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    function lbClose() {
+        lb.classList.remove('open');
+        document.body.style.overflow = '';
+        lbReset(true);
+    }
+    mainImg.addEventListener('click', lbOpen);
+    document.getElementById('cn-lb-x').addEventListener('click', lbClose);
+
+    document.getElementById('cn-lb-prev').addEventListener('click', function () {
+        showIdx(curIdx - 1); origHolat = ''; lbImg.src = kattaSrc(); lbReset(true);
+    });
+    document.getElementById('cn-lb-next').addEventListener('click', function () {
+        showIdx(curIdx + 1); origHolat = ''; lbImg.src = kattaSrc(); lbReset(true);
+    });
+
+    // ── Sichqoncha bilan ushlab surish ──
+    var surish = false, sx = 0, sy = 0, stx = 0, sty = 0, surildi = 0;
+
+    lbStage.addEventListener('mousedown', function (e) {
+        if (e.button !== 0) return;
+        e.preventDefault();
+        surish = true; surildi = 0;
+        sx = e.clientX; sy = e.clientY; stx = tx; sty = ty;
+        lbStage.classList.add('grabbing');
+    });
+    window.addEventListener('mousemove', function (e) {
+        if (!surish) return;
+        var dx = e.clientX - sx, dy = e.clientY - sy;
+        surildi = Math.max(surildi, Math.abs(dx) + Math.abs(dy));
+        if (zoom > 1) { tx = stx + dx; ty = sty + dy; lbApply(true); }
+    });
+    window.addEventListener('mouseup', function () {
+        if (!surish) return;
+        surish = false;
+        lbStage.classList.remove('grabbing');
+    });
+
+    // Rasmga bosish: kattalashtirish / qaytarish (surgandan keyin ishlamasin)
+    lbImg.addEventListener('click', function (e) {
+        if (surildi > 6) { surildi = 0; return; }
+        if (zoom > 1.01) lbReset(false);
+        else zoomAt(e.clientX, e.clientY, 2.5, false);
+    });
+    lbImg.addEventListener('dblclick', function (e) { e.preventDefault(); });
+
+    // Fon bosilsa yopiladi (surib qo'yib yuborilganda emas)
+    lb.addEventListener('click', function (e) {
+        if (e.target === lb && surildi <= 6) lbClose();
+    });
+
+    // ── G'ildirak bilan zoom (1x – 6x), sichqoncha turgan nuqtaga ──
+    lb.addEventListener('wheel', function (e) {
+        if (!lb.classList.contains('open')) return;
+        e.preventDefault();
+        var k = e.deltaY < 0 ? 1.16 : 1 / 1.16;
+        zoomAt(e.clientX, e.clientY, zoom * k, true);
+    }, { passive: false });
+
+    // ── Telefon: ikki barmoq bilan kattalashtirish, bir barmoq bilan surish ──
+    var pinchD = 0, pinchZ = 1;
+    function ikkiOra(t) {
+        var dx = t[0].clientX - t[1].clientX, dy = t[0].clientY - t[1].clientY;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+    lbStage.addEventListener('touchstart', function (e) {
+        if (e.touches.length === 2) {
+            pinchD = ikkiOra(e.touches); pinchZ = zoom; surish = false;
+        } else if (e.touches.length === 1) {
+            surish = true; surildi = 0;
+            sx = e.touches[0].clientX; sy = e.touches[0].clientY; stx = tx; sty = ty;
+        }
+    }, { passive: true });
+    lbStage.addEventListener('touchmove', function (e) {
+        if (e.touches.length === 2 && pinchD > 0) {
+            e.preventDefault();
+            var mx = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+            var my = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+            zoomAt(mx, my, pinchZ * (ikkiOra(e.touches) / pinchD), true);
+        } else if (e.touches.length === 1 && surish && zoom > 1) {
+            e.preventDefault();
+            var dx = e.touches[0].clientX - sx, dy = e.touches[0].clientY - sy;
+            surildi = Math.max(surildi, Math.abs(dx) + Math.abs(dy));
+            tx = stx + dx; ty = sty + dy; lbApply(true);
+        }
+    }, { passive: false });
+    lbStage.addEventListener('touchend', function (e) {
+        if (e.touches.length === 0) { surish = false; pinchD = 0; }
+    });
+
+    // ── Klaviatura ──
+    document.addEventListener('keydown', function (e) {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') lbClose();
+        if (e.key === 'ArrowLeft') document.getElementById('cn-lb-prev').click();
+        if (e.key === 'ArrowRight') document.getElementById('cn-lb-next').click();
+        if (e.key === '+' || e.key === '=') { var r1 = lbStage.getBoundingClientRect(); zoomAt(r1.left + r1.width / 2, r1.top + r1.height / 2, zoom * 1.3, false); }
+        if (e.key === '-' || e.key === '_') { var r2 = lbStage.getBoundingClientRect(); zoomAt(r2.left + r2.width / 2, r2.top + r2.height / 2, zoom / 1.3, false); }
+        if (e.key === '0') lbReset(false);
+    });
+
+    // ── Modallar: ochish/yopish ──
+    function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeModals() {
+        document.querySelectorAll('.cn-modal-wrap.open').forEach(function (m) { m.classList.remove('open'); });
+        document.body.style.overflow = '';
+    }
+    document.querySelectorAll('.cn-modal-wrap').forEach(function (w) {
+        w.addEventListener('click', function (e) { if (e.target === w) closeModals(); });
+    });
+    document.querySelectorAll('[data-close]').forEach(function (b) { b.addEventListener('click', closeModals); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModals(); });
+
+    var rfToggle = document.getElementById('cn-rf-toggle');
+    if (rfToggle) rfToggle.addEventListener('click', function () { openModal('cn-review-modal'); });
+
+    // ── Belgi hisoblagich (0/1000) ──
+    document.querySelectorAll('.cn-count-me').forEach(function (t) {
+        var c = t.parentElement.querySelector('.cn-chars');
+        t.addEventListener('input', function () { c.textContent = t.value.length + '/1000'; });
+    });
+
+    // ── Sharhga javob: modal ochish, @ism bilan boshlash ──
+    var replyForm = document.getElementById('cn-reply-form');
+    document.querySelectorAll('.cn-rev-reply-btn').forEach(function (b) {
+        b.addEventListener('click', function () {
+            replyForm.action = "{% url 'products:reply_review' review_id=0 %}".replace('/0/', '/' + b.dataset.id + '/');
+            var t = document.getElementById('cn-reply-text');
+            t.value = '@' + b.dataset.name + ', ';
+            t.dispatchEvent(new Event('input'));
+            openModal('cn-reply-modal');
+        });
+    });
+
+    // ── Like / Dislike (AJAX) ──
+    function getCookie(name) {
+        var m = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+        return m ? m.pop() : '';
+    }
+    document.querySelectorAll('.cn-vote').forEach(function (b) {
+        b.addEventListener('click', function () {
+            var row = b.closest('.cn-rev-actions');
+            var url = "{% url 'products:review_vote' review_id=0 vote_type='like' %}"
+                .replace('/0/', '/' + b.dataset.id + '/').replace('/like/', '/' + b.dataset.t + '/');
+            fetch(url, { method: 'POST', headers: { 'X-CSRFToken': getCookie('csrftoken') } })
+                .then(function (r) { return r.json(); })
+                .then(function (d) {
+                    row.querySelector('.cn-vote[data-t="like"] i').textContent = d.likes;
+                    row.querySelector('.cn-vote[data-t="dislike"] i').textContent = d.dislikes;
+                    row.querySelectorAll('.cn-vote').forEach(function (v) {
+                        v.classList.toggle('done', v.dataset.t === d.vote);
+                    });
+                });
+        });
+    });
+
+    // ── O'lcham va rang -> narx va savat linki ──
+    var priceEl = document.getElementById('cn-price');
+    var cartLink = document.getElementById('cn-cart-link');
+    var baseCartUrl = "{% url 'products:add_to_cart' pk=product.pk quantity=1 %}";
+    var buyNowLink = document.getElementById('cn-buynow');
+    var baseBuyUrl = "{% url 'products:buy_now' pk=product.pk %}";
+    var curSize = '', curColor = '';
+
+    function rebuild() {
+        var q = [];
+        if (curSize) q.push('size=' + encodeURIComponent(curSize));
+        if (curColor) q.push('color=' + encodeURIComponent(curColor));
+        var qs = (q.length ? '?' + q.join('&') : '');
+        // Mahsulot "vaqtincha yo'q" bo'lsa bu tugmalar umuman bo'lmaydi
+        if (cartLink) cartLink.href = baseCartUrl + qs;
+        if (buyNowLink) buyNowLink.href = baseBuyUrl + qs;
+    }
+
+    var sizes = document.getElementById('cn-sizes');
+    if (sizes) {
+        var szBtns = Array.prototype.slice.call(sizes.querySelectorAll('.cn-size'));
+        var vrx = /^(.+?)\s*\((.+)\)$/;
+        var splitMode = false; // O'chirilgan: o'lchamlar asl holida bitta qatorda ko'rsatiladi
+
+        if (splitMode) {
+            // ── "85x85 (Oyna)" -> o'lcham va material ALOHIDA qatorlar ──
+            var comboMap = {}, sizeList = [], varList = [];
+            szBtns.forEach(function (b) {
+                var m = b.dataset.size.match(vrx);
+                var s = m[1].trim(), v = m[2].trim();
+                if (sizeList.indexOf(s) < 0) sizeList.push(s);
+                if (varList.indexOf(v) < 0) varList.push(v);
+                comboMap[s + '|' + v] = {
+                    full: b.dataset.size,
+                    priceText: b.dataset.priceText
+                };
+                b.style.display = 'none';
+            });
+            var curS = sizeList[0], curV = varList[0];
+            var varWrap = document.getElementById('cn-variants');
+            var varLabel = document.getElementById('cn-variant-label');
+            varWrap.style.display = 'flex';
+            varLabel.style.display = 'block';
+
+            sizeList.forEach(function (s, i) {
+                var el = document.createElement('button');
+                el.type = 'button';
+                el.className = 'cn-size' + (i === 0 ? ' on' : '');
+                el.textContent = s;
+                el.dataset.s = s;
+                sizes.appendChild(el);
+            });
+            varList.forEach(function (v, i) {
+                var el = document.createElement('button');
+                el.type = 'button';
+                el.className = 'cn-size' + (i === 0 ? ' on' : '');
+                el.textContent = v;
+                el.dataset.v = v;
+                varWrap.appendChild(el);
+            });
+
+            function applyCombo() {
+                var d = comboMap[curS + '|' + curV];
+                if (!d) return;
+                curSize = d.full;
+                if (d.priceText) priceEl.textContent = d.priceText;
+                rebuild();
+            }
+            sizes.addEventListener('click', function (e) {
+                var b = e.target.closest('button[data-s]');
+                if (!b) return;
+                sizes.querySelectorAll('button[data-s]').forEach(function (x) { x.classList.remove('on'); });
+                b.classList.add('on');
+                curS = b.dataset.s;
+                applyCombo();
+            });
+            varWrap.addEventListener('click', function (e) {
+                var b = e.target.closest('button[data-v]');
+                if (!b) return;
+                varWrap.querySelectorAll('button[data-v]').forEach(function (x) { x.classList.remove('on'); });
+                b.classList.add('on');
+                curV = b.dataset.v;
+                applyCombo();
+            });
+            applyCombo();
+        } else {
+            var first = sizes.querySelector('.cn-size');
+            if (first) {
+                curSize = first.dataset.size;
+                if (first.dataset.priceText) priceEl.textContent = first.dataset.priceText;
+            }
+            sizes.addEventListener('click', function (e) {
+                var b = e.target.closest('.cn-size');
+                if (!b) return;
+                sizes.querySelectorAll('.cn-size').forEach(function (x) { x.classList.remove('on'); });
+                b.classList.add('on');
+                curSize = b.dataset.size;
+                if (b.dataset.priceText) priceEl.textContent = b.dataset.priceText;
+                rebuild();
+            });
+        }
+    }
+
+    var colors = document.getElementById('cn-colors');
+    if (colors) {
+        var firstC = colors.querySelector('.cn-color.on') || colors.querySelector('.cn-color');
+        if (firstC) {
+            firstC.classList.add('on');
+            curColor = firstC.dataset.color;
+            var nm0 = document.getElementById('cn-color-name');
+            if (nm0) nm0.textContent = curColor;
+        }
+        colors.addEventListener('click', function (e) {
+            var b = e.target.closest('.cn-color');
+            if (!b) return;
+            colors.querySelectorAll('.cn-color').forEach(function (x) { x.classList.remove('on'); });
+            b.classList.add('on');
+            curColor = b.dataset.color;
+            var nameEl = document.getElementById('cn-color-name');
+            if (nameEl) nameEl.textContent = curColor;
+            // rang rasmlari bilan galereyani yangilash
+            var imgs  = (b.dataset.images || '').split('|').filter(Boolean);
+            var thmbs = (b.dataset.thumbs || '').split('|').filter(Boolean);
+            var fulls = (b.dataset.fulls  || '').split('|').filter(Boolean);
+            var origs2 = (b.dataset.origs || '').split('|').filter(Boolean);
+            if (imgs.length) {
+                mainImg.src = imgs[0];
+                var t = document.getElementById('cn-thumbs');
+                t.innerHTML = '';
+                imgs.forEach(function (u, i) {
+                    var im = document.createElement('img');
+                    im.src = thmbs[i] || u;          // pastdagi kichik rasm
+                    im.setAttribute('data-big', u);  // bosilganda kattasi qo'yiladi
+                    im.setAttribute('data-full', fulls[i] || u);
+                    if (origs2[i]) im.setAttribute('data-orig', origs2[i]);
+                    if (i === 0) im.className = 'on';
+                    t.appendChild(im);
+                });
+                curIdx = 0;
+            }
+            rebuild();
+        });
+    }
+    rebuild();
+
+    // ── Sharh formasi: yulduz tanlash va fayl nomi ──
+    var rfStars = document.getElementById('cn-rf-stars');
+    if (rfStars) {
+        var rfInput = document.getElementById('cn-rf-rating');
+        var rfBtns = rfStars.querySelectorAll('button');
+        function paintStars(v) {
+            rfBtns.forEach(function (b) { b.classList.toggle('lit', +b.dataset.v <= v); });
+        }
+        paintStars(5);
+        rfStars.addEventListener('click', function (e) {
+            var b = e.target.closest('button');
+            if (!b) return;
+            rfInput.value = b.dataset.v;
+            paintStars(+b.dataset.v);
+        });
+        var rfFile = document.querySelector('.cn-rf-file input');
+        if (rfFile) rfFile.addEventListener('change', function () {
+            var n = document.getElementById('cn-rf-fname');
+            if (n && rfFile.files.length) n.textContent = rfFile.files[0].name;
+        });
+    }
+
+    // ── 360° aylanuvchi mahsulot ──
+    var spinBox = document.getElementById('cn-spin');
+    if (spinBox) {
+        var spinFrames = JSON.parse(document.getElementById('cn-spin-data').textContent);
+        var spinImg = document.getElementById('cn-spin-img');
+        var n = spinFrames.length, idx = 0, auto = null;
+        // Kadrlarni oldindan yuklash
+        spinFrames.forEach(function (u) { var im = new Image(); im.src = u; });
+        function setFrame(i) {
+            idx = ((i % n) + n) % n;
+            spinImg.src = spinFrames[idx];
+        }
+        // Sekin avto-aylanish (birinchi teginishgacha)
+        auto = setInterval(function () { setFrame(idx + 1); }, 160);
+        var dragging = false, sx = 0, si = 0;
+        function start(x) {
+            dragging = true; sx = x; si = idx;
+            if (auto) { clearInterval(auto); auto = null; }
+            spinBox.classList.add('grabbing');
+        }
+        function move(x) {
+            if (!dragging) return;
+            var df = Math.round((x - sx) / 12);   // har 12px = 1 kadr
+            setFrame(si + df);
+        }
+        function end() { dragging = false; spinBox.classList.remove('grabbing'); }
+        spinBox.addEventListener('mousedown', function (e) { e.preventDefault(); start(e.clientX); });
+        document.addEventListener('mousemove', function (e) { move(e.clientX); });
+        document.addEventListener('mouseup', end);
+        spinBox.addEventListener('touchstart', function (e) { start(e.touches[0].clientX); }, { passive: true });
+        spinBox.addEventListener('touchmove', function (e) { move(e.touches[0].clientX); }, { passive: true });
+        spinBox.addEventListener('touchend', end);
+    }
+
+    // ── O'xshash / Yaqinda ko'rilganlar karuseli ──
+    document.querySelectorAll('.cn-car-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var sec = btn.closest('.cn-sec');
+            var track = sec && sec.querySelector('.cn-car-track');
+            if (!track) return;
+            var step = track.clientWidth * 0.8;
+            if (btn.dataset.one) {
+                var it = track.querySelector('.cn-car-item');
+                if (it) step = it.getBoundingClientRect().width + 22;
+            }
+            track.scrollBy({ left: parseInt(btn.dataset.dir, 10) * step, behavior: 'smooth' });
+        });
+    });
+})();
+</script>
+
+<!-- Google uchun mahsulot ma'lumoti (qidiruvda narx va yulduzcha chiqadi) -->
+{% thumb product.image 1200 as ld_rasm %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ product.name|escapejs }}",
+  "image": "{{ request.scheme }}://{{ request.get_host }}{{ ld_rasm }}",
+  "category": "{{ product.category.name|escapejs }}",
+  "brand": { "@type": "Brand", "name": "Chinar Outdoor Furniture" },
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ request.scheme }}://{{ request.get_host }}{{ request.path }}",
+    "priceCurrency": "UZS",
+    "price": "{{ product.get_price_uzs|unlocalize }}",
+    "availability": "https://schema.org/InStock"
+  }{% if product.ortacha_reyting %},
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{ product.ortacha_reyting|unlocalize }}",
+    "reviewCount": "{{ reviews|length }}"
+  }{% endif %}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+/* Rangli dropdown — admin Product colors uchun */
+/* Admin .form-row {overflow:hidden} panelni kesib qo'ymasin */
+.form-row.field-color, .form-row.field-color > div { overflow: visible !important; }
+.cimg-wrap { position: relative; display: inline-block; min-width: 240px; vertical-align: middle; }
+.cimg-btn {
+    display: flex; align-items: center; gap: 8px;
+    width: 100%; padding: 5px 10px;
+    border: 1px solid #ccc; border-radius: 4px;
+    background: #fff; cursor: pointer;
+    font-size: 13px; text-align: left; color: #333;
+}
+.cimg-btn:hover { border-color: #999; }
+.cimg-car { margin-left: auto; border: solid #666; border-width: 0 2px 2px 0; padding: 3px; transform: rotate(45deg); }
+.cimg-th {
+    width: 26px; height: 26px; flex: 0 0 26px;
+    border-radius: 4px; border: 1px solid #ddd;
+    background-size: cover; background-position: center;
+    display: inline-block;
+}
+.cimg-panel {
+    display: none; position: absolute; z-index: 1000;
+    top: calc(100% + 3px); left: 0; min-width: 100%;
+    max-height: 320px; overflow-y: auto;
+    background: #fff; border: 1px solid #ccc; border-radius: 4px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.15);
+}
+.cimg-panel.open { display: block; }
+.cimg-group {
+    padding: 6px 10px 4px; font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px;
+    color: #666; background: #f6f6f6; border-top: 1px solid #eee;
+    position: sticky; top: 0;
+}
+.cimg-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 6px 10px; cursor: pointer; font-size: 13px; color: #333;
+    white-space: nowrap;
+}
+.cimg-item:hover { background: #f0f6fc; }
+.cimg-item.sel { background: #e8f0fe; font-weight: 600; }

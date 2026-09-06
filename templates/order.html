@@ -1,0 +1,242 @@
+{% load static %}
+{% load i18n %}
+{% load my_tags %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% blocktrans %}Profile{% endblocktrans %} — Chinar</title>
+    {% include 'cn/meta.html' %}
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'chinar-new.css' %}">
+    <style>
+      .cn-prof-tabs { display: flex; gap: 10px; margin-bottom: 26px; flex-wrap: wrap; }
+      .cn-prof-tab {
+          padding: 10px 22px; border-radius: 999px; font-weight: 700; font-size: 14px;
+          border: 1.5px solid #d9d0be; color: var(--c-ink); background: #fff;
+      }
+      .cn-prof-tab.on { background: var(--c-green); color: #fff; border-color: var(--c-green); }
+      .cn-order {
+          background: #fff; border: 1px solid #e7dfd0; border-radius: 20px;
+          padding: 22px; margin-bottom: 16px;
+      }
+      .cn-order-top { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: center; }
+      .cn-order-id { font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--c-green); }
+      .cn-status {
+          font-size: 12px; font-weight: 800; letter-spacing: 1px;
+          padding: 6px 14px; border-radius: 999px; text-transform: uppercase;
+          background: var(--c-sand); color: var(--c-ink);
+      }
+      .cn-status.paid { background: #e2efe0; color: #2e6b3a; }
+      .cn-order-rows { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 16px; }
+      .cn-order-rows p { font-size: 12px; color: var(--c-mut); }
+      .cn-order-rows b { font-size: 14.5px; color: var(--c-ink); }
+      .cn-order-items { margin-top: 14px; border-top: 1px solid #eee5d4; padding-top: 12px; font-size: 14px; color: var(--c-mut); }
+      .cn-logout { color: var(--c-terra); font-weight: 700; }
+      .cn-tg-btn {
+          display: inline-flex; align-items: center; gap: 9px;
+          background: #2aabee; color: #fff;
+          font-weight: 700; font-size: 14px;
+          padding: 11px 22px; border-radius: 999px;
+          margin-bottom: 22px;
+          box-shadow: 0 6px 16px rgba(42, 171, 238, .3);
+          transition: .2s;
+      }
+      .cn-tg-btn:hover { background: #1e98d9; transform: translateY(-2px); }
+      .cn-tg-btn svg { flex: none; }
+      .cn-status.cancel { background: #fbe4e0; color: #a5402a; }
+      .cn-msg {
+          border-radius: 14px; padding: 13px 18px; margin-bottom: 16px;
+          font-size: 14px; font-weight: 600;
+      }
+      .cn-msg.success { background: #e2efe0; color: #2e6b3a; border: 1px solid #c7dfc3; }
+      .cn-msg.error { background: #fbe4e0; color: #a5402a; border: 1px solid #f0ccc3; }
+      .cn-cancel-btn {
+          display: inline-flex; align-items: center; gap: 7px;
+          background: none; border: 1.5px solid #e0b4a8; color: #a5402a;
+          padding: 8px 18px; border-radius: 999px;
+          font-weight: 700; font-size: 13px; margin-top: 14px;
+          transition: .2s;
+      }
+      .cn-cancel-btn:hover { background: #a5402a; border-color: #a5402a; color: #fff; }
+      /* Bekor qilish modali */
+      .cn-cancel-bg {
+          position: fixed; inset: 0; z-index: 500;
+          background: rgba(31, 42, 34, .55); backdrop-filter: blur(4px);
+          display: none; align-items: center; justify-content: center; padding: 20px;
+      }
+      .cn-cancel-bg.open { display: flex; }
+      .cn-cancel-modal {
+          background: var(--c-cream); border-radius: 24px;
+          padding: 30px 28px; max-width: 460px; width: 100%;
+          animation: cnCancelIn .25s ease;
+      }
+      @keyframes cnCancelIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+      .cn-cancel-modal h3 { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--c-green); margin-bottom: 6px; }
+      .cn-cancel-modal .warn { font-size: 13.5px; color: #a5402a; font-weight: 700; margin-bottom: 16px; }
+      .cn-cancel-modal label.rz {
+          display: flex; align-items: center; gap: 10px;
+          background: #fff; border: 1.5px solid #d9d0be; border-radius: 12px;
+          padding: 11px 14px; margin-bottom: 8px;
+          font-size: 14px; font-weight: 600; cursor: pointer;
+      }
+      .cn-cancel-modal label.rz:has(input:checked) { border-color: var(--c-green); background: #f0f3ec; }
+      .cn-cancel-modal input[type=radio] { accent-color: var(--c-green); width: 16px; height: 16px; }
+      .cn-cancel-modal textarea {
+          width: 100%; font-family: inherit; font-size: 14px;
+          border: 1.5px solid #d9d0be; border-radius: 12px;
+          padding: 11px 14px; resize: vertical; outline: none;
+          background: #fff; margin-top: 4px;
+      }
+      .cn-cancel-modal textarea:focus { border-color: var(--c-green); }
+      .cn-cancel-acts { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
+      .cn-cancel-yes {
+          flex: 1; background: #a5402a; color: #fff; border: none;
+          padding: 13px 18px; border-radius: 999px; font-weight: 700; font-size: 14px;
+          transition: .2s;
+      }
+      .cn-cancel-yes:hover { background: #8c3421; }
+      .cn-cancel-no {
+          flex: 1; background: #fff; color: var(--c-ink); border: 1.5px solid #d9d0be;
+          padding: 13px 18px; border-radius: 999px; font-weight: 700; font-size: 14px;
+      }
+      .cn-cancel-no:hover { border-color: var(--c-green); }
+      .cn-copy-btn {
+          display: inline-flex; align-items: center; justify-content: center;
+          width: 28px; height: 28px; margin-left: 6px;
+          border: 1px solid #d9d0be; border-radius: 8px;
+          background: #fff; color: var(--c-mut);
+          vertical-align: middle; transition: .18s;
+      }
+      .cn-copy-btn:hover { border-color: var(--c-green); color: var(--c-green); }
+      .cn-copy-btn.done { border-color: #2e6b3a; color: #2e6b3a; background: #e2efe0; }
+    </style>
+</head>
+<body>
+{% include 'cn/header.html' %}
+
+<main class="cn-page">
+    <div class="cn-page-head">
+        <div class="cn-crumbs"><a href="{% url 'pages:home' %}">{% trans "Home" %}</a> / {% blocktrans %}Profile{% endblocktrans %}</div>
+        <h1 class="cn-page-title">{% trans "My" %} <em>{% trans "orders" %}</em></h1>
+    </div>
+
+    <div class="cn-prof-tabs">
+        <a href="{% url 'pages:order' %}" class="cn-prof-tab on">{% blocktrans %}Orders{% endblocktrans %}</a>
+        <a href="{% url 'pages:review' %}" class="cn-prof-tab">{% blocktrans %}Reviews{% endblocktrans %}</a>
+        <a href="{% url 'pages:profile' %}" class="cn-prof-tab">{% blocktrans %}Settings{% endblocktrans %}</a>
+        <a href="{% url 'pages:logout' %}" class="cn-prof-tab cn-logout">{% blocktrans %}Log out{% endblocktrans %}</a>
+    </div>
+
+    <!-- {% if orders %}
+    <a href="https://t.me/chinar_client_bot" target="_blank" class="cn-tg-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.04 9.613c-.15.675-.54.84-1.097.522l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.215-3.053 5.56-5.023c.242-.215-.052-.334-.373-.12L6.24 14.6l-2.95-.92c-.64-.2-.653-.64.136-.948l11.527-4.445c.533-.193 1-.12 1.61.961z"/>
+        </svg>
+        {% trans "Track order status in Telegram" %}
+    </a>
+    {% endif %} -->
+
+    {% for order in orders %}
+    <div class="cn-order rv">
+        <div class="cn-order-top">
+            <span class="cn-order-id">№ {{ order.order_id }}
+                <button type="button" class="cn-copy-btn" data-copy="{{ order.order_id }}" title="{% trans 'Copy' %}">
+                    <svg class="ic-copy" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    <svg class="ic-done" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M20 6L9 17l-5-5"/></svg>
+                </button>
+            </span>
+            <span class="cn-status {% if order.status == 'canceled' %}cancel{% elif order.is_paid %}paid{% endif %}">{{ order.get_status_display }}</span>
+        </div>
+        <div class="cn-order-rows">
+            <div><p>{% blocktrans %}Date{% endblocktrans %}</p><b>{{ order.created_at|date:"d.m.Y, H:i" }}</b></div>
+            <div><p>{% blocktrans %}Total{% endblocktrans %}</p><b>{{ order.total_price|uzbek_price }} UZS</b></div>
+            <div><p>{% trans "Delivery" %}</p><b>{% if order.delivery_method == 'pickup' %}{% trans "Pickup" %}{% else %}{% trans "Delivery" %}{% endif %}</b></div>
+            {% if order.address %}<div><p>{% blocktrans %}Delivery address{% endblocktrans %}</p><b>{{ order.address }}</b></div>{% endif %}
+        </div>
+        <div class="cn-order-items">
+            {% for item in order.items.all %}
+            {{ item.product.name }} × {{ item.quantity }}{% if not forloop.last %} · {% endif %}
+            {% endfor %}
+        </div>
+        {% if order.status == 'pending' %}
+        <button type="button" class="cn-cancel-btn" data-order="{{ order.order_id }}">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            {% trans "Cancel order" %}
+        </button>
+        {% endif %}
+    </div>
+    {% empty %}
+    <div class="cn-empty">
+        <h3>{% trans "No orders yet" %}</h3>
+        <p>{% trans "Go to the catalog to place your first order." %}</p>
+        <a href="{% url 'pages:category' %}" class="cn-btn">{% trans "Open catalog" %}</a>
+    </div>
+    {% endfor %}
+</main>
+
+<!-- Buyurtmani bekor qilish modali -->
+<div class="cn-cancel-bg" id="cn-cancel-bg">
+    <form class="cn-cancel-modal" id="cn-cancel-form" method="post" action="">
+        {% csrf_token %}
+        <h3>{% trans "Cancel the order?" %}</h3>
+        <p class="warn">{% trans "Are you sure? This action cannot be undone." %}</p>
+
+        <label class="rz"><input type="radio" name="reason" value="Fikrim o'zgardi" checked> {% trans "I changed my mind" %}</label>
+        <label class="rz"><input type="radio" name="reason" value="Boshqa mahsulot tanladim"> {% trans "I chose another product" %}</label>
+        <label class="rz"><input type="radio" name="reason" value="Narxi to'g'ri kelmadi"> {% trans "The price did not suit me" %}</label>
+        <label class="rz"><input type="radio" name="reason" value="Muddat uzoq"> {% trans "Waiting time is too long" %}</label>
+        <label class="rz"><input type="radio" name="reason" value="Boshqa"> {% trans "Other reason" %}</label>
+        <textarea name="reason_text" rows="2" placeholder="{% trans 'Comment (optional)' %}"></textarea>
+
+        <div class="cn-cancel-acts">
+            <button type="submit" class="cn-cancel-yes">{% trans "Yes, cancel the order" %}</button>
+            <button type="button" class="cn-cancel-no" id="cn-cancel-no">{% trans "No, keep it" %}</button>
+        </div>
+    </form>
+</div>
+
+<script>
+(function () {
+    var bg = document.getElementById('cn-cancel-bg');
+    var form = document.getElementById('cn-cancel-form');
+    document.querySelectorAll('.cn-cancel-btn').forEach(function (b) {
+        b.addEventListener('click', function () {
+            form.action = '{% url "pages:cancel_order" order_id="ORDER_ID" %}'.replace('ORDER_ID', b.dataset.order);
+            bg.classList.add('open');
+        });
+    });
+    document.getElementById('cn-cancel-no').addEventListener('click', function () { bg.classList.remove('open'); });
+    bg.addEventListener('click', function (e) { if (e.target === bg) bg.classList.remove('open'); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') bg.classList.remove('open'); });
+
+    // Buyurtma raqamini nusxalash
+    document.querySelectorAll('.cn-copy-btn').forEach(function (b) {
+        b.addEventListener('click', function () {
+            var txt = b.dataset.copy;
+            function ok() {
+                b.classList.add('done');
+                b.querySelector('.ic-copy').style.display = 'none';
+                b.querySelector('.ic-done').style.display = 'block';
+                setTimeout(function () {
+                    b.classList.remove('done');
+                    b.querySelector('.ic-copy').style.display = 'block';
+                    b.querySelector('.ic-done').style.display = 'none';
+                }, 1600);
+            }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(txt).then(ok);
+            } else {
+                var ta = document.createElement('textarea');
+                ta.value = txt; document.body.appendChild(ta);
+                ta.select(); document.execCommand('copy'); ta.remove(); ok();
+            }
+        });
+    });
+})();
+</script>
+
+{% include 'cn/footer.html' %}
+</body>
+</html>

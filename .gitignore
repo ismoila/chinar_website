@@ -1,0 +1,36 @@
+# ═══ MAXFIY — hech qachon yuklanmasin ═══
+.env
+*.env
+!.env.namuna
+
+# ═══ Baza ═══
+db.sqlite3
+db.sqlite3-journal
+*.sqlite3
+
+# ═══ Yuklangan rasmlar va avtomatik nusxalar ═══
+media/
+static/
+!static/.gitkeep
+
+# ═══ Python ═══
+__pycache__/
+*.py[cod]
+*.pyo
+venv/
+env/
+.venv/
+
+# ═══ Muharrir va tizim fayllari ═══
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# ═══ Vaqtinchalik ═══
+_keraksiz_fayllar/
+_asl_nusxa/
+.ornatildi
+*.log

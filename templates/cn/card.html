@@ -1,0 +1,40 @@
+{% load my_tags %}{% load rasm %}{% load i18n %}
+<div class="cn-card rv{% if not product.in_stock %} cn-card-out{% endif %}">
+    <div class="cn-card-img">
+        {% if not product.in_stock %}<span class="cn-nostock-tag">{% trans "Temporarily out" %}</span>
+        {% elif product.is_discount_active %}<span class="cn-off">-{{ product.discount }}%</span>{% endif %}
+        <a href="{% url 'products:wishlist_toggle' product.id %}" class="cn-heart">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="{% if product.id in wishlist_ids %}#c4633e{% else %}none{% endif %}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 20.364l-7.682-7.682a4.5 4.5 0 010-6.364z"/></svg>
+        </a>
+        <a href="{% url 'products:product_detail' product.slug %}" class="cn-ci-slider">
+            {% thumb product.image 600 as r600 %}{% thumb product.image 1200 as r1200 %}
+            <img src="{{ r600 }}" srcset="{{ r600 }} 600w, {{ r1200 }} 1200w"
+                 sizes="{% if card_big %}(max-width: 1000px) 94vw, 24vw{% else %}(max-width: 1000px) 47vw, 24vw{% endif %}"
+                 alt="{{ product.name }}" loading="lazy" class="cn-ci-img on">
+            {% for img in product.images.all %}
+            {% if img.image.name|basename != product.image.name|basename %}
+            {% thumb img.image 600 as g600 %}{% thumb img.image 1200 as g1200 %}
+            <img src="{{ g600 }}" srcset="{{ g600 }} 600w, {{ g1200 }} 1200w"
+                 sizes="{% if card_big %}(max-width: 1000px) 94vw, 24vw{% else %}(max-width: 1000px) 47vw, 24vw{% endif %}"
+                 alt="{{ product.name }}" loading="lazy" class="cn-ci-img cn-ci-alt">
+            {% endif %}
+            {% endfor %}
+            <span class="cn-ci-dots"></span>
+        </a>
+        {% if product.in_stock %}
+        {% in_cart product.pk as p_in_cart %}
+        <a href="{% url 'products:add_to_cart' pk=product.pk quantity=1 %}" class="cn-addlink"
+           data-opts="{% url 'products:product_options' pk=product.pk %}"{% if p_in_cart %} data-incart="1"{% endif %}
+           title="{% if p_in_cart %}Savatdan olib tashlash{% else %}Savatga qo'shish{% endif %}">
+            <button type="button" class="cn-add{% if p_in_cart %} on{% endif %}">{% if p_in_cart %}−{% else %}+{% endif %}</button>
+        </a>
+        {% endif %}
+    </div>
+    <div class="cn-card-body">
+        <div class="cn-card-name">{{ product.name }}</div>
+        <div class="cn-card-price">
+            {{ product.get_price_uzs|uzbek_price }} UZS
+            {% if product.is_discount_active %}<s>{{ product.get_original_price_uzs|uzbek_price }}</s>{% endif %}
+        </div>
+    </div>
+</div>

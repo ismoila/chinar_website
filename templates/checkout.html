@@ -1,0 +1,188 @@
+{% load static %}{% load rasm %}
+{% load i18n %}
+{% load my_tags %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% blocktrans %}Checkout{% endblocktrans %} — Chinar</title>
+    {% include 'cn/meta.html' %}
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'chinar-new.css' %}">
+    <style>
+      .cn-chk { display: grid; grid-template-columns: 1.5fr .9fr; gap: 30px; align-items: start; }
+      .cn-chk-sec { background: #fff; border: 1px solid #e7dfd0; border-radius: 20px; padding: 24px; margin-bottom: 18px; }
+      .cn-chk-sec h3 { font-family: var(--serif); font-size: 21px; color: var(--c-green); margin-bottom: 16px; }
+      .cn-f-row { display: flex; gap: 12px; flex-wrap: wrap; }
+      .cn-f { flex: 1; min-width: 180px; margin-bottom: 12px; }
+      .cn-f label { display: block; font-size: 12.5px; font-weight: 700; color: var(--c-mut); margin-bottom: 6px; }
+      .cn-f label .req { color: var(--c-terra); }
+      .cn-f input, .cn-f select {
+          width: 100%; font-family: inherit; font-size: 15px;
+          border: 1.5px solid #d9d0be; border-radius: 12px;
+          padding: 12px 14px; outline: none; background: #fff; color: var(--c-ink);
+      }
+      .cn-f input:focus, .cn-f select:focus { border-color: var(--c-green); }
+      .cn-radio {
+          display: flex; align-items: center; gap: 10px;
+          border: 1.5px solid #d9d0be; border-radius: 14px;
+          padding: 14px 16px; cursor: pointer; flex: 1; min-width: 170px;
+          font-weight: 700; font-size: 14px;
+      }
+      .cn-radio input { accent-color: var(--c-green); width: 17px; height: 17px; }
+      .cn-radio:has(input:checked) { border-color: var(--c-green); background: #f0f3ec; }
+      .cn-chk-item { display: flex; gap: 12px; align-items: center; padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,.12); font-size: 14px; }
+      .cn-chk-item img { width: 48px; height: 48px; border-radius: 10px; object-fit: cover; background: var(--c-sand); }
+      .cn-chk-item span { flex: 1; }
+      @media (max-width: 900px) { .cn-chk { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+{% include 'cn/header.html' %}
+
+<main class="cn-page">
+    <div class="cn-page-head">
+        <div class="cn-crumbs">
+            <a href="{% url 'pages:home' %}">{% trans "Home" %}</a> /
+            <a href="{% url 'pages:shopping_cart' %}">{% blocktrans %}Cart{% endblocktrans %}</a> /
+            {% blocktrans %}Checkout{% endblocktrans %}
+        </div>
+        <h1 class="cn-page-title">{% trans "Place your" %} <em>{% trans "order" %}</em></h1>
+    </div>
+
+    {% if cart_items %}
+    <div class="cn-chk">
+        <form action="{% url 'pages:create_order' %}" method="post">
+            {% csrf_token %}
+            <div class="cn-chk-sec rv">
+                <h3>1 · {% trans "Contact details" %}</h3>
+                <div class="cn-f-row">
+                    <div class="cn-f">
+                        <label>{% blocktrans %}Phone{% endblocktrans %} <span class="req">*</span></label>
+                        <input type="tel" name="phone" value="+998" required>
+                    </div>
+                    <div class="cn-f">
+                        <label>{% blocktrans %}First name{% endblocktrans %} <span class="req">*</span></label>
+                        <input type="text" name="first_name" required>
+                    </div>
+                    <div class="cn-f">
+                        <label>{% blocktrans %}Last name{% endblocktrans %}</label>
+                        <input type="text" name="last_name">
+                    </div>
+                </div>
+            </div>
+
+            <div class="cn-chk-sec rv">
+                <h3>2 · {% trans "Delivery" %}</h3>
+                <div class="cn-f-row" style="margin-bottom: 14px;">
+                    <label class="cn-radio"><input type="radio" name="delivery_method" value="delivery" checked> {% trans "Delivery (free)" %}</label>
+                    <label class="cn-radio"><input type="radio" name="delivery_method" value="pickup"> {% trans "Pickup from store" %}</label>
+                </div>
+                <div class="cn-pickup-info" id="cn-pickup-info">
+                    <b>{% trans "Pickup point" %} — CHINAR</b>
+                    <p>
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        {% trans "Tashkent, CHINAR furniture workshop" %}
+                        &nbsp;·&nbsp;<a href="https://maps.google.com/?q=41.2910145,69.1627934" target="_blank" rel="noopener">{% trans "Open in Google Maps" %}</a>
+                    </p>
+                    <p>
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        {% trans "Working hours" %}: {% trans "Daily 9:00 — 19:00" %}
+                    </p>
+                    <p>
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <a href="tel:+998996595555">+998 (99) 659-55-55</a>
+                    </p>
+                </div>
+                <div id="cn-addr">
+                    <div class="cn-f-row">
+                        <div class="cn-f">
+                            <label>{% blocktrans %}Region{% endblocktrans %} <span class="req">*</span></label>
+                            <select name="region"><option>Tashkent</option></select>
+                        </div>
+                        <div class="cn-f">
+                            <label>{% blocktrans %}City / District {% endblocktrans %} <span class="req">*</span></label>
+                            <select name="city">
+                                <option value="">{% trans "Choose a district" %}</option>
+                                <option>Bektemir tumani</option>
+                                <option>Chilonzor tumani</option>
+                                <option>Mirobod tumani</option>
+                                <option>Mirzo Ulug'bek tumani</option>
+                                <option>Olmazor tumani</option>
+                                <option>Sergeli tumani</option>
+                                <option>Shayxontoxur tumani</option>
+                                <option>Uchtepa tumani</option>
+                                <option>Yakkasaroy tumani</option>
+                                <option>Yangi Hayot tumani</option>
+                                <option>Yashnobod tumani</option>
+                                <option>Yunusobod tumani</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="cn-f-row">
+                        <div class="cn-f" style="flex: 2;">
+                            <label>{% blocktrans %}Address {% endblocktrans %} <span class="req">*</span></label>
+                            <input type="text" name="address" placeholder="{% trans 'For example: Yunusobod 13th block' %}">
+                        </div>
+                        <div class="cn-f">
+                            <label>{% trans "Floor / landmark" %}</label>
+                            <input type="text" name="floor">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cn-chk-sec rv">
+                <h3>3 · {% trans "Payment method" %}</h3>
+                <div class="cn-f-row">
+                    <!-- <label class="cn-radio"><input type="radio" name="payment" value="payme" checked> Payme</label> -->
+                    <label class="cn-radio"><input type="radio" name="payment" value="Card"> {% trans "Card" %}</label>
+                    <label class="cn-radio"><input type="radio" name="payment" value="cash" checked> {% trans "Cash" %}</label>
+                </div>
+            </div>
+
+            <button type="submit" class="cn-btn" style="width: 100%; justify-content: center; font-size: 16px;">
+                {% trans "Place order" %} → {{ grand_total|uzbek_price }} UZS
+            </button>
+        </form>
+
+        <aside class="cn-summary rv">
+            <h3>{% trans "Your order" %}</h3>
+            {% for item in cart_items %}
+            <div class="cn-chk-item">
+                <img src="{% thumb item.product.image 200 %}" alt="">
+                <span>{{ item.product.name }} × {{ item.quantity }}</span>
+                <b>{{ item.item_total|default:item.price|uzbek_price }}</b>
+            </div>
+            {% endfor %}
+            <div class="cn-sum-row" style="margin-top: 14px;"><span>{% trans "Products" %} ({{ count }})</span><span>{{ total|uzbek_price }} UZS</span></div>
+            {% if promo_discount %}
+            <div class="cn-sum-row"><span>{% trans "Promo code" %} ({{ promo_code }})</span><span style="color:#e8a583;">−{{ promo_discount|uzbek_price }}</span></div>
+            {% endif %}
+            <div class="cn-sum-row"><span>{% trans "Delivery" %}</span><span>{% trans "Free" %}</span></div>
+            <div class="cn-sum-row total"><span>{% trans "Total" %}</span><span>{{ grand_total|uzbek_price }} UZS</span></div>
+        </aside>
+    </div>
+    {% else %}
+    <div class="cn-empty">
+        <h3>{% trans "Cart is empty" %}</h3>
+        <p>{% trans "Choose a product before checkout." %}</p>
+        <a href="{% url 'pages:category' %}" class="cn-btn">{% trans "Open catalog" %}</a>
+    </div>
+    {% endif %}
+</main>
+
+{% include 'cn/footer.html' %}
+<script>
+// Olib ketish tanlansa manzil bo'limi yashirinadi
+document.querySelectorAll('input[name="delivery_method"]').forEach(function (r) {
+    r.addEventListener('change', function () {
+        var isPickup = r.value === 'pickup' && r.checked;
+        document.getElementById('cn-addr').style.display = isPickup ? 'none' : '';
+        document.getElementById('cn-pickup-info').classList.toggle('show', isPickup);
+    });
+});
+</script>
+</body>
+</html>

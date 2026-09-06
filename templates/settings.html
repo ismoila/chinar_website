@@ -1,0 +1,118 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% blocktrans %}Settings{% endblocktrans %} — Chinar</title>
+    {% include 'cn/meta.html' %}
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'chinar-new.css' %}">
+    <style>
+      .cn-prof-tabs { display: flex; gap: 10px; margin-bottom: 26px; flex-wrap: wrap; }
+      .cn-prof-tab { padding: 10px 22px; border-radius: 999px; font-weight: 700; font-size: 14px; border: 1.5px solid #d9d0be; color: var(--c-ink); background: #fff; }
+      .cn-prof-tab.on { background: var(--c-green); color: #fff; border-color: var(--c-green); }
+      .cn-logout { color: var(--c-terra); font-weight: 700; }
+      .cn-set { max-width: 620px; background: #fff; border: 1px solid #e7dfd0; border-radius: 22px; padding: 28px; }
+      .cn-f { margin-bottom: 14px; }
+      .cn-f label { display: block; font-size: 12.5px; font-weight: 700; color: var(--c-mut); margin-bottom: 6px; }
+      .cn-f input, .cn-f select { width: 100%; font-family: inherit; font-size: 15px; border: 1.5px solid #d9d0be; border-radius: 12px; padding: 12px 14px; outline: none; }
+      .cn-f input:focus, .cn-f select:focus { border-color: var(--c-green); }
+      .cn-f-row { display: flex; gap: 12px; }
+      .cn-f-row .cn-f { flex: 1; }
+      /* Jins — segment tugmalar */
+      .cn-seg { display: flex; gap: 5px; background: #f6f8f5; border: 1.5px solid #d9d0be; border-radius: 12px; padding: 4px; }
+      .cn-seg input { display: none; }
+      .cn-seg label { flex: 1; text-align: center; padding: 9px 8px; border-radius: 9px; font-size: 14px; font-weight: 700; color: var(--c-mut); cursor: pointer; transition: .18s; margin: 0; user-select: none; }
+      .cn-seg label:hover { color: var(--c-ink); background: #fff; }
+      .cn-seg input:checked + label { background: var(--c-green); color: #fff; box-shadow: 0 2px 8px rgba(63, 145, 66, .28); }
+      .cn-seg input:checked + label:hover { background: var(--c-green); color: #fff; }
+
+      /* ── Telefon (mobil) ── */
+      @media (max-width: 700px) {
+        .cn-prof-tabs { gap: 8px; margin-bottom: 20px; }
+        .cn-prof-tab { padding: 9px 16px; font-size: 13px; }
+        .cn-set { max-width: 100%; padding: 20px 16px; border-radius: 18px; }
+        .cn-f { margin-bottom: 13px; }
+        /* Ism/Familiya va Sana/Jins juftliklari ustma-ust tushadi — matn kesilmaydi */
+        .cn-f-row { flex-wrap: wrap; gap: 0; }
+        .cn-f-row .cn-f { flex: 1 1 100%; min-width: 0; }
+        /* 16px — iPhone'da inputga bosilganda sahifa zoom bo'lib ketmasin */
+        .cn-f input, .cn-f select { min-width: 0; font-size: 16px; padding: 12px 13px; }
+        .cn-seg label { padding: 11px 8px; font-size: 14px; }
+        .cn-set .cn-btn { margin-top: 4px; padding: 15px 22px; font-size: 14.5px; }
+      }
+      @media (max-width: 380px) {
+        .cn-set { padding: 18px 13px; }
+        .cn-prof-tab { padding: 8px 14px; font-size: 12.5px; }
+      }
+    </style>
+</head>
+<body>
+{% include 'cn/header.html' %}
+
+<main class="cn-page">
+    <div class="cn-page-head">
+        <div class="cn-crumbs"><a href="{% url 'pages:home' %}">Bosh sahifa</a> / {% blocktrans %}Settings{% endblocktrans %}</div>
+        <h1 class="cn-page-title">{% trans "Profile" %} <em>{% trans "settings" %}</em></h1>
+    </div>
+
+    <div class="cn-prof-tabs">
+        <a href="{% url 'pages:order' %}" class="cn-prof-tab">{% blocktrans %}Orders{% endblocktrans %}</a>
+        <a href="{% url 'pages:review' %}" class="cn-prof-tab">{% blocktrans %}Reviews{% endblocktrans %}</a>
+        <a href="{% url 'pages:profile' %}" class="cn-prof-tab on">{% blocktrans %}Settings{% endblocktrans %}</a>
+        <a href="{% url 'pages:logout' %}" class="cn-prof-tab cn-logout">{% blocktrans %}Log out{% endblocktrans %}</a>
+    </div>
+
+    <form method="post" class="cn-set rv">
+        {% csrf_token %}
+        <div class="cn-f-row">
+            <div class="cn-f">
+                <label>{% blocktrans %}First name{% endblocktrans %}</label>
+                <input type="text" name="first_name" value="{{ profile.first_name|default:'' }}">
+            </div>
+            <div class="cn-f">
+                <label>{% blocktrans %}Last name{% endblocktrans %}</label>
+                <input type="text" name="last_name" value="{{ profile.last_name|default:'' }}">
+            </div>
+        </div>
+        <div class="cn-f">
+            <label>Email</label>
+            <input type="email" name="email" value="{{ profile.email|default:'' }}">
+        </div>
+        <div class="cn-f">
+            <label>{% blocktrans %}Phone{% endblocktrans %}</label>
+            <input type="tel" name="phone" value="{{ profile.phone|default:'' }}">
+        </div>
+        <div class="cn-f-row">
+            <div class="cn-f">
+                <label>{% trans "Birth date" %}</label>
+                <input type="date" name="birthdate" value="{{ profile.date_of_birth|date:'Y-m-d' }}">
+            </div>
+            <div class="cn-f">
+                <label>{% trans "Gender" %}</label>
+                <div class="cn-seg">
+                    <input type="radio" name="gender" value="male" id="cn-g-male" {% if profile.gender == 'male' %}checked{% endif %}>
+                    <label for="cn-g-male">{% trans "Male" %}</label>
+                    <input type="radio" name="gender" value="female" id="cn-g-female" {% if profile.gender == 'female' %}checked{% endif %}>
+                    <label for="cn-g-female">{% trans "Female" %}</label>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="cn-btn" style="width: 100%; justify-content: center;">{% trans "Save" %}</button>
+    </form>
+</main>
+
+{% include 'cn/footer.html' %}
+<script>
+    // Belgilangan jinsni qayta bosilsa — bekor qilinadi
+    document.querySelectorAll('.cn-seg label').forEach(function (l) {
+        l.addEventListener('click', function (e) {
+            var inp = document.getElementById(l.htmlFor);
+            if (inp && inp.checked) { e.preventDefault(); inp.checked = false; }
+        });
+    });
+</script>
+</body>
+</html>

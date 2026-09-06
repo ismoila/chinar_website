@@ -1,0 +1,446 @@
+{% load i18n %}
+{% load static %}
+<!-- Footer -->
+<footer class="cn-footer">
+    <div class="cn-footer-in">
+        <div class="cn-footer-grid">
+            <div>
+                <div class="cn-footer-logo-card"><img src="{% static 'images/chinar-logo-white.png' %}" alt="CHINAR"></div>
+                <p>{% trans "Your comfort is our goal. 15 years of experience in garden and patio furniture." %}</p>
+            </div>
+            <div>
+                <h4>{% blocktrans %}Catalog{% endblocktrans %}</h4>
+                <a href="{% url 'pages:category' %}">{% blocktrans %}Catalog{% endblocktrans %}</a>
+                <a href="{% url 'pages:journal' %}" class="cn-journal-link">{% trans "Journal" %}</a>
+                <a href="{% url 'pages:idea' %}">{% blocktrans %}Ideas{% endblocktrans %}</a>
+                <a href="{% url 'pages:news' %}">{% trans "New arrivals" %}</a>
+                <a href="{% url 'pages:services' %}">{% trans "Our services" %}</a>
+                <!-- <a href="{% url 'pages:projects' %}">{% blocktrans %}Projects{% endblocktrans %}</a> -->
+            </div>
+            <div>
+                <h4>{% blocktrans %}About the company{% endblocktrans %}</h4>
+                <a href="{% url 'pages:about' %}">{% blocktrans %}About the company{% endblocktrans %}</a>
+                <a href="{% url 'pages:address' %}">{% blocktrans %}Store addresses{% endblocktrans %}</a>
+                <a href="{% url 'pages:delivery' %}">{% blocktrans %}Delivery and payment{% endblocktrans %}</a>
+                <a href="{% url 'pages:designers' %}">{% blocktrans %}Designers and architects{% endblocktrans %}</a>
+            </div>
+            <div>
+                <h4>{% trans "Contact" %}</h4>
+                <a href="tel:+998996595555">+998 (99) 659-55-55</a>
+                <a href="https://www.instagram.com/chinar.uz/" target="_blank" rel="noopener">Instagram</a>
+                <a href="{% url 'pages:address' %}">{% trans "Tashkent, Chinar showroom" %}</a>
+            </div>
+        </div>
+        <div class="cn-footer-bottom">
+            <span>© 2026 Chinar. {% trans "All rights reserved." %}</span>
+            <span>{% trans "Your comfort is our goal!" %}</span>
+        </div>
+    </div>
+</footer>
+
+<!-- Mobil pastki navigatsiya -->
+<nav class="cn-bottom-nav">
+    {% with un=request.resolver_match.url_name %}
+    <a href="{% url 'pages:home' %}" class="{% if un == 'home' %}on{% endif %}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>{% trans "Home" %}</span>
+    </a>
+    <a href="{% url 'pages:category' %}" class="{% if un == 'category' or un == 'category_detail' %}on{% endif %}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        <span>{% blocktrans %}Catalog{% endblocktrans %}</span>
+    </a>
+    <a href="{% url 'pages:shopping_cart' %}" class="{% if un == 'shopping_cart' %}on{% endif %}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        {% if cart_count %}<i class="cn-bn-badge">{{ cart_count }}</i>{% endif %}
+        <span>{% blocktrans %}Cart{% endblocktrans %}</span>
+    </a>
+    <a href="{% url 'products:wishlist' %}" class="{% if un == 'wishlist' %}on{% endif %}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 20.364l-7.682-7.682a4.5 4.5 0 010-6.364z"/></svg>
+        {% if wishlist_count %}<i class="cn-bn-badge">{{ wishlist_count }}</i>{% endif %}
+        <span>{% blocktrans %}Favorites{% endblocktrans %}</span>
+    </a>
+    {% if request.user.is_authenticated %}
+    <a href="{% url 'pages:order' %}" class="{% if un == 'order' or un == 'review' or un == 'profile' %}on{% endif %}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>{% blocktrans %}Profile{% endblocktrans %}</span>
+    </a>
+    {% else %}
+    <a href="{% url 'pages:send_code' %}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>{% trans "Login" %}</span>
+    </a>
+    {% endif %}
+    {% endwith %}
+</nav>
+
+<!-- Karta "+" bosilganda: o'lcham/rang tanlash modali -->
+<div class="cn-modal-wrap" id="cn-opt-modal">
+    <div class="cn-modal">
+        <button type="button" class="cn-modal-x" data-close>&times;</button>
+        <h4 class="cn-modal-title">{% trans "Choose an option" %}</h4>
+        <div class="cn-oc-product">
+            <img id="cn-opt-img" src="" alt="">
+            <div>
+                <b id="cn-opt-name"></b>
+                <i id="cn-opt-price"></i>
+            </div>
+        </div>
+        <div id="cn-opt-sizes" style="display:none;">
+            <div class="cn-opt-label">{% trans "Size:" %}</div>
+            <div class="cn-sizes" id="cn-opt-size-list"></div>
+        </div>
+        <div id="cn-opt-colors" style="display:none;"></div>
+        <div class="cn-modal-btns">
+            <button type="button" class="cn-modal-cancel" data-close>{% trans "Cancel" %}</button>
+            <a href="#" class="cn-btn" id="cn-opt-add">{% trans "Add To Cart" %}</a>
+        </div>
+    </div>
+</div>
+
+<!-- Suzuvchi aloqa tugmasi: qo'ng'iroq so'rovi + Telegram -->
+<div class="cn-cb" id="cn-cb">
+    <div class="cn-cb-pop">
+        <div class="cn-cb-body">
+            <b>{% trans "Contact us" %}</b>
+            <p>{% trans "Leave your number and we will call you back shortly" %}</p>
+            <form class="cn-cb-form">
+                <input type="tel" name="phone" placeholder="+998 -- --- -- --" autocomplete="tel">
+                <div class="cn-cb-err">{% trans "Enter a valid phone number" %}</div>
+                <button type="submit" class="cn-cb-send">{% trans "Call me back" %}</button>
+            </form>
+            <a class="cn-cb-tg" href="https://t.me/+998996595555" target="_blank" rel="noopener">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23.91 3.79L20.3 20.84c-.25 1.21-.98 1.5-2 .94l-5.5-4.07-2.66 2.57c-.3.3-.55.56-1.1.56-.72 0-.6-.27-.84-.95L6.3 13.7l-5.45-1.7c-1.18-.35-1.19-1.16.26-1.75l21.26-8.2c.97-.43 1.9.24 1.53 1.73z"/></svg>
+                {% trans "Write on Telegram" %}
+            </a>
+        </div>
+        <div class="cn-cb-ok" style="display:none;">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
+            <b>{% trans "Thank you!" %}</b>
+            <p>{% trans "We received your number and will call you back soon" %}</p>
+        </div>
+    </div>
+    <button type="button" class="cn-cb-btn" title="{% trans "Contact us" %}">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </button>
+</div>
+
+<!-- Bildirishnomalar (toast) -->
+{% if messages %}
+<div class="cn-toasts" id="cn-toasts">
+    {% for m in messages %}
+    <div class="cn-toast {{ m.tags }}">{{ m }}</div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<script>
+(function () {
+    var box = document.getElementById('cn-toasts');
+    if (!box) return;
+    Array.prototype.forEach.call(box.children, function (t, i) {
+        setTimeout(function () { t.classList.add('show'); }, 80 + i * 140);
+        setTimeout(function () { t.classList.add('hide'); }, 4200 + i * 500);
+        setTimeout(function () { t.remove(); }, 4800 + i * 500);
+        t.addEventListener('click', function () { t.remove(); });
+    });
+})();
+function cnSetLang(code) {
+    var f = document.querySelector('.cn-lang-form');
+    f.querySelector('.cn-lang-input').value = code;
+    f.submit();
+}
+document.querySelectorAll('.cn-search-toggle').forEach(function (b) {
+    b.addEventListener('click', function () {
+        var bar = document.querySelector('.cn-search-bar');
+        bar.classList.toggle('open');
+        if (bar.classList.contains('open')) bar.querySelector('input').focus();
+    });
+});
+document.querySelectorAll('.cn-burger').forEach(function (b) {
+    b.addEventListener('click', function () {
+        var m = document.querySelector('.cn-mobile-menu');
+        if (m) m.classList.toggle('open');
+    });
+});
+// Saralash ochiluvchi ro'yxati
+document.querySelectorAll('.cn-dd').forEach(function (dd) {
+    dd.querySelector('.cn-dd-btn').addEventListener('click', function (e) {
+        e.stopPropagation();
+        document.querySelectorAll('.cn-dd.open').forEach(function (o) { if (o !== dd) o.classList.remove('open'); });
+        dd.classList.toggle('open');
+    });
+});
+document.addEventListener('click', function () {
+    document.querySelectorAll('.cn-dd.open').forEach(function (o) { o.classList.remove('open'); });
+});
+(function () {
+    // E'lon chizig'i: uzluksiz, bo'sh joysiz aylanishi uchun
+    // matn ekran enidan kengroq bo'lguncha takrorlanadi, so'ng 2 nusxa qilinadi
+    var t = document.querySelector('.cn-strip-js');
+    if (!t) return;
+    var orig = t.innerHTML;
+    var w = t.scrollWidth || 1;
+    var reps = Math.max(1, Math.ceil(window.innerWidth / w));
+    var half = '';
+    for (var i = 0; i < reps; i++) half += orig;
+    t.innerHTML = half + half;
+    // tezlik doim bir xil bo'lsin (~70px/s)
+    t.style.animationDuration = Math.max(14, Math.round(w * reps / 70)) + 's';
+})();
+// Qidiruv dropdown: yaqinda izlanganlar + tavsiya (Uzum uslubi)
+(function () {
+    var bar = document.querySelector('.cn-search-bar');
+    if (!bar) return;
+    var drop = bar.querySelector('.cn-search-drop');
+    var input = bar.querySelector('input[name="q"]');
+    var form = bar.querySelector('form');
+    if (!drop || !input) return;
+    var loaded = false;
+
+    function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
+
+    function render(data) {
+        var rc = drop.querySelector('.cn-sd-recent');
+        var list = drop.querySelector('.cn-sd-list');
+        if (data.recent && data.recent.length) {
+            list.innerHTML = data.recent.map(function (t) {
+                return '<div class="cn-sd-item" data-term="' + esc(t) + '">' +
+                    '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>' +
+                    '<span>' + esc(t) + '</span>' +
+                    '<button type="button" class="cn-sd-x" title="O\'chirish">&times;</button></div>';
+            }).join('');
+            rc.style.display = '';
+        } else rc.style.display = 'none';
+
+        var rec = drop.querySelector('.cn-sd-rec');
+        var grid = drop.querySelector('.cn-sd-grid');
+        if (data.recommended && data.recommended.length) {
+            grid.innerHTML = data.recommended.map(function (p) {
+                return '<a href="' + p.url + '"><img src="' + p.image + '" loading="lazy" alt="">' +
+                    '<b>' + esc(p.name) + '</b><i>' + p.price + ' UZS</i></a>';
+            }).join('');
+            rec.style.display = '';
+        } else rec.style.display = 'none';
+
+        drop.classList.toggle('open', (data.recent && data.recent.length) || (data.recommended && data.recommended.length));
+    }
+
+    function openDrop() {
+        if (input.value.trim()) { drop.classList.remove('open'); return; }
+        fetch("{% url 'products:search_dropdown_data' %}")
+            .then(function (r) { return r.json(); })
+            .then(render);
+    }
+
+    input.addEventListener('focus', openDrop);
+    input.addEventListener('input', function () {
+        if (input.value.trim()) drop.classList.remove('open');
+        else openDrop();
+    });
+    document.addEventListener('click', function (e) {
+        if (!bar.contains(e.target)) drop.classList.remove('open');
+    });
+
+    drop.addEventListener('click', function (e) {
+        var x = e.target.closest('.cn-sd-x');
+        var item = e.target.closest('.cn-sd-item');
+        if (x && item) {
+            e.stopPropagation();
+            fetch("{% url 'products:remove_recent_search' %}?term=" + encodeURIComponent(item.dataset.term))
+                .then(function () { item.remove();
+                    if (!drop.querySelector('.cn-sd-item')) drop.querySelector('.cn-sd-recent').style.display = 'none';
+                });
+            return;
+        }
+        if (item) { input.value = item.dataset.term; form.submit(); return; }
+        var cl = e.target.closest('.cn-sd-clear');
+        if (cl) {
+            fetch("{% url 'products:clear_recent_searches' %}")
+                .then(function () { drop.querySelector('.cn-sd-recent').style.display = 'none'; });
+        }
+    });
+})();
+// Karta rasm slayderi (Uzum uslubi): sichqoncha o'rniga qarab rasm almashadi
+(function () {
+    document.querySelectorAll('.cn-ci-slider').forEach(function (sl) {
+        var imgs = sl.querySelectorAll('.cn-ci-img');
+        if (imgs.length < 2) return;
+        var dots = sl.querySelector('.cn-ci-dots');
+        dots.classList.add('show');
+        imgs.forEach(function (_, i) {
+            var d = document.createElement('i');
+            if (i === 0) d.classList.add('on');
+            dots.appendChild(d);
+        });
+        var dEls = dots.querySelectorAll('i');
+        function show(i) {
+            imgs.forEach(function (im, k) { im.classList.toggle('on', k === i); });
+            dEls.forEach(function (d, k) { d.classList.toggle('on', k === i); });
+        }
+        sl.addEventListener('mousemove', function (e) {
+            var r = sl.getBoundingClientRect();
+            var i = Math.floor((e.clientX - r.left) / r.width * imgs.length);
+            show(Math.max(0, Math.min(imgs.length - 1, i)));
+        });
+        sl.addEventListener('mouseleave', function () { show(0); });
+    });
+})();
+// Karta "+" tugmasi: o'lcham/rang bo'lsa — avval so'raymiz
+(function () {
+    var wrap = document.getElementById('cn-opt-modal');
+    if (!wrap) return;
+    var addBtn = document.getElementById('cn-opt-add');
+    var curSize = '', curColor = '', baseHref = '';
+
+    function open_() { wrap.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function close_() { wrap.classList.remove('open'); document.body.style.overflow = ''; }
+    wrap.addEventListener('click', function (e) {
+        if (e.target === wrap || e.target.closest('[data-close]')) close_();
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close_(); });
+
+    function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
+
+    function rebuild() {
+        var q = [];
+        if (curSize) q.push('size=' + encodeURIComponent(curSize));
+        if (curColor) q.push('color=' + encodeURIComponent(curColor));
+        addBtn.href = baseHref + (q.length ? '?' + q.join('&') : '');
+    }
+
+    function fill(d) {
+        document.getElementById('cn-opt-img').src = d.image || '';
+        document.getElementById('cn-opt-name').textContent = d.name;
+        document.getElementById('cn-opt-price').textContent = d.price + ' UZS';
+        curSize = ''; curColor = '';
+
+        var sBox = document.getElementById('cn-opt-sizes'),
+            sList = document.getElementById('cn-opt-size-list');
+        if (d.sizes && d.sizes.length) {
+            sList.innerHTML = d.sizes.map(function (s, i) {
+                return '<button type="button" class="cn-size' + (i === 0 ? ' on' : '') +
+                       '" data-size="' + esc(s.title) + '" data-price="' + esc(s.price) + '">' + esc(s.title) + '</button>';
+            }).join('');
+            curSize = d.sizes[0].title;
+            document.getElementById('cn-opt-price').textContent = d.sizes[0].price + ' UZS';
+            sBox.style.display = '';
+        } else sBox.style.display = 'none';
+
+        var cBox = document.getElementById('cn-opt-colors');
+        if (d.groups && d.groups.length) {
+            cBox.innerHTML = d.groups.map(function (g) {
+                return '<div class="cn-opt-label">' + esc(g.label) + '</div><div class="cn-colors">' +
+                    g.colors.map(function (c) {
+                        var inner = c.image ? '<img src="' + c.image + '" alt="">'
+                                            : '<span class="cp-fill" style="background:' + esc(c.code) + ';"></span>';
+                        return '<button type="button" class="cn-color" data-color="' + esc(c.name) + '" title="' + esc(c.name) + '">' + inner + '</button>';
+                    }).join('') + '</div>';
+            }).join('');
+            var f = cBox.querySelector('.cn-color');
+            if (f) { f.classList.add('on'); curColor = f.dataset.color; }
+            cBox.style.display = '';
+        } else cBox.style.display = 'none';
+
+        rebuild();
+    }
+
+    // o'lcham / rang tanlash
+    wrap.addEventListener('click', function (e) {
+        var sz = e.target.closest('.cn-size');
+        if (sz) {
+            wrap.querySelectorAll('.cn-size').forEach(function (b) { b.classList.toggle('on', b === sz); });
+            curSize = sz.dataset.size;
+            document.getElementById('cn-opt-price').textContent = sz.dataset.price + ' UZS';
+            rebuild(); return;
+        }
+        var cl = e.target.closest('.cn-color');
+        if (cl) {
+            wrap.querySelectorAll('.cn-color').forEach(function (b) { b.classList.toggle('on', b === cl); });
+            curColor = cl.dataset.color;
+            rebuild();
+        }
+    });
+
+    // kartadagi "+" bosilishi
+    document.addEventListener('click', function (e) {
+        var link = e.target.closest('.cn-addlink');
+        if (!link || !link.dataset.opts) return;
+        if (link.dataset.incart) return;                 // savatdan olib tashlash — o'z yo'li bilan
+        e.preventDefault();
+        baseHref = link.getAttribute('href');
+        fetch(link.dataset.opts)
+            .then(function (r) { return r.json(); })
+            .then(function (d) {
+                if (!d.ok) { window.location = baseHref; return; }
+                var has = (d.sizes && d.sizes.length) || (d.groups && d.groups.length);
+                if (!has) { window.location = baseHref; return; }   // variant yo'q — to'g'ridan savatga
+                fill(d); open_();
+            })
+            .catch(function () { window.location = baseHref; });
+    });
+})();
+// Suzuvchi aloqa tugmasi
+(function () {
+    var cb = document.getElementById('cn-cb');
+    if (!cb) return;
+    cb.querySelector('.cn-cb-btn').addEventListener('click', function () {
+        cb.classList.toggle('open');
+        if (cb.classList.contains('open')) {
+            var inp = cb.querySelector('input[name="phone"]');
+            if (inp) inp.focus();
+        }
+    });
+    document.addEventListener('click', function (e) {
+        if (!cb.contains(e.target)) cb.classList.remove('open');
+    });
+    cb.querySelector('.cn-cb-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var inp = cb.querySelector('input[name="phone"]');
+        var err = cb.querySelector('.cn-cb-err');
+        var digits = (inp.value.match(/\d/g) || []).length;
+        if (digits < 7) { err.style.display = 'block'; return; }
+        err.style.display = 'none';
+        var fd = new FormData();
+        fd.append('phone', inp.value.trim());
+        fetch("{% url 'products:callback_request' %}", { method: 'POST', body: fd })
+            .then(function (r) { return r.json(); })
+            .then(function (d) {
+                if (!d.ok) { err.style.display = 'block'; return; }
+                cb.querySelector('.cn-cb-body').style.display = 'none';
+                cb.querySelector('.cn-cb-ok').style.display = 'block';
+                setTimeout(function () {
+                    cb.classList.remove('open');
+                    setTimeout(function () {
+                        cb.querySelector('.cn-cb-body').style.display = '';
+                        cb.querySelector('.cn-cb-ok').style.display = 'none';
+                        inp.value = '';
+                    }, 300);
+                }, 2600);
+            });
+    });
+})();
+// Header scroll effekti
+(function () {
+    var h = document.querySelector('.cn-header');
+    if (!h) return;
+    function onScroll() { h.classList.toggle('scrolled', window.scrollY > 12); }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+})();
+(function () {
+    var els = document.querySelectorAll('.rv');
+    if (!('IntersectionObserver' in window)) {
+        els.forEach(function (el) { el.classList.add('in'); });
+        return;
+    }
+    var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+    }, { threshold: .1, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (el, i) {
+        el.style.transitionDelay = (i % 4) * 70 + 'ms';
+        io.observe(el);
+    });
+})();
+</script>

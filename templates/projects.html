@@ -1,0 +1,242 @@
+{% load static %}{% load rasm %}
+{% load i18n %}
+{% load l10n %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% blocktrans %}Projects{% endblocktrans %} — Chinar</title>
+    {% include 'cn/meta.html' %}
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'chinar-new.css' %}">
+    <style>
+      .cn-modal-bg {
+          position: fixed; inset: 0; z-index: 500;
+          background: rgba(31, 42, 34, .55); backdrop-filter: blur(4px);
+          display: none; align-items: center; justify-content: center; padding: 20px;
+      }
+      .cn-modal-bg.open { display: flex; }
+      .cn-modal {
+          background: var(--c-cream); border-radius: 26px;
+          padding: 36px 34px; max-width: 430px; width: 100%;
+          text-align: center; position: relative;
+          animation: cnModalIn .25s ease;
+      }
+      @keyframes cnModalIn { from { opacity: 0; transform: translateY(14px) scale(.97); } to { opacity: 1; transform: none; } }
+      .cn-modal h3 { font-family: var(--serif); font-size: 26px; font-weight: 600; color: var(--c-green); }
+      .cn-modal h3 em { font-style: italic; color: var(--c-terra); }
+      .cn-modal p { color: var(--c-mut); font-size: 14.5px; margin: 12px 0 22px; line-height: 1.6; }
+      .cn-modal .row { display: flex; flex-direction: column; gap: 10px; }
+      .cn-modal .row a {
+          display: flex; align-items: center; justify-content: center; gap: 10px;
+          padding: 13px 20px; border-radius: 999px; font-weight: 700; font-size: 14.5px;
+          transition: .2s;
+      }
+      .cn-modal .row a svg { flex: none; }
+      .cn-m-call { background: var(--c-green); color: #fff; }
+      .cn-m-call:hover { background: var(--c-green-dark); }
+      .cn-m-tg { background: #2aabee; color: #fff; }
+      .cn-m-tg:hover { background: #1e98d9; }
+      .cn-m-visit { border: 1.5px solid #d9d0be; color: var(--c-ink); background: #fff; }
+      .cn-m-visit:hover { border-color: var(--c-green); }
+      .cn-modal-x {
+          position: absolute; top: 14px; right: 14px;
+          width: 36px; height: 36px; border-radius: 50%; border: none;
+          background: var(--c-sand); color: var(--c-ink);
+          display: flex; align-items: center; justify-content: center;
+      }
+      .cn-modal-x:hover { background: #ddd3c0; }
+      .cn-modal .hours { margin-top: 16px; margin-bottom: 0; font-size: 12.5px; }
+    </style>
+</head>
+<body>
+{% include 'cn/header.html' %}
+
+<main class="cn-page">
+    <div class="cn-page-head">
+        <div class="cn-crumbs"><a href="{% url 'pages:home' %}">{% trans "Home" %}</a> / {% blocktrans %}Projects{% endblocktrans %}</div>
+        <h1 class="cn-page-title">{% trans "Completed" %} <em>{% trans "projects" %}</em></h1>
+    </div>
+
+    {% if projects %}
+    <div class="cn-pr-tabs">
+        <button type="button" class="cn-pr-tab on" data-k="all">{% trans "All" %}</button>
+        {% for k in project_kinds %}
+        <button type="button" class="cn-pr-tab" data-k="{{ k.key }}">{{ k.label }} <i>{{ k.count }}</i></button>
+        {% endfor %}
+    </div>
+
+    <div class="cn-pr-grid">
+        {% for pr in projects %}
+        <button type="button" class="cn-pr-card rv" data-k="{{ pr.kind }}" data-i="{{ forloop.counter0 }}">
+            <span class="cn-pr-img">
+                <img src="{% thumb pr.cover 800 %}" alt="{{ pr.title }}" loading="lazy">
+                {% if pr.images.count %}<i class="cn-pr-count">{{ pr.images.count|add:1 }} 📷</i>{% endif %}
+            </span>
+            <span class="cn-pr-body">
+                <b>{{ pr.title }}</b>
+                <span class="cn-pr-meta">{{ pr.get_kind_display }}{% if pr.location %} · {{ pr.location }}{% endif %}{% if pr.year %} · {{ pr.year|unlocalize }}{% endif %}</span>
+            </span>
+        </button>
+        {% endfor %}
+    </div>
+
+    <!-- Loyiha galereyasi modali -->
+    <div class="cn-prm" id="cn-prm">
+        <div class="cn-prm-box">
+            <button type="button" class="cn-prm-x" data-prclose>&times;</button>
+            <div class="cn-prm-stage">
+                <button type="button" class="cn-prm-arr prev" data-prdir="-1">‹</button>
+                <img id="cn-prm-img" src="" alt="">
+                <button type="button" class="cn-prm-arr next" data-prdir="1">›</button>
+                <span class="cn-prm-num" id="cn-prm-num"></span>
+            </div>
+            <div class="cn-prm-info">
+                <h3 id="cn-prm-title"></h3>
+                <p class="cn-prm-meta" id="cn-prm-meta"></p>
+                <p class="cn-prm-desc" id="cn-prm-desc"></p>
+                <div id="cn-prm-prods"></div>
+            </div>
+        </div>
+    </div>
+
+    {{ projects_json|json_script:"cn-pr-data" }}
+    {% else %}
+    <div class="cn-about" style="margin-top: 10px;">
+        <div class="rv">
+            <h2>{% trans "Your space —" %} <em>{% trans "our project" %}</em></h2>
+            <p>{% trans "We have furnished dozens of spaces with Chinar furniture — private yards, cafes, restaurants and hotels. A project gallery will appear here soon." %}</p>
+            <p>{% trans "Want to start your own project? Contact us for a free consultation and a layout plan." %}</p>
+            <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
+                <button type="button" class="cn-btn" id="cn-start-project">{% trans "Start a project" %}</button>
+                <a href="{% url 'pages:idea' %}" class="cn-btn ghost">{% blocktrans %}Ideas{% endblocktrans %} →</a>
+            </div>
+        </div>
+        <div class="cn-about-imgs rv">
+            <img src="{% static 'textures/ratan_qora_kulrang.jpg' %}" alt="">
+            <img src="{% static 'textures/mato_qizil.jpg' %}" alt="">
+        </div>
+    </div>
+    {% endif %}
+
+    {% if projects %}
+    <div class="cn-pr-cta">
+        <h2>{% trans "Want the same for your space?" %}</h2>
+        <p>{% trans "Free consultation, measurements and a furniture layout plan." %}</p>
+        <button type="button" class="cn-btn" id="cn-start-project">{% trans "Start a project" %}</button>
+    </div>
+    {% endif %}
+
+</main>
+
+<!-- Loyihani boshlash modali -->
+<div class="cn-modal-bg" id="cn-modal-bg">
+    <div class="cn-modal">
+        <button type="button" class="cn-modal-x" id="cn-modal-x">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <h3>{% trans "Let's start" %} <em>{% trans "your project" %}</em></h3>
+        <p>{% trans "Our specialist will offer a free consultation, take measurements and prepare a furniture layout for your space." %}</p>
+        <div class="row">
+            <a href="tel:+998996595555" class="cn-m-call">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                +998 (99) 659-55-55
+            </a>
+            <a href="https://t.me/Chinar_Rotangmebel" target="_blank" class="cn-m-tg">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.04 9.613c-.15.675-.54.84-1.097.522l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.215-3.053 5.56-5.023c.242-.215-.052-.334-.373-.12L6.24 14.6l-2.95-.92c-.64-.2-.653-.64.136-.948l11.527-4.445c.533-.193 1-.12 1.61.961z"/></svg>
+                {% trans "Write on Telegram" %}
+            </a>
+            <a href="{% url 'pages:address' %}" class="cn-m-visit">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                {% trans "Visit our showroom" %}
+            </a>
+        </div>
+        <p class="hours">{% trans "Daily 9:00 — 19:00" %}</p>
+    </div>
+</div>
+
+{% include 'cn/footer.html' %}
+<script>
+(function () {
+    var bg = document.getElementById('cn-modal-bg');
+    document.querySelectorAll('#cn-start-project, .cn-pr-cta .cn-btn').forEach(function (b) {
+        b.addEventListener('click', function () { bg.classList.add('open'); });
+    });
+    document.getElementById('cn-modal-x').addEventListener('click', function () {
+        bg.classList.remove('open');
+    });
+    bg.addEventListener('click', function (e) {
+        if (e.target === bg) bg.classList.remove('open');
+    });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') bg.classList.remove('open');
+    });
+})();
+
+(function () {
+    var data = document.getElementById('cn-pr-data');
+    if (!data) return;
+    var PR = JSON.parse(data.textContent);
+    var modal = document.getElementById('cn-prm');
+    var img = document.getElementById('cn-prm-img');
+    var num = document.getElementById('cn-prm-num');
+    var cur = 0, idx = 0;
+
+    function show(i) {
+        var p = PR[cur];
+        idx = ((i % p.images.length) + p.images.length) % p.images.length;
+        img.src = p.images[idx];
+        num.textContent = (idx + 1) + ' / ' + p.images.length;
+    }
+    function openPr(i) {
+        cur = i;
+        var p = PR[i];
+        document.getElementById('cn-prm-title').textContent = p.title;
+        document.getElementById('cn-prm-meta').textContent = p.meta;
+        document.getElementById('cn-prm-desc').textContent = p.desc || '';
+        var box = document.getElementById('cn-prm-prods');
+        box.innerHTML = p.products.length
+            ? '<div class="cn-prm-plabel">' + (window.CN_USED || 'Ishlatilgan mahsulotlar') + '</div>' +
+              p.products.map(function (pp) {
+                  return '<a class="cn-prm-prod" href="' + pp.url + '">' +
+                      '<span class="cn-prm-th"><img src="' + pp.image + '" alt=""></span>' +
+                      '<span><b>' + pp.name + '</b><i>' + pp.price + ' UZS</i></span></a>';
+              }).join('')
+            : '';
+        show(0);
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    function close_() { modal.classList.remove('open'); document.body.style.overflow = ''; }
+
+    document.querySelectorAll('.cn-pr-card').forEach(function (c) {
+        c.addEventListener('click', function () { openPr(parseInt(c.dataset.i, 10)); });
+    });
+    modal.addEventListener('click', function (e) {
+        if (e.target === modal || e.target.closest('[data-prclose]')) { close_(); return; }
+        var a = e.target.closest('[data-prdir]');
+        if (a) show(idx + parseInt(a.dataset.prdir, 10));
+    });
+    document.addEventListener('keydown', function (e) {
+        if (!modal.classList.contains('open')) return;
+        if (e.key === 'Escape') close_();
+        if (e.key === 'ArrowRight') show(idx + 1);
+        if (e.key === 'ArrowLeft') show(idx - 1);
+    });
+
+    // Turi bo'yicha filtr
+    var tabs = document.querySelector('.cn-pr-tabs');
+    if (tabs) tabs.addEventListener('click', function (e) {
+        var b = e.target.closest('.cn-pr-tab');
+        if (!b) return;
+        tabs.querySelectorAll('.cn-pr-tab').forEach(function (t) { t.classList.toggle('on', t === b); });
+        var k = b.dataset.k;
+        document.querySelectorAll('.cn-pr-card').forEach(function (c) {
+            c.style.display = (k === 'all' || c.dataset.k === k) ? '' : 'none';
+        });
+    });
+})();
+</script>
+</body>
+</html>

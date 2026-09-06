@@ -1,0 +1,90 @@
+{% load static %}{% load rasm %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% blocktrans %}Ideas{% endblocktrans %} — Chinar</title>
+    {% include 'cn/meta.html' %}
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'chinar-new.css' %}">
+    <style>
+      .cn-ideas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .cn-idea { position: relative; border-radius: 24px; overflow: hidden; background: var(--c-sand); }
+      .cn-idea > img { width: 100%; aspect-ratio: 13/12; object-fit: cover; }
+      .cn-pin {
+          position: absolute; width: 30px; height: 30px; border-radius: 50%;
+          background: #fff; border: none; box-shadow: 0 4px 14px rgba(0,0,0,.3);
+          display: flex; align-items: center; justify-content: center;
+          font-weight: 800; color: var(--c-terra); font-size: 16px;
+          animation: pinPulse 2s ease-in-out infinite;
+      }
+      @keyframes pinPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(196,99,62,.4); } 50% { box-shadow: 0 0 0 10px rgba(196,99,62,0); } }
+      .cn-pin-card {
+          position: absolute; z-index: 5; width: 180px;
+          background: #fff; border-radius: 14px; padding: 9px;
+          box-shadow: 0 16px 40px rgba(0,0,0,.25);
+          display: none;
+      }
+      .cn-pin-card.open { display: block; }
+      .cn-pin-card img { width: 100%; height: 80px; object-fit: cover; border-radius: 9px; }
+      .cn-pin-card b { display: block; font-family: var(--serif); margin-top: 6px; font-size: 13px; color: var(--c-ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .cn-pin-card span { color: var(--c-green); font-weight: 800; font-size: 12.5px; }
+      .cn-pin-card a.go { display: block; margin-top: 6px; text-align: center; background: var(--c-green); color: #fff; border-radius: 999px; padding: 7px; font-size: 12px; font-weight: 700; }
+      @media (max-width: 900px) { .cn-ideas { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+{% include 'cn/header.html' %}
+
+<main class="cn-page">
+    <div class="cn-page-head">
+        <div class="cn-crumbs"><a href="{% url 'pages:home' %}">{% trans "Home" %}</a> / {% blocktrans %}Ideas{% endblocktrans %}</div>
+        <h1 class="cn-page-title">{% trans "Inspiring" %} <em>{% trans "ideas" %}</em></h1>
+        <div class="cn-page-meta"><span class="cn-count">{% trans "Tap the dots on the photo to see the product" %}</span></div>
+    </div>
+
+    <div class="cn-ideas">
+        {% for idea in ideas %}
+        <div class="cn-idea rv">
+            <img src="{% thumb idea.image 1000 %}" alt="Idea">
+            {% for pin in idea.pins.all %}
+            <button type="button" class="cn-pin" style="left: {{ pin.left_percent }}%; top: {{ pin.top_percent }}%;" data-pin="{{ idea.id }}-{{ forloop.counter }}">+</button>
+            <div class="cn-pin-card" id="pin-{{ idea.id }}-{{ forloop.counter }}"
+                 style="left: max(6px, min(calc({{ pin.left_percent }}% + 18px), calc(100% - 190px))); top: max(6px, min(calc({{ pin.top_percent }}% + 18px), calc(100% - 185px)));">
+                {% if pin.product %}
+                <img src="{% thumb pin.product.image 200 %}" alt="">
+                <b>{{ pin.product.name }}</b>
+                <span>{{ pin.product.get_price_uzs|floatformat:"0" }} UZS</span>
+                <a class="go" href="{% url 'products:product_detail' pin.product.slug %}">{% trans "View product" %} →</a>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        {% empty %}
+        <div class="cn-empty" style="grid-column: 1/-1;">
+            <h3>{% trans "No ideas yet" %}</h3>
+            <p>{% trans "New interior ideas are coming soon." %}</p>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+
+{% include 'cn/footer.html' %}
+<script>
+document.querySelectorAll('.cn-pin').forEach(function (p) {
+    p.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var card = document.getElementById('pin-' + p.dataset.pin);
+        var was = card.classList.contains('open');
+        document.querySelectorAll('.cn-pin-card').forEach(function (c) { c.classList.remove('open'); });
+        if (!was) card.classList.add('open');
+    });
+});
+document.addEventListener('click', function () {
+    document.querySelectorAll('.cn-pin-card').forEach(function (c) { c.classList.remove('open'); });
+});
+</script>
+</body>
+</html>

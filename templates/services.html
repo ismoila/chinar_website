@@ -1,0 +1,43 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% blocktrans %}Services{% endblocktrans %} — Chinar</title>
+    {% include 'cn/meta.html' %}
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'chinar-new.css' %}">
+    <style>
+      .cn-srv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+      .cn-srv { background: #fff; border: 1px solid #e7dfd0; border-radius: 22px; padding: 28px; transition: .25s; }
+      .cn-srv:hover { transform: translateY(-5px); box-shadow: 0 18px 38px rgba(46,64,51,.12); }
+      .cn-srv i { font-style: normal; font-size: 32px; }
+      .cn-srv h3 { font-family: var(--serif); font-size: 21px; color: var(--c-green); margin: 14px 0 8px; }
+      .cn-srv p { color: var(--c-mut); font-size: 14.5px; line-height: 1.65; }
+      @media (max-width: 900px) { .cn-srv-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+{% include 'cn/header.html' %}
+
+<main class="cn-page">
+    <div class="cn-page-head">
+        <div class="cn-crumbs"><a href="{% url 'pages:home' %}">Bosh sahifa</a> / {% blocktrans %}Services{% endblocktrans %}</div>
+        <h1 class="cn-page-title">{% trans "Our" %} <em>{% trans "services" %}</em></h1>
+    </div>
+
+    <div class="cn-srv-grid">
+        <div class="cn-srv rv"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></i><h3>{% trans "Delivery and installation" %}</h3><p>{% trans "Free delivery across Tashkent, assembled and installed on site." %}</p></div>
+        <div class="cn-srv rv"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg></i><h3>{% trans "Space design" %}</h3><p>{% trans "We plan the furniture layout for your garden or yard for free." %}</p></div>
+        <div class="cn-srv rv"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></i><h3>{% trans "Custom weaving" %}</h3><p>{% trans "Choose the size, shape and color — our craftsmen weave it just for you." %}</p></div>
+        <div class="cn-srv rv"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></i><h3>{% trans "Repair" %}</h3><p>{% trans "Re-weaving and renewal service for Chinar furniture." %}</p></div>
+        <div class="cn-srv rv"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></i><h3>{% trans "Handcrafted" %}</h3><p>{% trans "Every weave made by craftsmen" %}</p></div>
+        <div class="cn-srv rv"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 9h1M9 13h1M14 9h1M14 13h1M11 21v-4h2v4"/></svg></i><h3>{% trans "For business" %}</h3><p>{% trans "Furnishing for cafes, restaurants and hotels at wholesale prices." %}</p></div>
+    </div>
+</main>
+
+{% include 'cn/footer.html' %}
+</body>
+</html>

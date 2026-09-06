@@ -1,0 +1,64 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% blocktrans %}Delivery and payment{% endblocktrans %} — Chinar</title>
+    {% include 'cn/meta.html' %}
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'chinar-new.css' %}">
+    <style>
+      .cn-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+      .cn-info-card { background: #fff; border: 1px solid #e7dfd0; border-radius: 22px; padding: 28px; }
+      .cn-info-card i { font-style: normal; font-size: 30px; }
+      .cn-info-card h3 { font-family: var(--serif); font-size: 22px; color: var(--c-green); margin: 12px 0 10px; }
+      .cn-info-card p, .cn-info-card li { color: var(--c-mut); font-size: 14.5px; line-height: 1.7; }
+      .cn-info-card ul { padding-left: 18px; margin-top: 8px; }
+      @media (max-width: 800px) { .cn-info-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+{% include 'cn/header.html' %}
+
+<main class="cn-page">
+    <div class="cn-page-head">
+        <div class="cn-crumbs"><a href="{% url 'pages:home' %}">Bosh sahifa</a> / {% blocktrans %}Delivery and payment{% endblocktrans %}</div>
+        <h1 class="cn-page-title">{% trans "Delivery and" %} <em>{% trans "payment" %}</em></h1>
+    </div>
+
+    <div class="cn-info-grid">
+        <div class="cn-info-card rv">
+            <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></i>
+            <h3>{% trans "Delivery" %}</h3>
+            <ul>
+                <li><b>{% trans "Free across Tashkent." %}</b> {% trans "Delivered within 1–3 business days after confirmation." %}</li>
+                <li>{% trans "Delivery to regions is priced by distance." %}</li>
+                <li>{% trans "The courier will contact you before delivery." %}</li>
+            </ul>
+        </div>
+        <div class="cn-info-card rv">
+            <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></i>
+            <h3>{% trans "Pickup" %}</h3>
+            <p>{% trans "You can pick up your order from our showroom — free and without queues. Address: Tashkent, Chinar showroom. Call before visiting: +998 (99) 659-55-55." %}</p>
+        </div>
+        <div class="cn-info-card rv">
+            <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></i>
+            <h3>{% trans "Payment methods" %}</h3>
+            <ul>
+                <li><b>Payme / Click</b> — {% trans "secure online payment." %}</li>
+                <li><b>{% trans "Cash" %}</b> — {% trans "upon receiving the order." %}</li>
+            </ul>
+        </div>
+        <div class="cn-info-card rv">
+            <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></i>
+            <h3>{% trans "Warranty and returns" %}</h3>
+            <p>{% trans "All products come with a 2-year warranty. If a factory defect is found, we repair or replace the product for free. Questions: +998 (99) 659-55-55." %}</p>
+        </div>
+    </div>
+</main>
+
+{% include 'cn/footer.html' %}
+</body>
+</html>

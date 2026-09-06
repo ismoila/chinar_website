@@ -1,0 +1,127 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "Journal" %} — Chinar</title>
+    {% include 'cn/meta.html' %}
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'chinar-new.css' %}">
+    <style>
+      .cn-jr-stage {
+          position: relative;
+          background: var(--c-green);
+          border-radius: 28px;
+          padding: 46px 96px 74px;
+          margin-top: 10px;
+      }
+      .cn-jr-stage:fullscreen {
+          border-radius: 0;
+          display: flex; align-items: center; justify-content: center;
+      }
+      .cn-jr-wrap { width: min(980px, 100%); margin: 0 auto; }
+      #chinar-book { margin: 0 auto; }
+      .cn-jr-arrow {
+          position: absolute; top: 50%; transform: translateY(-50%);
+          width: 52px; height: 52px; border-radius: 50%; border: none;
+          background: var(--c-cream); color: var(--c-green);
+          font-size: 26px; cursor: pointer; z-index: 5;
+          display: flex; align-items: center; justify-content: center;
+          box-shadow: 0 4px 16px rgba(0, 0, 0, .3);
+          transition: transform .15s, background .15s;
+      }
+      .cn-jr-arrow:hover { transform: translateY(-50%) scale(1.08); background: #fff; }
+      .cn-jr-prev { left: 24px; }
+      .cn-jr-next { right: 24px; }
+      .cn-jr-bottom {
+          position: absolute; left: 0; right: 0; bottom: 18px;
+          display: flex; align-items: center; justify-content: space-between;
+          padding: 0 28px;
+      }
+      .cn-jr-num { color: rgba(247, 243, 234, .85); font-size: 14.5px; font-weight: 600; letter-spacing: 1px; }
+      .cn-jr-fs {
+          width: 44px; height: 44px; border-radius: 12px; border: none;
+          background: rgba(247, 243, 234, .15); color: var(--c-cream);
+          cursor: pointer; display: flex; align-items: center; justify-content: center;
+          transition: background .15s;
+      }
+      .cn-jr-fs:hover { background: rgba(247, 243, 234, .32); }
+      @media (max-width: 768px) {
+          .cn-jr-stage { padding: 18px 12px 66px; }
+          .cn-jr-prev { left: 8px; } .cn-jr-next { right: 8px; }
+          .cn-jr-arrow { width: 42px; height: 42px; font-size: 22px; }
+      }
+    </style>
+</head>
+<body>
+{% include 'cn/header.html' %}
+
+<main class="cn-page">
+    <div class="cn-page-head">
+        <div class="cn-crumbs"><a href="{% url 'pages:home' %}">{% trans "Home" %}</a> / {% trans "Journal" %}</div>
+        <h1 class="cn-page-title">Chinar <em>{% trans "journal" %}</em></h1>
+        <div class="cn-page-meta"><span class="cn-count">{% trans "Flip through our catalog — drag the page corner or use the arrows" %}</span></div>
+    </div>
+
+    <div class="cn-jr-stage" id="cn-jr-stage">
+        <button class="cn-jr-arrow cn-jr-prev" id="jr-prev">&#8249;</button>
+        <div class="cn-jr-wrap"><div id="chinar-book"></div></div>
+        <button class="cn-jr-arrow cn-jr-next" id="jr-next">&#8250;</button>
+        <div class="cn-jr-bottom">
+            <span class="cn-jr-num" id="jr-num"></span>
+            <button class="cn-jr-fs" id="jr-fs" title="{% trans 'Fullscreen' %}">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+            </button>
+        </div>
+    </div>
+</main>
+
+{% include 'cn/footer.html' %}
+<script src="{% static 'page-flip.browser.js' %}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var el = document.getElementById('chinar-book');
+    if (!el || typeof St === 'undefined') return;
+    var PAGE_COUNT = 80;
+    var baseUrl = "{% static 'journal/' %}";
+    var pages = [];
+    for (var i = 1; i <= PAGE_COUNT; i++) {
+        pages.push(baseUrl + 'p' + String(i).padStart(2, '0') + '.jpg');
+    }
+    var book = new St.PageFlip(el, {
+        width: 560,
+        height: 560,
+        size: 'stretch',
+        minWidth: 280, maxWidth: 1000,
+        minHeight: 280, maxHeight: 1000,
+        showCover: true,
+        maxShadowOpacity: 0.4,
+        mobileScrollSupport: false,
+        flippingTime: 700
+    });
+    book.loadFromImages(pages);
+
+    var num = document.getElementById('jr-num');
+    function updNum() {
+        if (num) num.textContent = (book.getCurrentPageIndex() + 1) + ' / ' + PAGE_COUNT;
+    }
+    book.on('flip', updNum);
+    setTimeout(updNum, 300);
+
+    document.getElementById('jr-prev').addEventListener('click', function () { book.flipPrev(); });
+    document.getElementById('jr-next').addEventListener('click', function () { book.flipNext(); });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') book.flipPrev();
+        if (e.key === 'ArrowRight') book.flipNext();
+    });
+    var stage = document.getElementById('cn-jr-stage');
+    document.getElementById('jr-fs').addEventListener('click', function () {
+        if (document.fullscreenElement) document.exitFullscreen();
+        else if (stage.requestFullscreen) stage.requestFullscreen();
+    });
+});
+</script>
+</body>
+</html>

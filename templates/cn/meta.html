@@ -1,0 +1,40 @@
+{% load static %}{% load i18n %}{% load rasm %}{% load seo %}{% load my_tags %}
+{% comment %}
+  ═══ SEO va ijtimoiy tarmoq teglari (har bir sahifa <head> ichida) ═══
+  Sahifa o'z qiymatini berishi mumkin: meta_title, meta_desc.
+  Mahsulot sahifasida hech narsa berish shart emas — o'zi taniydi.
+{% endcomment %}
+<link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+<link rel="apple-touch-icon" href="{% static 'images/favicon.png' %}">
+{% trans "Chinar — rattan garden and patio furniture. Made in Tashkent: free delivery, 2-year warranty, showroom." as cn_default_desc %}
+{% if product.pk %}
+{% thumb product.image 1200 as cn_og_rasm %}
+{% if product.meta_description %}
+<meta name="description" content="{{ product.meta_description }}">
+<meta property="og:description" content="{{ product.meta_description }}">
+{% elif product.description %}{% comment %}Tavsif yozilgan bo'lsa — Google uchun aynan shu ishlatiladi{% endcomment %}
+<meta name="description" content="{{ product.description|striptags|truncatewords:32 }}">
+<meta property="og:description" content="{{ product.description|striptags|truncatewords:28 }}">
+{% else %}
+<meta name="description" content="{{ product.name }} — {{ product.category.name }}. {% trans 'Price' %}: {{ product.get_price_uzs|uzbek_price }} UZS. {{ cn_default_desc }}">
+<meta property="og:description" content="{{ product.category.name }} · Chinar Outdoor Furniture. {% trans 'Free delivery in Tashkent, 2-year warranty.' %}">
+{% endif %}
+<meta property="og:title" content="{% if product.meta_title %}{{ product.meta_title }}{% else %}{{ product.name }} — {{ product.get_price_uzs|uzbek_price }} UZS{% endif %}">
+<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ cn_og_rasm }}">
+<meta property="og:type" content="product">
+{% else %}
+<meta name="description" content="{{ meta_desc|default:cn_default_desc }}">
+<meta property="og:title" content="{{ meta_title|default:'Chinar — Outdoor Furniture' }}">
+<meta property="og:description" content="{{ meta_desc|default:cn_default_desc }}">
+<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/chinar-og.jpg' %}">
+<meta property="og:type" content="website">
+{% endif %}
+<meta property="og:site_name" content="Chinar Outdoor Furniture">
+<meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}">
+<meta property="og:image:width" content="1200">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}">
+<link rel="alternate" hreflang="uz" href="{{ request.scheme }}://{{ request.get_host }}{% lang_url 'uz' %}">
+<link rel="alternate" hreflang="ru" href="{{ request.scheme }}://{{ request.get_host }}{% lang_url 'ru' %}">
+<link rel="alternate" hreflang="en" href="{{ request.scheme }}://{{ request.get_host }}{% lang_url 'en' %}">
+<link rel="alternate" hreflang="x-default" href="{{ request.scheme }}://{{ request.get_host }}{% lang_url 'uz' %}">

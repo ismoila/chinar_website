@@ -1,0 +1,116 @@
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+<!-- E'lon chizig'i -->
+<div class="cn-strip"><div class="cn-strip-track cn-strip-js">
+    {% trans "FREE DELIVERY IN TASHKENT" %} &nbsp;✦&nbsp; {% trans "2 YEAR WARRANTY" %} &nbsp;✦&nbsp; +998 (99) 659-55-55 &nbsp;✦&nbsp;
+</div></div>
+
+<!-- Header -->
+<header class="cn-header">
+    <div class="cn-header-in">
+        <button type="button" class="cn-burger" title="{% trans "Menu" %}">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <nav class="cn-nav">
+            <!-- <a href="{% url 'pages:discounts' %}">{% blocktrans %}% Monthly discounts{% endblocktrans %}</a> -->
+            <a href="{% url 'pages:category' %}">{% blocktrans %}Catalog{% endblocktrans %}</a>
+            <a href="{% url 'pages:news' %}">{% trans "New arrivals" %}</a>
+            <a href="{% url 'pages:idea' %}">{% blocktrans %}Ideas{% endblocktrans %}</a>
+            <!-- <a href="{% url 'pages:projects' %}">{% blocktrans %}Projects{% endblocktrans %}</a> -->
+            <a href="{% url 'pages:about' %}">{% blocktrans %}About the company{% endblocktrans %}</a>
+            <a href="{% url 'blog:post_list' %}" style="position:relative;">
+    {% trans "Blog" %}
+    <span style="position:absolute; top:-10px; right:-28px; background:#e53935; color:#fff; font-size:10px; font-weight:700; padding:2px 6px; border-radius:20px; letter-spacing:.5px;">NEW</span>
+</a>
+        </nav>
+
+        <a class="cn-logo" href="{% url 'pages:home' %}">
+            <img src="{% static 'images/chinar-logo.png' %}" alt="CHINAR — Outdoor Furniture" class="cn-logo-img">
+        </a>
+
+        <div class="cn-icons">
+            <button type="button" class="cn-ic cn-search-toggle" title="{% blocktrans %}Search{% endblocktrans %}">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+            </button>
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'pages:order' %}" class="cn-ic" title="{% blocktrans %}Profile{% endblocktrans %}">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </a>
+            {% else %}
+            <a href="{% url 'pages:send_code' %}" class="cn-ic" title="{% trans "Login" %}">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </a>
+            {% endif %}
+            <a href="{% url 'products:wishlist' %}" class="cn-ic" title="{% blocktrans %}Favorites{% endblocktrans %}">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 20.364l-7.682-7.682a4.5 4.5 0 010-6.364z"/></svg>
+                {% if wishlist_count %}<span class="cn-badge">{{ wishlist_count }}</span>{% endif %}
+            </a>
+            <a href="{% url 'pages:shopping_cart' %}" class="cn-ic" title="{% blocktrans %}Cart{% endblocktrans %}">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.3 2.3c-.6.6-.2 1.7.7 1.7H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                {% if cart_count %}<span class="cn-badge">{{ cart_count }}</span>{% endif %}
+            </a>
+            <div class="cn-lang">
+                {% get_available_languages as LANGUAGES %}
+                {% for lcode, lname in LANGUAGES %}
+                <button type="button" class="{% if lcode == LANGUAGE_CODE %}on{% endif %}" onclick="cnSetLang('{{ lcode }}')">{{ lcode|upper }}</button>
+                {% endfor %}
+            </div>
+            <form action="{% url 'set_language' %}" method="post" class="cn-lang-form" style="display:none;">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ request.path }}">
+                <input type="hidden" name="language" class="cn-lang-input">
+            </form>
+        </div>
+    </div>
+    <div class="cn-search-bar">
+        <form action="{% url 'products:search_results' %}" method="get">
+            <input type="text" name="q" value="{{ request.GET.q|default:'' }}" placeholder="{% blocktrans %}Search furniture...{% endblocktrans %}">
+            <button type="submit">{% blocktrans %}Search{% endblocktrans %}</button>
+        </form>
+        <div class="cn-search-drop" id="cn-search-drop">
+            <div class="cn-sd-recent" style="display:none;">
+                <div class="cn-sd-head">
+                    <b>{% trans "Your recent searches" %}</b>
+                    <button type="button" class="cn-sd-clear">{% trans "Clear" %}</button>
+                </div>
+                <div class="cn-sd-list"></div>
+            </div>
+            <div class="cn-sd-rec" style="display:none;">
+                <b class="cn-sd-title">{% trans "We recommend" %}</b>
+                <div class="cn-sd-grid"></div>
+            </div>
+        </div>
+    </div>
+    <nav class="cn-mobile-menu">
+        <!-- <a href="{% url 'pages:discounts' %}">{% blocktrans %}% Monthly discounts{% endblocktrans %}</a> -->
+            <a href="{% url 'pages:category' %}">{% blocktrans %}Catalog{% endblocktrans %}</a>
+            <a href="{% url 'pages:news' %}">{% trans "New arrivals" %}</a>
+            <a href="{% url 'pages:idea' %}">{% blocktrans %}Ideas{% endblocktrans %}</a>
+            <!-- <a href="{% url 'pages:projects' %}">{% blocktrans %}Projects{% endblocktrans %}</a> -->
+            <a href="{% url 'pages:about' %}">{% blocktrans %}About the company{% endblocktrans %}</a>
+            <a href="{% url 'blog:post_list' %}" style="position:relative;">
+    {% trans "Blog" %}
+    <span style="position:absolute; top:-10px; right:-28px; background:#e53935; color:#fff; font-size:10px; font-weight:700; padding:2px 6px; border-radius:20px; letter-spacing:.5px;">NEW</span>
+</a>
+        <!-- <a href="{% url 'pages:category' %}">{% blocktrans %}Catalog{% endblocktrans %}</a> -->
+        <!-- <a href="{% url 'pages:discounts' %}">{% blocktrans %}% Monthly discounts{% endblocktrans %}</a> -->
+        <!-- <a href="{% url 'pages:news' %}">{% trans "New arrivals" %}</a>
+        <a href="{% url 'pages:idea' %}">{% blocktrans %}Ideas{% endblocktrans %}</a> -->
+        <!-- <a href="{% url 'pages:projects' %}">{% blocktrans %}Projects{% endblocktrans %}</a> -->
+        <!-- <a href="{% url 'pages:services' %}">{% trans "Our services" %}</a>
+        <a href="{% url 'pages:journal' %}" class="cn-journal-link">{% trans "Journal" %}</a>
+        <a href="{% url 'pages:delivery' %}">{% blocktrans %}Delivery and payment{% endblocktrans %}</a>
+        <a href="{% url 'pages:about' %}">{% blocktrans %}About the company{% endblocktrans %}</a>
+        <a href="{% url 'pages:address' %}">{% blocktrans %}Contacts{% endblocktrans %}</a>
+        <a href="{% url 'blog:post_list' %}" style="position:relative;">
+    {% trans "Blog" %}
+    <span style="position:absolute; top:-10px; right:-28px; background:#e53935; color:#fff; font-size:10px; font-weight:700; padding:2px 6px; border-radius:20px; letter-spacing:.5px;">NEW</span>
+</a> -->
+        <div class="cn-mm-lang">
+            {% for lcode, lname in LANGUAGES %}
+            <button type="button" class="{% if lcode == LANGUAGE_CODE %}on{% endif %}" onclick="cnSetLang('{{ lcode }}')">{{ lcode|upper }}</button>
+            {% endfor %}
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,110 @@
+{% load static %}
+{% load i18n %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    {% include 'cn/meta.html' %}
+    <title>Chinar — Confirmation</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: 'Poppins', sans-serif;
+        min-height: 100vh;
+        background: #f4f1ec;
+        display: flex; align-items: center; justify-content: center;
+        padding: 20px;
+      }
+      .auth-card {
+        width: 100%; max-width: 430px; margin: auto;
+        background: #fff;
+        border: 1px solid #ece5d9;
+        border-radius: 22px;
+        box-shadow: 0 26px 60px rgba(120, 95, 65, .18);
+        padding: 34px 34px 26px;
+        animation: cardIn .45s ease-out;
+      }
+      @keyframes cardIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+      @media (max-width: 560px) {
+        .auth-card { padding: 26px 20px 20px; }
+      }
+      .auth-back {
+        display: inline-block; text-decoration: none;
+        color: #8a7d6f; font-size: 13.5px; margin-bottom: 14px;
+      }
+      .auth-back:hover { color: #b5895a; }
+      .auth-logo img { height: 42px; width: auto; display: block; margin-bottom: 4px; }
+      .auth-title { font-size: 19px; font-weight: 600; color: #3d3229; margin-top: 14px; }
+      .auth-sub { font-size: 13.5px; color: #8a7d6f; margin: 6px 0 20px; }
+      .auth-error {
+        background: #fdeaea; color: #b3261e;
+        border: 1px solid #f3c1bd; border-radius: 10px;
+        font-size: 13.5px; padding: 10px 14px; margin-bottom: 14px;
+      }
+      .auth-code-input {
+        width: 100%;
+        background: #f6f3ee; border: 1.5px solid #e7e0d6;
+        border-radius: 12px; padding: 14px 16px;
+        font-family: inherit; font-size: 24px; font-weight: 600;
+        letter-spacing: 10px; text-align: center; color: #3d3229;
+        outline: none; transition: border-color .15s;
+      }
+      .auth-code-input:focus { border-color: #b5895a; background: #fff; }
+      .auth-btn {
+        width: 100%; margin-top: 16px;
+        background: #3d3229; color: #fff;
+        border: none; border-radius: 12px;
+        padding: 14px; font-family: inherit;
+        font-size: 15px; font-weight: 600; letter-spacing: 1.5px;
+        cursor: pointer; transition: background .2s;
+        display: flex; align-items: center; justify-content: center; gap: 10px;
+      }
+      .auth-btn:hover { background: #b5895a; }
+      .btn-ring {
+        display: none;
+        width: 18px; height: 18px; border-radius: 50%;
+        border: 3px solid rgba(255,255,255,.35); border-top-color: #fff;
+        animation: spin .8s linear infinite;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      .auth-btn.loading .btn-ring { display: inline-block; }
+      .auth-resend { font-size: 13px; color: #8a7d6f; margin-top: 18px; text-align: center; }
+      .auth-resend a { color: #b5895a; font-weight: 600; text-decoration: none; }
+      .auth-resend a:hover { text-decoration: underline; }
+    </style>
+  </head>
+  <body>
+    <div class="auth-card">
+      <a class="auth-back" href="{% url 'pages:send_code' %}">← {% trans "Back" %}</a>
+      <div class="auth-logo"><img src="{% static 'images/chinar-logo.png' %}" alt="CHINAR"></div>
+      <h2 class="auth-title">{% trans "Enter the code" %}</h2>
+      <p class="auth-sub">{% trans "We sent a 6-digit code to your phone via SMS" %}</p>
+
+      {% if error %}
+      <div class="auth-error">{{ error }}</div>
+      {% endif %}
+
+      <form method="post" action="{% url 'pages:verify_code' %}" id="authForm">
+        {% csrf_token %}
+        <input type="text" name="code" class="auth-code-input"
+               placeholder="______" maxlength="6" inputmode="numeric"
+               autocomplete="one-time-code" autofocus>
+        <button type="submit" class="auth-btn" id="authBtn">
+          <span>{% trans "CONFIRM" %}</span><span class="btn-ring"></span>
+        </button>
+      </form>
+
+      <p class="auth-resend">
+        {% trans "Did not receive the code?" %} <a href="{% url 'pages:send_code' %}">{% trans "Send again" %}</a>
+      </p>
+    </div>
+
+    <script>
+      document.getElementById('authForm').addEventListener('submit', function () {
+        document.getElementById('authBtn').classList.add('loading');
+      });
+    </script>
+  </body>
+</html>

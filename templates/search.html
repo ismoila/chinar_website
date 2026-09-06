@@ -1,0 +1,42 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% blocktrans %}Search{% endblocktrans %} — Chinar</title>
+    {% include 'cn/meta.html' %}
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'chinar-new.css' %}">
+</head>
+<body>
+{% include 'cn/header.html' %}
+
+<main class="cn-page">
+    <div class="cn-page-head">
+        <div class="cn-crumbs"><a href="{% url 'pages:home' %}">{% trans "Home" %}</a> / {% blocktrans %}Search{% endblocktrans %}</div>
+        <h1 class="cn-page-title">{% trans "Search" %}: <em>{{ request.GET.q }}</em></h1>
+        <div class="cn-page-meta">
+            <span class="cn-count">{{ products|length }} {% trans "results found" %}</span>
+        </div>
+    </div>
+
+    {% if products %}
+    <div class="cn-grid">
+        {% for product in products %}
+        {% include 'cn/card.html' %}
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="cn-empty">
+        <h3>{% trans "Nothing found" %}</h3>
+        <p>"{{ request.GET.q }}" — {% trans "no products found. Try another word." %}</p>
+        <a href="{% url 'pages:category' %}" class="cn-btn">{% trans "Open catalog" %}</a>
+    </div>
+    {% endif %}
+</main>
+
+{% include 'cn/footer.html' %}
+</body>
+</html>

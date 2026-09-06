@@ -1,0 +1,274 @@
+{% load static %}{% load i18n %}{% load rasm %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if post.meta_title %}{{ post.meta_title }}{% else %}{{ post.title }} — CHINAR FM{% endif %}</title>
+    <meta name="description" content="{% if post.meta_description %}{{ post.meta_description }}{% else %}{{ post.excerpt }}{% endif %}">
+    {% include 'cn/meta.html' %}
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'chinar-new.css' %}">
+    <style>
+        .cn-blog-topbar {
+            background: #f4f3f1;
+            text-align: center;
+            padding: 44px 20px 40px;
+        }
+        .cn-blog-topbar h1 {
+            font-family: var(--serif);
+            font-size: 30px;
+            color: #1a1a1a;
+            margin: 0 0 12px 0;
+        }
+        .cn-blog-topbar-meta {
+            font-size: 13px;
+            color: var(--c-mut);
+        }
+        .cn-blog-topbar-meta span:not(:last-child)::after {
+            content: "|";
+            margin: 0 10px;
+            color: #ccc;
+        }
+
+        .cn-blog-hero-img {
+            max-width: 900px;
+            margin: -30px auto 0;
+            padding: 0 20px;
+        }
+        .cn-blog-hero-img img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 4px;
+            display: block;
+        }
+
+        .cn-blog-body {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px 70px;
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 30px;
+        }
+        @media (max-width: 640px) {
+            .cn-blog-body { grid-template-columns: 1fr; }
+            .cn-blog-share { display: flex; gap: 12px; margin-bottom: 20px; }
+        }
+
+        .cn-blog-share {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+        }
+        .cn-blog-share-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: var(--c-mut);
+            margin-bottom: 4px;
+        }
+        .cn-blog-share a {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff;
+            text-decoration: none;
+        }
+        .cn-blog-share a.fb { background: #3b5998; }
+        .cn-blog-share a.tw { background: #1da1f2; }
+        .cn-blog-share a.tg { background: var(--c-green); }
+
+        .cn-blog-content {
+            font-size: 16px;
+            line-height: 1.85;
+            color: #444;
+        }
+        .cn-blog-content p {
+            margin: 0 0 20px 0;
+        }
+
+        .cn-blog-nav {
+            max-width: 900px;
+            margin: 0 auto 70px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .cn-blog-nav a {
+            border: 1px solid #ececec;
+            border-radius: 10px;
+            padding: 18px 22px;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .cn-blog-nav a:hover {
+            border-color: var(--c-green);
+        }
+        .cn-blog-nav .lbl {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--c-mut);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .cn-blog-nav .title {
+            font-family: var(--serif);
+            font-size: 16px;
+            color: var(--c-green);
+        }
+        .cn-blog-nav.next { text-align: right; }
+        .cn-blog-comments {
+    max-width: 900px;
+    margin: 0 auto 70px;
+    padding: 0 20px 0 110px;
+}
+@media (max-width: 640px) { .cn-blog-comments { padding-left: 20px; } }
+.cn-blog-comments h3 {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--c-green);
+    margin-bottom: 24px;
+}
+.cn-blog-comment {
+    display: flex;
+    gap: 14px;
+    padding: 18px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.cn-blog-comment-avatar {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: #eee;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    color: var(--c-green);
+    flex-shrink: 0;
+}
+.cn-blog-comment-date {
+    font-size: 12px;
+    color: var(--c-mut);
+    margin-left: 8px;
+}
+.cn-blog-comment p {
+    margin: 6px 0 0 0;
+    color: #444;
+}
+.cn-blog-comment-form {
+    margin-top: 32px;
+}
+.cn-blog-comment-form h4 {
+    font-family: var(--serif);
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+.cn-blog-comment-form input,
+.cn-blog-comment-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    font-family: inherit;
+    font-size: 14.5px;
+}
+.cn-blog-comment-form button {
+    background: var(--c-green);
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+{% include 'cn/header.html' %}
+<main class="cn-page" style="padding:0;">
+
+    <div class="cn-blog-topbar">
+        <h1>{{ post.title }}</h1>
+        <div class="cn-blog-topbar-meta">
+            <span>{% trans "CHINAR FM" %}</span>
+            <span>{{ post.created_at|date:"d F, Y" }}</span>
+        </div>
+    </div>
+
+    {% if post.cover_image %}
+    <div class="cn-blog-hero-img">
+        <img src="{% thumb post.cover_image 1200 %}" alt="{{ post.title }}">
+    </div>
+    {% endif %}
+
+    <div class="cn-blog-body">
+        <div class="cn-blog-share">
+            <span class="cn-blog-share-label">{% trans "SHARE" %}</span>
+            <a class="fb" href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" target="_blank" title="Facebook">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+            </a>
+            <a class="tw" href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text={{ post.title }}" target="_blank" title="Twitter">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23 4.5c-.8.36-1.7.6-2.6.7.95-.57 1.67-1.47 2-2.55-.9.53-1.9.9-2.95 1.1A4.6 4.6 0 0 0 16 2c-2.55 0-4.6 2.06-4.6 4.6 0 .36.04.7.12 1.04C7.7 7.45 4.1 5.5 1.67 2.6c-.4.68-.62 1.47-.62 2.32 0 1.6.82 3.02 2.06 3.85-.76-.02-1.47-.23-2.1-.58v.06c0 2.24 1.6 4.1 3.7 4.53-.38.1-.8.16-1.22.16-.3 0-.58-.03-.87-.08.6 1.85 2.3 3.2 4.35 3.24A9.3 9.3 0 0 1 0 19.54 13.1 13.1 0 0 0 7.1 21.5c8.5 0 13.15-7.05 13.15-13.15 0-.2 0-.4-.02-.6.9-.65 1.68-1.47 2.3-2.4z"/></svg>
+            </a>
+            <a class="tg" href="https://t.me/share/url?url={{ request.build_absolute_uri }}&text={{ post.title }}" target="_blank" title="Telegram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 2 2 10.6l6 2v7l3.6-3.6L17 20l5-18Z"/></svg>
+            </a>
+        </div>
+
+        <div class="cn-blog-content">
+            {{ post.content|linebreaks }}
+        </div>
+    </div>
+
+    <div class="cn-blog-nav">
+        {% if prev_post %}
+        <a href="{{ prev_post.get_absolute_url }}" class="prev">
+            <span class="lbl">← {% trans "Previous post" %}</span>
+            <span class="title">{{ prev_post.title }}</span>
+        </a>
+        {% else %}<div></div>{% endif %}
+
+        {% if next_post %}
+        <a href="{{ next_post.get_absolute_url }}" class="next">
+            <span class="lbl">{% trans "Next post" %} →</span>
+            <span class="title">{{ next_post.title }}</span>
+        </a>
+        {% else %}<div></div>{% endif %}
+    </div>
+<div class="cn-blog-comments" id="comments">
+    <h3>{% trans "Comments" %} ({{ post.comments.count }})</h3>
+
+    {% for comment in post.comments.all %}
+    <div class="cn-blog-comment">
+        <div class="cn-blog-comment-avatar">{{ comment.name|first|upper }}</div>
+        <div>
+            <strong>{{ comment.name }}</strong>
+            <span class="cn-blog-comment-date">{{ comment.created_at|date:"d.m.Y" }}</span>
+            <p>{{ comment.text }}</p>
+        </div>
+    </div>
+    {% empty %}
+    <p style="color:var(--c-mut);">{% trans "No comments yet. Be the first!" %}</p>
+    {% endfor %}
+
+    <div class="cn-blog-comment-form">
+        <h4>{% trans "Leave a Comment" %}</h4>
+        <form method="post" action="{{ request.path }}#comments">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="{% trans 'Your name' %}" required maxlength="100"
+                   value="{% if request.user.is_authenticated %}{{ request.user.first_name }}{% endif %}">
+            <textarea name="text" rows="4" placeholder="{% trans 'Your comment...' %}" required maxlength="1000"></textarea>
+            <button type="submit">{% trans "Post Comment" %}</button>
+        </form>
+    </div>
+</div>
+</main>
+{% include 'cn/footer.html' %}
+</body>
+</html>

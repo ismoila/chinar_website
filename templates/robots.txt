@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /nested_admin/
+Disallow: /payments/
+Disallow: /*/cart/
+Disallow: /*/checkout/
+Disallow: /*/profile/
+Disallow: /*/profile_reviews/
+Disallow: /*/profile_settings/
+Disallow: /*/send-code/
+Disallow: /*/verify-code/
+Disallow: /*/products/wishlist/
+Disallow: /*/products/search/
+
+Sitemap: {{ request.scheme }}://{{ request.get_host }}/sitemap.xml

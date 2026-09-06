@@ -1,0 +1,3 @@
+Hamkor logolarini shu papkaga tashlang (PNG/JPG/WEBP, kvadrat bo'lsa chiroyli chiqadi).
+Sayt ularni avtomatik ko'rsatadi — bosh sahifada 'Hamkorlarimiz' bo'limi paydo bo'ladi.
+Fayl nomi tartibi bo'yicha chiqadi (01-shosh.png, 02-joints.png ...).

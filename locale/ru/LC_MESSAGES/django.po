@@ -1,0 +1,3913 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-22 22:59+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\config\settings.py:131
+msgid "English"
+msgstr ""
+
+#: .\config\settings.py:132
+msgid "Uzbek"
+msgstr ""
+
+#: .\config\settings.py:133
+msgid "Russian"
+msgstr ""
+
+#: .\templates\about.html:9 .\templates\category.html:10
+#: .\templates\delivery.html:9 .\templates\home.html:10
+#: .\templates\workers.html:9
+msgid "Chinar — Your comfort is our goal!"
+msgstr "Chinar — Ваш комфорт — наша главная цель!"
+
+#: .\templates\about.html:70 .\templates\category.html:58
+#: .\templates\category_detail.html:58 .\templates\checkout.html:93
+#: .\templates\delivery.html:56 .\templates\discounts.html:57
+#: .\templates\home.html:61 .\templates\idea.html:57
+#: .\templates\location.html:57 .\templates\order.html:57
+#: .\templates\projects.html:57 .\templates\reviews.html:56
+#: .\templates\search.html:60 .\templates\services.html:57
+#: .\templates\settings.html:57 .\templates\shop_details.html:60
+#: .\templates\shopping_cart.html:58 .\templates\wishlist.html:58
+#: .\templates\workers.html:57
+msgid "About the company"
+msgstr "О компании"
+
+#: .\templates\about.html:71 .\templates\category.html:59
+#: .\templates\category_detail.html:59 .\templates\checkout.html:94
+#: .\templates\delivery.html:57 .\templates\discounts.html:58
+#: .\templates\home.html:62 .\templates\idea.html:58
+#: .\templates\location.html:58 .\templates\order.html:58
+#: .\templates\projects.html:58 .\templates\reviews.html:57
+#: .\templates\search.html:61 .\templates\services.html:58
+#: .\templates\settings.html:58 .\templates\shop_details.html:61
+#: .\templates\shopping_cart.html:59 .\templates\wishlist.html:59
+#: .\templates\workers.html:58
+msgid "Store addresses"
+msgstr "Адреса магазинов"
+
+#: .\templates\about.html:72 .\templates\category.html:60
+#: .\templates\category_detail.html:60 .\templates\checkout.html:95
+#: .\templates\delivery.html:58 .\templates\discounts.html:59
+#: .\templates\home.html:63 .\templates\idea.html:59
+#: .\templates\location.html:59 .\templates\order.html:59
+#: .\templates\projects.html:59 .\templates\reviews.html:58
+#: .\templates\search.html:62 .\templates\services.html:59
+#: .\templates\settings.html:59 .\templates\shop_details.html:62
+#: .\templates\shopping_cart.html:60 .\templates\wishlist.html:60
+#: .\templates\workers.html:59
+msgid "Designers and architects"
+msgstr "Дизайнеры и архитекторы"
+
+#: .\templates\about.html:73 .\templates\category.html:61
+#: .\templates\category_detail.html:61 .\templates\checkout.html:96
+#: .\templates\delivery.html:59 .\templates\discounts.html:60
+#: .\templates\home.html:64 .\templates\idea.html:60
+#: .\templates\location.html:60 .\templates\order.html:60
+#: .\templates\projects.html:60 .\templates\reviews.html:59
+#: .\templates\search.html:63 .\templates\services.html:60
+#: .\templates\settings.html:60 .\templates\shop_details.html:63
+#: .\templates\shopping_cart.html:61 .\templates\wishlist.html:61
+#: .\templates\workers.html:60
+msgid "Delivery and payment"
+msgstr "Доставка и оплата"
+
+#: .\templates\about.html:85 .\templates\category.html:73
+#: .\templates\category_detail.html:73 .\templates\checkout.html:108
+#: .\templates\delivery.html:71 .\templates\discounts.html:72
+#: .\templates\home.html:76 .\templates\idea.html:72
+#: .\templates\location.html:72 .\templates\order.html:72
+#: .\templates\projects.html:72 .\templates\reviews.html:71
+#: .\templates\search.html:75 .\templates\services.html:72
+#: .\templates\settings.html:72 .\templates\shop_details.html:75
+#: .\templates\shopping_cart.html:73 .\templates\wishlist.html:73
+#: .\templates\workers.html:72
+msgid " Catalog"
+msgstr "Каталог"
+
+#: .\templates\about.html:88 .\templates\category.html:76
+#: .\templates\category_detail.html:76 .\templates\checkout.html:111
+#: .\templates\delivery.html:74 .\templates\discounts.html:75
+#: .\templates\home.html:79 .\templates\idea.html:75
+#: .\templates\location.html:75 .\templates\order.html:75
+#: .\templates\projects.html:75 .\templates\reviews.html:74
+#: .\templates\search.html:78 .\templates\services.html:75
+#: .\templates\settings.html:75 .\templates\shop_details.html:78
+#: .\templates\shopping_cart.html:76 .\templates\wishlist.html:76
+#: .\templates\workers.html:75
+msgid "News"
+msgstr "Новости"
+
+#: .\templates\about.html:89 .\templates\category.html:77
+#: .\templates\category_detail.html:77 .\templates\checkout.html:112
+#: .\templates\delivery.html:75 .\templates\discounts.html:76
+#: .\templates\home.html:80 .\templates\idea.html:76
+#: .\templates\location.html:76 .\templates\order.html:76
+#: .\templates\projects.html:76 .\templates\reviews.html:75
+#: .\templates\search.html:79 .\templates\services.html:76
+#: .\templates\settings.html:76 .\templates\shop_details.html:79
+#: .\templates\shopping_cart.html:77 .\templates\wishlist.html:77
+#: .\templates\workers.html:76
+msgid "Ideas"
+msgstr "Идеи"
+
+#: .\templates\about.html:90 .\templates\category.html:78
+#: .\templates\category_detail.html:78 .\templates\checkout.html:113
+#: .\templates\delivery.html:76 .\templates\discounts.html:77
+#: .\templates\home.html:81 .\templates\idea.html:77
+#: .\templates\location.html:77 .\templates\order.html:77
+#: .\templates\projects.html:77 .\templates\reviews.html:76
+#: .\templates\search.html:80 .\templates\services.html:77
+#: .\templates\settings.html:77 .\templates\shop_details.html:80
+#: .\templates\shopping_cart.html:78 .\templates\wishlist.html:78
+#: .\templates\workers.html:77
+msgid "Projects"
+msgstr "Проекты"
+
+#: .\templates\about.html:91 .\templates\category.html:79
+#: .\templates\category_detail.html:79 .\templates\checkout.html:114
+#: .\templates\delivery.html:77 .\templates\discounts.html:78
+#: .\templates\home.html:82 .\templates\home.html:535 .\templates\idea.html:78
+#: .\templates\location.html:78 .\templates\order.html:78
+#: .\templates\projects.html:78 .\templates\reviews.html:77
+#: .\templates\search.html:81 .\templates\services.html:78
+#: .\templates\services.html:278 .\templates\settings.html:78
+#: .\templates\shop_details.html:81 .\templates\shop_details.html:520
+#: .\templates\shopping_cart.html:79 .\templates\wishlist.html:79
+#: .\templates\workers.html:78
+msgid "Services"
+msgstr "Услуги"
+
+#: .\templates\about.html:115 .\templates\category.html:103
+#: .\templates\category_detail.html:103 .\templates\checkout.html:138
+#: .\templates\delivery.html:101 .\templates\discounts.html:102
+#: .\templates\home.html:106 .\templates\idea.html:102
+#: .\templates\location.html:102 .\templates\order.html:102
+#: .\templates\projects.html:102 .\templates\reviews.html:101
+#: .\templates\search.html:105 .\templates\services.html:102
+#: .\templates\settings.html:102 .\templates\shop_details.html:105
+#: .\templates\shopping_cart.html:103 .\templates\wishlist.html:103
+#: .\templates\workers.html:102
+msgid "Recent searches"
+msgstr "Недавние поиски"
+
+#: .\templates\about.html:116 .\templates\category.html:104
+#: .\templates\category_detail.html:104 .\templates\checkout.html:139
+#: .\templates\delivery.html:102 .\templates\discounts.html:103
+#: .\templates\home.html:107 .\templates\idea.html:103
+#: .\templates\location.html:103 .\templates\order.html:103
+#: .\templates\projects.html:103 .\templates\reviews.html:102
+#: .\templates\search.html:106 .\templates\services.html:103
+#: .\templates\settings.html:103 .\templates\shop_details.html:106
+#: .\templates\shopping_cart.html:104 .\templates\wishlist.html:104
+#: .\templates\workers.html:103
+msgid "Clear all"
+msgstr "Очистить все"
+
+#: .\templates\about.html:121 .\templates\category.html:109
+#: .\templates\category_detail.html:109 .\templates\checkout.html:144
+#: .\templates\delivery.html:107 .\templates\discounts.html:108
+#: .\templates\home.html:112 .\templates\idea.html:108
+#: .\templates\location.html:108 .\templates\order.html:108
+#: .\templates\projects.html:108 .\templates\reviews.html:107
+#: .\templates\search.html:111 .\templates\services.html:108
+#: .\templates\settings.html:108 .\templates\shop_details.html:111
+#: .\templates\shopping_cart.html:109 .\templates\wishlist.html:109
+#: .\templates\workers.html:108
+msgid "Frequently searched"
+msgstr "Часто искомые"
+
+#: .\templates\about.html:129 .\templates\category.html:117
+#: .\templates\category_detail.html:117 .\templates\checkout.html:152
+#: .\templates\delivery.html:115 .\templates\discounts.html:116
+#: .\templates\home.html:120 .\templates\idea.html:116
+#: .\templates\location.html:116 .\templates\order.html:116
+#: .\templates\projects.html:116 .\templates\reviews.html:115
+#: .\templates\search.html:119 .\templates\services.html:116
+#: .\templates\settings.html:116 .\templates\shop_details.html:119
+#: .\templates\shopping_cart.html:117 .\templates\wishlist.html:117
+#: .\templates\workers.html:116
+msgid "Found"
+msgstr "Найдено"
+
+#: .\templates\about.html:190 .\templates\about.html:247
+#: .\templates\category.html:178 .\templates\category.html:235
+#: .\templates\category_detail.html:178 .\templates\category_detail.html:235
+#: .\templates\checkout.html:213 .\templates\checkout.html:270
+#: .\templates\delivery.html:176 .\templates\delivery.html:233
+#: .\templates\discounts.html:177 .\templates\discounts.html:234
+#: .\templates\home.html:181 .\templates\home.html:238
+#: .\templates\idea.html:177 .\templates\idea.html:234
+#: .\templates\location.html:177 .\templates\location.html:234
+#: .\templates\order.html:177 .\templates\order.html:234
+#: .\templates\projects.html:177 .\templates\projects.html:234
+#: .\templates\reviews.html:176 .\templates\reviews.html:233
+#: .\templates\search.html:180 .\templates\search.html:237
+#: .\templates\services.html:177 .\templates\services.html:234
+#: .\templates\settings.html:177 .\templates\settings.html:234
+#: .\templates\shop_details.html:180 .\templates\shop_details.html:237
+#: .\templates\shopping_cart.html:178 .\templates\shopping_cart.html:235
+#: .\templates\wishlist.html:178 .\templates\wishlist.html:235
+#: .\templates\wishlist.html:282 .\templates\workers.html:177
+#: .\templates\workers.html:234
+msgid "Favorites"
+msgstr "Избранное"
+
+#: .\templates\about.html:199 .\templates\about.html:270
+#: .\templates\category.html:187 .\templates\category.html:258
+#: .\templates\category_detail.html:187 .\templates\category_detail.html:258
+#: .\templates\checkout.html:222 .\templates\checkout.html:293
+#: .\templates\delivery.html:185 .\templates\delivery.html:256
+#: .\templates\discounts.html:186 .\templates\discounts.html:257
+#: .\templates\home.html:190 .\templates\home.html:261
+#: .\templates\idea.html:186 .\templates\idea.html:257
+#: .\templates\location.html:186 .\templates\location.html:257
+#: .\templates\order.html:186 .\templates\order.html:257
+#: .\templates\order.html:318 .\templates\projects.html:186
+#: .\templates\projects.html:257 .\templates\reviews.html:185
+#: .\templates\reviews.html:256 .\templates\reviews.html:316
+#: .\templates\search.html:189 .\templates\search.html:260
+#: .\templates\services.html:186 .\templates\services.html:257
+#: .\templates\settings.html:186 .\templates\settings.html:257
+#: .\templates\settings.html:322 .\templates\shop_details.html:189
+#: .\templates\shop_details.html:260 .\templates\shopping_cart.html:187
+#: .\templates\shopping_cart.html:258 .\templates\wishlist.html:187
+#: .\templates\wishlist.html:258 .\templates\workers.html:186
+#: .\templates\workers.html:257
+msgid "Profile"
+msgstr "Профиль"
+
+#: .\templates\about.html:206 .\templates\category.html:194
+#: .\templates\category_detail.html:194 .\templates\checkout.html:229
+#: .\templates\delivery.html:192 .\templates\discounts.html:193
+#: .\templates\home.html:197 .\templates\idea.html:193
+#: .\templates\location.html:193 .\templates\order.html:193
+#: .\templates\projects.html:193 .\templates\reviews.html:192
+#: .\templates\search.html:196 .\templates\services.html:193
+#: .\templates\settings.html:193 .\templates\shop_details.html:196
+#: .\templates\shopping_cart.html:194 .\templates\wishlist.html:194
+#: .\templates\workers.html:193
+msgid "Login"
+msgstr "Войти"
+
+#: .\templates\about.html:218 .\templates\about.html:259
+#: .\templates\category.html:206 .\templates\category.html:247
+#: .\templates\category_detail.html:206 .\templates\category_detail.html:247
+#: .\templates\checkout.html:241 .\templates\checkout.html:282
+#: .\templates\delivery.html:204 .\templates\delivery.html:245
+#: .\templates\discounts.html:205 .\templates\discounts.html:246
+#: .\templates\home.html:209 .\templates\home.html:250
+#: .\templates\idea.html:205 .\templates\idea.html:246
+#: .\templates\location.html:205 .\templates\location.html:246
+#: .\templates\order.html:205 .\templates\order.html:246
+#: .\templates\projects.html:205 .\templates\projects.html:246
+#: .\templates\reviews.html:204 .\templates\reviews.html:245
+#: .\templates\search.html:208 .\templates\search.html:249
+#: .\templates\services.html:205 .\templates\services.html:246
+#: .\templates\settings.html:205 .\templates\settings.html:246
+#: .\templates\shop_details.html:208 .\templates\shop_details.html:249
+#: .\templates\shopping_cart.html:206 .\templates\shopping_cart.html:247
+#: .\templates\shopping_cart.html:287 .\templates\wishlist.html:206
+#: .\templates\wishlist.html:247 .\templates\workers.html:205
+#: .\templates\workers.html:246
+msgid "Cart"
+msgstr "Корзина"
+
+#: .\templates\about.html:228 .\templates\category.html:216
+#: .\templates\category_detail.html:216 .\templates\category_detail.html:279
+#: .\templates\checkout.html:251 .\templates\delivery.html:214
+#: .\templates\discounts.html:215 .\templates\discounts.html:278
+#: .\templates\home.html:219 .\templates\idea.html:215
+#: .\templates\location.html:215 .\templates\order.html:215
+#: .\templates\projects.html:215 .\templates\reviews.html:214
+#: .\templates\search.html:218 .\templates\search.html:285
+#: .\templates\services.html:215 .\templates\settings.html:215
+#: .\templates\shop_details.html:218 .\templates\shop_details.html:281
+#: .\templates\shopping_cart.html:216 .\templates\wishlist.html:216
+#: .\templates\workers.html:215
+msgid "Home"
+msgstr "Главная"
+
+#: .\templates\about.html:235 .\templates\category.html:223
+#: .\templates\category.html:281 .\templates\category_detail.html:223
+#: .\templates\category_detail.html:281 .\templates\checkout.html:258
+#: .\templates\delivery.html:221 .\templates\discounts.html:222
+#: .\templates\home.html:226 .\templates\idea.html:222
+#: .\templates\location.html:222 .\templates\order.html:222
+#: .\templates\projects.html:222 .\templates\reviews.html:221
+#: .\templates\search.html:225 .\templates\services.html:222
+#: .\templates\settings.html:222 .\templates\shop_details.html:225
+#: .\templates\shop_details.html:283 .\templates\shopping_cart.html:223
+#: .\templates\wishlist.html:223 .\templates\workers.html:222
+msgid "Catalog"
+msgstr "Каталог"
+
+#: .\templates\about.html:281 .\templates\category.html:269
+#: .\templates\category_detail.html:269 .\templates\delivery.html:267
+#: .\templates\discounts.html:268 .\templates\home.html:272
+#: .\templates\idea.html:268 .\templates\location.html:268
+#: .\templates\order.html:268 .\templates\projects.html:268
+#: .\templates\reviews.html:267 .\templates\search.html:271
+#: .\templates\services.html:268 .\templates\settings.html:268
+#: .\templates\shop_details.html:270 .\templates\shopping_cart.html:269
+#: .\templates\wishlist.html:269 .\templates\workers.html:268
+#, python-format
+msgid "%% Monthly discounts"
+msgstr "%% Ежемесячные скидки"
+
+#: .\templates\about.html:296
+msgid "About Us"
+msgstr "О нас"
+
+#: .\templates\about.html:297
+msgid ""
+"Our company, Firdavs Mebel LLC, has been successfully operating in the "
+"furniture market since 2008, and over these years, we have accumulated "
+"invaluable practical experience. We have meticulously refined all "
+"technological and production processes, honing every detail."
+msgstr ""
+"Наша компания, ООО «Фирдавс Мебель», успешно работает на мебельном рынке с "
+"2008 года, и за эти годы мы накопили бесценный практический опыт. Мы "
+"тщательно усовершенствовали все технологические и производственные процессы,"
+" отточив каждую деталь."
+
+#: .\templates\about.html:298
+msgid ""
+"We offer a wide selection of artificial rattan furniture under the CHINAR "
+"brand, and our collection is constantly expanding."
+msgstr ""
+"Мы предлагаем широкий выбор мебели из искусственного ротанга под брендом "
+"CHINAR, и наша коллекция постоянно расширяется."
+
+#: .\templates\about.html:306
+msgid "employees"
+msgstr "сотрудников"
+
+#: .\templates\about.html:315
+msgid "countries for export"
+msgstr "стран для экспорта"
+
+#: .\templates\about.html:326
+msgid "years of experience"
+msgstr "лет опыта"
+
+#: .\templates\about.html:331
+msgid "satisfied customers"
+msgstr "довольных клиентов"
+
+#: .\templates\about.html:336
+msgid "types of products"
+msgstr "видов продукции"
+
+#: .\templates\about.html:392 .\templates\category.html:361
+#: .\templates\category_detail.html:573 .\templates\checkout.html:696
+#: .\templates\delivery.html:365 .\templates\discounts.html:419
+#: .\templates\home.html:742 .\templates\idea.html:377
+#: .\templates\location.html:329 .\templates\order.html:410
+#: .\templates\projects.html:471 .\templates\reviews.html:450
+#: .\templates\search.html:495 .\templates\services.html:369
+#: .\templates\shop_details.html:1003 .\templates\shopping_cart.html:467
+#: .\templates\wishlist.html:401 .\templates\workers.html:386
+msgid "For Partners"
+msgstr "Партнёрам"
+
+#: .\templates\about.html:393 .\templates\category.html:362
+#: .\templates\category_detail.html:574 .\templates\checkout.html:697
+#: .\templates\delivery.html:366 .\templates\discounts.html:420
+#: .\templates\home.html:743 .\templates\idea.html:378
+#: .\templates\location.html:330 .\templates\order.html:411
+#: .\templates\projects.html:472 .\templates\reviews.html:451
+#: .\templates\search.html:496 .\templates\services.html:370
+#: .\templates\shop_details.html:1004 .\templates\shopping_cart.html:468
+#: .\templates\wishlist.html:402 .\templates\workers.html:387
+msgid "Company benefits"
+msgstr "Преимущества компании"
+
+#: .\templates\about.html:397 .\templates\category.html:366
+#: .\templates\category_detail.html:578 .\templates\checkout.html:701
+#: .\templates\delivery.html:370 .\templates\discounts.html:424
+#: .\templates\home.html:747 .\templates\idea.html:382
+#: .\templates\location.html:334 .\templates\order.html:415
+#: .\templates\projects.html:476 .\templates\reviews.html:455
+#: .\templates\search.html:500 .\templates\services.html:374
+#: .\templates\shop_details.html:1008 .\templates\shopping_cart.html:472
+#: .\templates\wishlist.html:406 .\templates\workers.html:391
+msgid "Inspiration"
+msgstr "Вдохновение"
+
+#: .\templates\about.html:398 .\templates\category.html:367
+#: .\templates\category_detail.html:579 .\templates\checkout.html:702
+#: .\templates\delivery.html:371 .\templates\discounts.html:425
+#: .\templates\home.html:748 .\templates\idea.html:383
+#: .\templates\location.html:335 .\templates\order.html:416
+#: .\templates\projects.html:477 .\templates\reviews.html:456
+#: .\templates\search.html:501 .\templates\services.html:375
+#: .\templates\shop_details.html:1009 .\templates\shopping_cart.html:473
+#: .\templates\wishlist.html:407 .\templates\workers.html:392
+msgid "Chinar Blog"
+msgstr "Блог Chinar"
+
+#: .\templates\about.html:399 .\templates\category.html:368
+#: .\templates\category_detail.html:580 .\templates\checkout.html:703
+#: .\templates\delivery.html:372 .\templates\discounts.html:426
+#: .\templates\home.html:749 .\templates\idea.html:384
+#: .\templates\location.html:336 .\templates\order.html:417
+#: .\templates\projects.html:478 .\templates\reviews.html:457
+#: .\templates\search.html:502 .\templates\services.html:376
+#: .\templates\shop_details.html:1010 .\templates\shopping_cart.html:474
+#: .\templates\wishlist.html:408 .\templates\workers.html:393
+msgid "Ideas for Inspiration"
+msgstr "Идеи для вдохновения"
+
+#: .\templates\about.html:403 .\templates\category.html:372
+#: .\templates\category_detail.html:584 .\templates\checkout.html:707
+#: .\templates\delivery.html:376 .\templates\discounts.html:430
+#: .\templates\home.html:753 .\templates\idea.html:388
+#: .\templates\location.html:340 .\templates\order.html:421
+#: .\templates\projects.html:482 .\templates\reviews.html:461
+#: .\templates\search.html:506 .\templates\services.html:380
+#: .\templates\shop_details.html:1014 .\templates\shopping_cart.html:478
+#: .\templates\wishlist.html:412 .\templates\workers.html:397
+msgid "About Chinar"
+msgstr "О Chinar"
+
+#: .\templates\about.html:404 .\templates\category.html:373
+#: .\templates\category_detail.html:585 .\templates\checkout.html:708
+#: .\templates\delivery.html:377 .\templates\discounts.html:431
+#: .\templates\home.html:754 .\templates\idea.html:389
+#: .\templates\location.html:341 .\templates\order.html:422
+#: .\templates\projects.html:483 .\templates\reviews.html:462
+#: .\templates\search.html:507 .\templates\services.html:381
+#: .\templates\shop_details.html:1015 .\templates\shopping_cart.html:479
+#: .\templates\wishlist.html:413 .\templates\workers.html:398
+msgid "About Company"
+msgstr "О компании"
+
+#: .\templates\about.html:405 .\templates\category.html:374
+#: .\templates\category_detail.html:586 .\templates\checkout.html:709
+#: .\templates\delivery.html:378 .\templates\discounts.html:432
+#: .\templates\home.html:755 .\templates\idea.html:390
+#: .\templates\location.html:342 .\templates\order.html:423
+#: .\templates\projects.html:484 .\templates\reviews.html:463
+#: .\templates\search.html:508 .\templates\services.html:382
+#: .\templates\shop_details.html:1016 .\templates\shopping_cart.html:480
+#: .\templates\wishlist.html:414 .\templates\workers.html:399
+msgid "Operating rules"
+msgstr "Правила работы"
+
+#: .\templates\about.html:406 .\templates\category.html:375
+#: .\templates\category_detail.html:587 .\templates\checkout.html:710
+#: .\templates\delivery.html:379 .\templates\discounts.html:433
+#: .\templates\home.html:756 .\templates\idea.html:391
+#: .\templates\location.html:343 .\templates\order.html:424
+#: .\templates\projects.html:485 .\templates\reviews.html:464
+#: .\templates\search.html:509 .\templates\services.html:383
+#: .\templates\shop_details.html:1017 .\templates\shopping_cart.html:481
+#: .\templates\wishlist.html:415 .\templates\workers.html:400
+msgid "Copyright"
+msgstr "Авторские права"
+
+#: .\templates\about.html:407 .\templates\category.html:376
+#: .\templates\category_detail.html:588 .\templates\checkout.html:711
+#: .\templates\delivery.html:380 .\templates\discounts.html:434
+#: .\templates\home.html:757 .\templates\idea.html:392
+#: .\templates\location.html:344 .\templates\order.html:425
+#: .\templates\projects.html:486 .\templates\reviews.html:465
+#: .\templates\search.html:510 .\templates\services.html:384
+#: .\templates\shop_details.html:1018 .\templates\shopping_cart.html:482
+#: .\templates\wishlist.html:416 .\templates\workers.html:401
+msgid "Public offer"
+msgstr "Публичная оферта"
+
+#: .\templates\about.html:411 .\templates\category.html:380
+#: .\templates\category_detail.html:592 .\templates\checkout.html:715
+#: .\templates\delivery.html:384 .\templates\discounts.html:438
+#: .\templates\home.html:761 .\templates\idea.html:396
+#: .\templates\location.html:348 .\templates\order.html:429
+#: .\templates\projects.html:490 .\templates\reviews.html:469
+#: .\templates\search.html:514 .\templates\services.html:388
+#: .\templates\shop_details.html:1022 .\templates\shopping_cart.html:486
+#: .\templates\wishlist.html:420 .\templates\workers.html:405
+msgid "Our Services"
+msgstr "Наши услуги"
+
+#: .\templates\about.html:412 .\templates\category.html:381
+#: .\templates\category_detail.html:593 .\templates\checkout.html:716
+#: .\templates\delivery.html:385 .\templates\discounts.html:439
+#: .\templates\home.html:762 .\templates\idea.html:397
+#: .\templates\location.html:349 .\templates\order.html:430
+#: .\templates\projects.html:491 .\templates\reviews.html:470
+#: .\templates\search.html:515 .\templates\services.html:389
+#: .\templates\shop_details.html:1023 .\templates\shopping_cart.html:487
+#: .\templates\wishlist.html:421 .\templates\workers.html:406
+msgid "Delivery and Pickup"
+msgstr "Доставка и самовывоз"
+
+#: .\templates\about.html:413 .\templates\category.html:382
+#: .\templates\category_detail.html:594 .\templates\checkout.html:717
+#: .\templates\delivery.html:386 .\templates\discounts.html:440
+#: .\templates\home.html:763 .\templates\idea.html:398
+#: .\templates\location.html:350 .\templates\order.html:431
+#: .\templates\projects.html:492 .\templates\reviews.html:471
+#: .\templates\search.html:516 .\templates\services.html:390
+#: .\templates\shop_details.html:1024 .\templates\shopping_cart.html:488
+#: .\templates\wishlist.html:422 .\templates\workers.html:407
+msgid "Payment and Installment"
+msgstr "Оплата и рассрочка"
+
+#: .\templates\about.html:414 .\templates\category.html:383
+#: .\templates\category_detail.html:595 .\templates\checkout.html:718
+#: .\templates\delivery.html:387 .\templates\discounts.html:441
+#: .\templates\home.html:764 .\templates\idea.html:399
+#: .\templates\location.html:351 .\templates\order.html:432
+#: .\templates\projects.html:493 .\templates\reviews.html:472
+#: .\templates\search.html:517 .\templates\services.html:391
+#: .\templates\shop_details.html:1025 .\templates\shopping_cart.html:489
+#: .\templates\wishlist.html:423 .\templates\workers.html:408
+msgid "Return and Exchange"
+msgstr "Возврат и обмен"
+
+#: .\templates\about.html:415 .\templates\category.html:384
+#: .\templates\category_detail.html:596 .\templates\checkout.html:719
+#: .\templates\delivery.html:388 .\templates\discounts.html:442
+#: .\templates\home.html:765 .\templates\idea.html:400
+#: .\templates\location.html:352 .\templates\order.html:433
+#: .\templates\projects.html:494 .\templates\reviews.html:473
+#: .\templates\search.html:518 .\templates\services.html:392
+#: .\templates\shop_details.html:1026 .\templates\shopping_cart.html:490
+#: .\templates\wishlist.html:424 .\templates\workers.html:409
+msgid "All Services"
+msgstr "Все услуги"
+
+#: .\templates\about.html:416 .\templates\category.html:385
+#: .\templates\category_detail.html:597 .\templates\checkout.html:720
+#: .\templates\delivery.html:389 .\templates\discounts.html:443
+#: .\templates\home.html:766 .\templates\idea.html:401
+#: .\templates\location.html:353 .\templates\order.html:434
+#: .\templates\projects.html:495 .\templates\reviews.html:474
+#: .\templates\search.html:519 .\templates\services.html:393
+#: .\templates\shop_details.html:1027 .\templates\shopping_cart.html:491
+#: .\templates\wishlist.html:425 .\templates\workers.html:410
+msgid "Chinar Warranty"
+msgstr "Гарантия Chinar"
+
+#: .\templates\about.html:428 .\templates\category.html:397
+#: .\templates\category_detail.html:609 .\templates\checkout.html:732
+#: .\templates\delivery.html:401 .\templates\discounts.html:455
+#: .\templates\home.html:778 .\templates\idea.html:413
+#: .\templates\location.html:365 .\templates\order.html:446
+#: .\templates\projects.html:507 .\templates\reviews.html:486
+#: .\templates\search.html:531 .\templates\services.html:405
+#: .\templates\shop_details.html:1039 .\templates\shopping_cart.html:503
+#: .\templates\wishlist.html:437 .\templates\workers.html:422
+msgid "Contact Us"
+msgstr "Свяжитесь с нами"
+
+#: .\templates\about.html:429 .\templates\category.html:398
+#: .\templates\category_detail.html:610 .\templates\checkout.html:733
+#: .\templates\delivery.html:402 .\templates\discounts.html:456
+#: .\templates\home.html:779 .\templates\idea.html:414
+#: .\templates\location.html:366 .\templates\order.html:447
+#: .\templates\projects.html:508 .\templates\reviews.html:487
+#: .\templates\search.html:532 .\templates\services.html:406
+#: .\templates\shop_details.html:1040 .\templates\shopping_cart.html:504
+#: .\templates\wishlist.html:438 .\templates\workers.html:423
+msgid "Contacts"
+msgstr "Контакты"
+
+#: .\templates\about.html:430 .\templates\category.html:399
+#: .\templates\category_detail.html:611 .\templates\checkout.html:734
+#: .\templates\delivery.html:403 .\templates\discounts.html:457
+#: .\templates\home.html:780 .\templates\idea.html:415
+#: .\templates\location.html:367 .\templates\order.html:448
+#: .\templates\projects.html:509 .\templates\reviews.html:488
+#: .\templates\search.html:533 .\templates\services.html:407
+#: .\templates\shop_details.html:1041 .\templates\shopping_cart.html:505
+#: .\templates\wishlist.html:439 .\templates\workers.html:424
+msgid "Store Addresses"
+msgstr "Адреса магазинов"
+
+#: .\templates\about.html:434 .\templates\category.html:403
+#: .\templates\category_detail.html:615 .\templates\checkout.html:738
+#: .\templates\delivery.html:407 .\templates\discounts.html:461
+#: .\templates\home.html:784 .\templates\idea.html:419
+#: .\templates\location.html:371 .\templates\order.html:452
+#: .\templates\projects.html:513 .\templates\reviews.html:492
+#: .\templates\search.html:537 .\templates\services.html:411
+#: .\templates\shop_details.html:1045 .\templates\shopping_cart.html:509
+#: .\templates\wishlist.html:443 .\templates\workers.html:428
+msgid "Useful from Chinar"
+msgstr "Полезное от Chinar"
+
+#: .\templates\about.html:435 .\templates\category.html:404
+#: .\templates\category_detail.html:616 .\templates\checkout.html:739
+#: .\templates\delivery.html:408 .\templates\discounts.html:462
+#: .\templates\home.html:785 .\templates\idea.html:420
+#: .\templates\location.html:372 .\templates\order.html:453
+#: .\templates\projects.html:514 .\templates\reviews.html:493
+#: .\templates\search.html:538 .\templates\services.html:412
+#: .\templates\shop_details.html:1046 .\templates\shopping_cart.html:510
+#: .\templates\wishlist.html:444 .\templates\workers.html:429
+msgid "Product Catalog"
+msgstr "Каталог товаров"
+
+#: .\templates\about.html:436 .\templates\category.html:405
+#: .\templates\category_detail.html:617 .\templates\checkout.html:740
+#: .\templates\delivery.html:409 .\templates\discounts.html:463
+#: .\templates\home.html:786 .\templates\idea.html:421
+#: .\templates\location.html:373 .\templates\order.html:454
+#: .\templates\projects.html:515 .\templates\reviews.html:494
+#: .\templates\search.html:539 .\templates\services.html:413
+#: .\templates\shop_details.html:1047 .\templates\shopping_cart.html:511
+#: .\templates\wishlist.html:445 .\templates\workers.html:430
+msgid "How to Create Order"
+msgstr "Как оформить заказ"
+
+#: .\templates\about.html:437 .\templates\category.html:406
+#: .\templates\category_detail.html:618 .\templates\checkout.html:741
+#: .\templates\delivery.html:410 .\templates\discounts.html:464
+#: .\templates\home.html:787 .\templates\idea.html:422
+#: .\templates\location.html:374 .\templates\order.html:455
+#: .\templates\projects.html:516 .\templates\reviews.html:495
+#: .\templates\search.html:540 .\templates\services.html:414
+#: .\templates\shop_details.html:1048 .\templates\shopping_cart.html:512
+#: .\templates\wishlist.html:446 .\templates\workers.html:431
+msgid "Gift Certificates"
+msgstr "Подарочные сертификаты"
+
+#: .\templates\about.html:438 .\templates\category.html:407
+#: .\templates\category_detail.html:619 .\templates\checkout.html:742
+#: .\templates\delivery.html:411 .\templates\discounts.html:465
+#: .\templates\home.html:788 .\templates\idea.html:423
+#: .\templates\location.html:375 .\templates\order.html:456
+#: .\templates\projects.html:517 .\templates\reviews.html:496
+#: .\templates\search.html:541 .\templates\services.html:415
+#: .\templates\shop_details.html:1049 .\templates\shopping_cart.html:513
+#: .\templates\wishlist.html:447 .\templates\workers.html:432
+msgid "Brandbook"
+msgstr "Брендбук"
+
+#: .\templates\about.html:442 .\templates\category.html:411
+#: .\templates\category_detail.html:623 .\templates\checkout.html:746
+#: .\templates\delivery.html:415 .\templates\discounts.html:469
+#: .\templates\home.html:792 .\templates\idea.html:427
+#: .\templates\location.html:379 .\templates\order.html:460
+#: .\templates\projects.html:521 .\templates\reviews.html:500
+#: .\templates\search.html:545 .\templates\services.html:419
+#: .\templates\shop_details.html:1053 .\templates\shopping_cart.html:517
+#: .\templates\wishlist.html:451 .\templates\workers.html:436
+msgid "Contact Information"
+msgstr "Контактная информация"
+
+#: .\templates\about.html:456 .\templates\category.html:425
+#: .\templates\category_detail.html:637 .\templates\checkout.html:760
+#: .\templates\delivery.html:429 .\templates\discounts.html:483
+#: .\templates\home.html:806 .\templates\idea.html:441
+#: .\templates\location.html:393 .\templates\order.html:474
+#: .\templates\projects.html:535 .\templates\reviews.html:514
+#: .\templates\search.html:559 .\templates\services.html:433
+#: .\templates\shop_details.html:1067 .\templates\shopping_cart.html:531
+#: .\templates\wishlist.html:465 .\templates\workers.html:450
+msgid "Working hours daily from 10:00 to 20:00"
+msgstr "Время работы ежедневно с 10:00 до 20:00"
+
+#: .\templates\about.html:483 .\templates\category.html:452
+#: .\templates\category_detail.html:664 .\templates\checkout.html:787
+#: .\templates\delivery.html:456 .\templates\discounts.html:510
+#: .\templates\home.html:833 .\templates\idea.html:468
+#: .\templates\location.html:420 .\templates\order.html:501
+#: .\templates\projects.html:562 .\templates\reviews.html:541
+#: .\templates\search.html:586 .\templates\services.html:460
+#: .\templates\shop_details.html:1094 .\templates\shopping_cart.html:558
+#: .\templates\wishlist.html:492 .\templates\workers.html:477
+msgid "© CHINAR, 2008—2026. All rights reserved."
+msgstr "© CHINAR, 2008—2026. Все права защищены."
+
+#: .\templates\about.html:485 .\templates\category.html:454
+#: .\templates\category_detail.html:666 .\templates\checkout.html:789
+#: .\templates\delivery.html:458 .\templates\discounts.html:512
+#: .\templates\home.html:835 .\templates\idea.html:470
+#: .\templates\location.html:422 .\templates\order.html:503
+#: .\templates\projects.html:564 .\templates\reviews.html:543
+#: .\templates\search.html:588 .\templates\services.html:462
+#: .\templates\shop_details.html:1096 .\templates\shopping_cart.html:560
+#: .\templates\wishlist.html:494 .\templates\workers.html:479
+msgid "Privacy Policy"
+msgstr "Политика конфиденциальности"
+
+#: .\templates\about.html:486 .\templates\category.html:455
+#: .\templates\category_detail.html:667 .\templates\checkout.html:577
+#: .\templates\checkout.html:790 .\templates\delivery.html:459
+#: .\templates\discounts.html:513 .\templates\home.html:836
+#: .\templates\idea.html:471 .\templates\location.html:423
+#: .\templates\order.html:504 .\templates\projects.html:565
+#: .\templates\reviews.html:544 .\templates\search.html:589
+#: .\templates\services.html:463 .\templates\shop_details.html:1097
+#: .\templates\shopping_cart.html:561 .\templates\wishlist.html:495
+#: .\templates\workers.html:480
+msgid "User Agreement"
+msgstr "Пользовательское соглашение"
+
+#: .\templates\category_detail.html:289 .\templates\discounts.html:285
+#: .\templates\search.html:293
+msgid "products"
+msgstr "товаров"
+
+#: .\templates\category_detail.html:300 .\templates\category_detail.html:498
+#: .\templates\search.html:303
+msgid "Only in stock"
+msgstr "Только в наличии"
+
+#: .\templates\category_detail.html:317 .\templates\category_detail.html:505
+msgid "Price"
+msgstr "Цена"
+
+#: .\templates\category_detail.html:336 .\templates\category_detail.html:512
+#: .\templates\search.html:334
+msgid "from"
+msgstr "от"
+
+#: .\templates\category_detail.html:342 .\templates\category_detail.html:513
+#: .\templates\search.html:339
+msgid "to"
+msgstr "до"
+
+#: .\templates\category_detail.html:349 .\templates\category_detail.html:518
+#: .\templates\search.html:345
+msgid "Apply"
+msgstr "Применить"
+
+#: .\templates\category_detail.html:364
+msgid " By newness"
+msgstr "По новизне"
+
+#: .\templates\category_detail.html:368
+msgid " Lowest first"
+msgstr "Сначала дешёвые"
+
+#: .\templates\category_detail.html:372
+msgid " Highest first"
+msgstr "Сначала дорогие"
+
+#: .\templates\category_detail.html:376
+msgid "  On sale"
+msgstr "Со скидкой"
+
+#: .\templates\category_detail.html:384 .\templates\discounts.html:302
+msgid "Filters"
+msgstr "Фильтры"
+
+#: .\templates\category_detail.html:390 .\templates\discounts.html:293
+#: .\templates\discounts.html:308 .\templates\search.html:355
+msgid "By newness"
+msgstr "По новизне"
+
+#: .\templates\category_detail.html:391 .\templates\discounts.html:294
+#: .\templates\discounts.html:309 .\templates\search.html:356
+msgid "Lowest first"
+msgstr "Сначала дешёвые"
+
+#: .\templates\category_detail.html:392 .\templates\discounts.html:295
+#: .\templates\discounts.html:310 .\templates\search.html:357
+msgid "Highest first"
+msgstr "Сначала дорогие"
+
+#: .\templates\category_detail.html:393 .\templates\search.html:358
+msgid "On sale"
+msgstr "Со скидкой"
+
+#: .\templates\category_detail.html:411 .\templates\home.html:635
+#: .\templates\search.html:366 .\templates\shop_details.html:340
+#: .\templates\shop_details.html:815 .\templates\shop_details.html:879
+#: .\templates\wishlist.html:290
+msgid "New"
+msgstr "Новинка"
+
+#: .\templates\category_detail.html:455 .\templates\discounts.html:344
+#: .\templates\home.html:349 .\templates\home.html:666
+#: .\templates\search.html:412 .\templates\shop_details.html:350
+#: .\templates\shop_details.html:846 .\templates\shop_details.html:910
+#: .\templates\wishlist.html:318
+msgid "reviews"
+msgstr "отзывы"
+
+#: .\templates\category_detail.html:459 .\templates\discounts.html:347
+#: .\templates\search.html:416
+msgid "Manufacturer:"
+msgstr "Производитель:"
+
+#: .\templates\category_detail.html:460
+msgid "Chinar"
+msgstr "Chinar"
+
+#: .\templates\category_detail.html:476 .\templates\discounts.html:356
+#: .\templates\search.html:428
+msgid "Remove from cart"
+msgstr "Удалить из корзины"
+
+#: .\templates\category_detail.html:478 .\templates\discounts.html:358
+#: .\templates\search.html:430 .\templates\shop_details.html:848
+#: .\templates\shop_details.html:912 .\templates\wishlist.html:324
+msgid "Add to cart"
+msgstr "Добавить в корзину"
+
+#: .\templates\category_detail.html:519
+msgid "Reset"
+msgstr "Сбросить"
+
+#: .\templates\checkout.html:304
+#, python-format
+msgid " %% Monthly discounts"
+msgstr "%% Ежемесячные скидки"
+
+#: .\templates\checkout.html:326
+msgid "Your Data"
+msgstr "Ваши данные"
+
+#: .\templates\checkout.html:330 .\templates\settings.html:381
+msgid "Phone "
+msgstr "Телефон"
+
+#: .\templates\checkout.html:341
+msgid "First Name"
+msgstr "Имя"
+
+#: .\templates\checkout.html:350 .\templates\settings.html:357
+msgid "Last Name "
+msgstr "Фамилия"
+
+#: .\templates\checkout.html:369
+msgid "Delivery Method"
+msgstr "Способ доставки"
+
+#: .\templates\checkout.html:380 .\templates\checkout.html:623
+#: .\templates\shop_details.html:572
+msgid "Delivery"
+msgstr "Доставка"
+
+#: .\templates\checkout.html:381
+msgid "Delivery to address"
+msgstr "Доставка по адресу"
+
+#: .\templates\checkout.html:394 .\templates\delivery.html:304
+#: .\templates\shop_details.html:542
+msgid "Pickup"
+msgstr "Самовывоз"
+
+#: .\templates\checkout.html:395
+msgid "Pick up from store"
+msgstr "Забрать из магазина"
+
+#: .\templates\checkout.html:405
+msgid "Delivery Address"
+msgstr "Адрес доставки"
+
+#: .\templates\checkout.html:409
+msgid "Region / Oblast "
+msgstr "Регион / Область"
+
+#: .\templates\checkout.html:411
+msgid "Select region"
+msgstr "Выберите регион"
+
+#: .\templates\checkout.html:421
+msgid "City / District "
+msgstr "Город / Район"
+
+#: .\templates\checkout.html:442
+msgid "Address "
+msgstr "Адрес"
+
+#: .\templates\checkout.html:451
+msgid "Floor"
+msgstr "Этаж"
+
+#: .\templates\checkout.html:459
+msgid "Store Information"
+msgstr "Информация о магазине"
+
+#: .\templates\checkout.html:465
+msgid "Chinar Factory"
+msgstr "Фабрика Chinar"
+
+#: .\templates\checkout.html:466
+msgid ""
+"Mahalla Cho'pon-ota, Uchtepa hokimyatligi, 100123, Tashkent, Uzbekistan"
+msgstr "Махалля Чупон-ота, Учтепинский хокимият, 100123, Ташкент, Узбекистан"
+
+#: .\templates\checkout.html:471
+msgid "Working Hours"
+msgstr "Часы работы"
+
+#: .\templates\checkout.html:481
+msgid "Select Another Store"
+msgstr "Выбрать другой магазин"
+
+#: .\templates\checkout.html:485
+msgid "Delivery Conditions"
+msgstr "Условия доставки"
+
+#: .\templates\checkout.html:490
+msgid "Tomorrow or later"
+msgstr "Завтра или позже"
+
+#: .\templates\checkout.html:491
+msgid "Delivery within 3-5 days — 30.000sum"
+msgstr "Доставка в течение 3-5 дней — 30 000 сум"
+
+#: .\templates\checkout.html:503
+msgid "Fast delivery"
+msgstr "Быстрая доставка"
+
+#: .\templates\checkout.html:504
+msgid "Delivery within 1-2 days — 100 000 sum"
+msgstr "Доставка в течение 1-2 дней — 100 000 сум"
+
+#: .\templates\checkout.html:518
+msgid ""
+"Exact delivery time and cost will be communicated by the operator after "
+"order placement"
+msgstr ""
+"Точное время и стоимость доставки сообщит оператор после оформления заказа"
+
+#: .\templates\checkout.html:530
+msgid "Select Payment Method"
+msgstr "Выберите способ оплаты"
+
+#: .\templates\checkout.html:553
+msgid "Cash on Delivery"
+msgstr "Наличными при получении"
+
+#: .\templates\checkout.html:560 .\templates\shop_details.html:413
+msgid "Installment"
+msgstr "Рассрочка"
+
+#: .\templates\checkout.html:565
+msgid "Order Comment"
+msgstr "Комментарий к заказу"
+
+#: .\templates\checkout.html:576
+msgid "By confirming the order, I accept the terms of the"
+msgstr "Подтверждая заказ, я принимаю условия"
+
+#: .\templates\checkout.html:592 .\templates\shopping_cart.html:357
+msgid "Your Order"
+msgstr "Ваш заказ"
+
+#: .\templates\checkout.html:596
+msgid "Order Items"
+msgstr "Товары в заказе"
+
+#: .\templates\checkout.html:601
+msgid "Edit"
+msgstr "Редактировать"
+
+#: .\templates\checkout.html:619 .\templates\shopping_cart.html:359
+msgid "items for"
+msgstr "товаров на"
+
+#: .\templates\checkout.html:630 .\templates\shopping_cart.html:368
+msgid "Total"
+msgstr "Итого"
+
+#: .\templates\delivery.html:278
+msgid "Delivery and Payment"
+msgstr "Доставка и оплата"
+
+#: .\templates\delivery.html:289
+msgid "Delivery in Tashkent"
+msgstr "Доставка по Ташкенту"
+
+#: .\templates\delivery.html:290
+msgid ""
+"As soon as the order is processed, our manager will call you back to confirm"
+" the order and clarify details. Please note that if the operator cannot "
+"contact you within two days, we will be forced to cancel the order. Delivery"
+" within 24 hours from the moment of order confirmation, provided the goods "
+"are in stock. Delivery is carried out from 09:00 to 18:00. If you need to "
+"make a purchase on the same day, we advise you to check with our manager or "
+"come to one of the stores and buy on the spot. Note that the courier waiting"
+" time is limited. You can add your wishes for the order in the \"comment\" "
+"field. Any information can be obtained by phone"
+msgstr ""
+"Как только заказ будет обработан, наш менеджер перезвонит вам, чтобы "
+"подтвердить заказ и уточнить детали. Обратите внимание: если оператор не "
+"сможет связаться с вами в течение двух дней, мы будем вынуждены отменить "
+"заказ. Доставка осуществляется в течение 24 часов с момента подтверждения "
+"заказа при наличии товара на складе. Доставка производится с 09:00 до 18:00."
+" Если вам необходимо совершить покупку в тот же день, советуем уточнить у "
+"нашего менеджера или приехать в один из магазинов и купить на месте. "
+"Обратите внимание, что время ожидания курьера ограничено. Свои пожелания к "
+"заказу вы можете указать в поле «комментарий». Любую информацию можно "
+"получить по телефону"
+
+#: .\templates\delivery.html:290
+msgid ""
+"We will answer any questions from 9:00 to 21:00 on all working days. Please "
+"note that delivery is carried out within Tashkent."
+msgstr ""
+"Мы ответим на любые вопросы с 9:00 до 21:00 во все рабочие дни. Обратите "
+"внимание, что доставка осуществляется в пределах Ташкента."
+
+#: .\templates\delivery.html:294
+msgid "Furniture Lifting"
+msgstr "Подъём мебели"
+
+#: .\templates\delivery.html:295
+msgid "Furniture lifting is free of charge!"
+msgstr "Подъём мебели бесплатно!"
+
+#: .\templates\delivery.html:299
+msgid "Delivery in Uzbekistan"
+msgstr "Доставка по Узбекистану"
+
+#: .\templates\delivery.html:300
+msgid ""
+"Free delivery only within Tashkent city. Delivery to regions is negotiated "
+"individually."
+msgstr ""
+"Бесплатная доставка только в пределах города Ташкента. Доставка в регионы "
+"обговаривается индивидуально."
+
+#: .\templates\delivery.html:305
+msgid ""
+"As soon as your order is collected, our managers will definitely contact you"
+" to clarify the date of your arrival at the warehouse. Direct order "
+"formation takes place within one day and, as a rule, the order can be picked"
+" up the very next day."
+msgstr ""
+"Как только ваш заказ будет собран, наши менеджеры обязательно свяжутся с "
+"вами, чтобы уточнить дату вашего прибытия на склад. Непосредственное "
+"формирование заказа занимает один день, и, как правило, заказ можно забрать "
+"уже на следующий день."
+
+#: .\templates\delivery.html:309
+msgid "In case of questions or comments, feel free to contact us by phone"
+msgstr ""
+"При возникновении вопросов или замечаний, пожалуйста, свяжитесь с нами по "
+"телефону"
+
+#: .\templates\discounts.html:280
+msgid "Monthly Discounts"
+msgstr "Ежемесячные скидки"
+
+#: .\templates\discounts.html:284
+#, python-format
+msgid " %% Monthly Discounts"
+msgstr "%% Ежемесячные скидки"
+
+#: .\templates\home.html:290
+msgid "Order Now"
+msgstr "Заказать сейчас"
+
+#: .\templates\home.html:306
+msgid "Hot Discounts"
+msgstr "Горячие скидки"
+
+#: .\templates\home.html:356 .\templates\home.html:677
+#: .\templates\shop_details.html:384
+msgid "Remove From Cart"
+msgstr "Удалить из корзины"
+
+#: .\templates\home.html:358 .\templates\home.html:679
+#: .\templates\shop_details.html:386
+msgid "Add To Cart"
+msgstr "Добавить в корзину"
+
+#: .\templates\home.html:390
+msgid "Popular Categories"
+msgstr "Популярные категории"
+
+#: .\templates\home.html:408
+msgid "All Categories"
+msgstr "Все категории"
+
+#: .\templates\home.html:419 .\templates\idea.html:279
+msgid "Inspirational ideas"
+msgstr "Вдохновляющие идеи"
+
+#: .\templates\home.html:472
+msgid "CHINAR Interiors"
+msgstr "Интерьеры CHINAR"
+
+#: .\templates\home.html:498
+msgid "View project"
+msgstr "Смотреть проект"
+
+#: .\templates\home.html:545 .\templates\services.html:288
+msgid "Furniture Repair and Reupholstering"
+msgstr "Ремонт и перетяжка мебели"
+
+#: .\templates\home.html:546 .\templates\services.html:289
+msgid ""
+"We restore your furniture to its original beauty and comfort. We provide "
+"quality repairs, upholstery replacement, reupholstering and restoration so "
+"your beloved pieces can serve you for many more years."
+msgstr ""
+"Мы возвращаем вашей мебели первоначальную красоту и комфорт. Мы выполняем "
+"качественный ремонт, замену обивки, перетяжку и реставрацию, чтобы ваши "
+"любимые предметы служили вам ещё долгие годы."
+
+#: .\templates\home.html:547 .\templates\home.html:558
+#: .\templates\home.html:569 .\templates\services.html:290
+#: .\templates\services.html:301 .\templates\services.html:312
+#: .\templates\shop_details.html:445
+#: .\venv\Lib\site-packages\django\forms\formsets.py:484
+#: .\venv\Lib\site-packages\django\forms\formsets.py:491
+msgid "Order"
+msgstr "Оформить заказ"
+
+#: .\templates\home.html:556 .\templates\services.html:299
+msgid "Custom Orders and Projects"
+msgstr "Индивидуальные заказы и проекты"
+
+#: .\templates\home.html:557 .\templates\services.html:300
+msgid ""
+"We create furniture that reflects your style and fits perfectly into your "
+"space. From unique design ideas to ready-made solutions — every detail is "
+"developed with your wishes in mind."
+msgstr ""
+"Мы создаём мебель, которая отражает ваш стиль и идеально вписывается в ваше "
+"пространство. От уникальных дизайнерских идей до готовых решений — каждая "
+"деталь разрабатывается с учётом ваших пожеланий."
+
+#: .\templates\home.html:567 .\templates\services.html:310
+msgid "Kitchen Furniture"
+msgstr "Кухонная мебель"
+
+#: .\templates\home.html:568 .\templates\services.html:311
+msgid ""
+"Functional, stylish and durable kitchens for any size and interior. We "
+"design and manufacture kitchen furniture that will make your home cozy and "
+"comfortable for living."
+msgstr ""
+"Функциональные, стильные и долговечные кухни для любого размера и интерьера."
+" Мы проектируем и изготавливаем кухонную мебель, которая сделает ваш дом "
+"уютным и комфортным для жизни."
+
+#: .\templates\home.html:580
+msgid "Chinar Stories"
+msgstr "Истории Chinar"
+
+#: .\templates\home.html:589
+msgid "New collection"
+msgstr "Новая коллекция"
+
+#: .\templates\home.html:591
+msgid ""
+"Discover our latest collection of rattan furniture - style, comfort and "
+"natural beauty in every piece"
+msgstr ""
+"Откройте для себя нашу новейшую коллекцию мебели из ротанга — стиль, комфорт"
+" и природная красота в каждом предмете"
+
+#: .\templates\home.html:599
+msgid "Our orders"
+msgstr "Наши заказы"
+
+#: .\templates\home.html:601
+msgid ""
+"We delivered CHINAR furniture to the renowned GEYSER complex – see how our "
+"furniture transforms the space."
+msgstr ""
+"Мы поставили мебель CHINAR в известный комплекс GEYSER — посмотрите, как "
+"наша мебель преображает пространство."
+
+#: .\templates\home.html:609
+msgid "Collection 2026"
+msgstr "Коллекция 2026"
+
+#: .\templates\home.html:611
+msgid ""
+"Meet the 2025 collection – new shapes, fresh colours and contemporary design"
+" for your home and garden"
+msgstr ""
+"Встречайте коллекцию 2025 года — новые формы, свежие цвета и современный "
+"дизайн для вашего дома и сада"
+
+#: .\templates\home.html:622
+msgid "May Be of Interest"
+msgstr "Может быть интересно"
+
+#: .\templates\home.html:625 .\templates\projects.html:286
+msgid "All"
+msgstr "Все"
+
+#: .\templates\home.html:690
+msgid "Show more"
+msgstr "Показать ещё"
+
+#: .\templates\order.html:297 .\templates\reviews.html:295
+#: .\templates\settings.html:301
+msgid "Orders"
+msgstr "Заказы"
+
+#: .\templates\order.html:307 .\templates\reviews.html:305
+#: .\templates\settings.html:311 .\templates\shop_details.html:570
+msgid "Reviews"
+msgstr "Отзывы"
+
+#: .\templates\order.html:329
+msgid "My Orders"
+msgstr "Мои заказы"
+
+#: .\templates\order.html:333
+msgid "All orders"
+msgstr "Все заказы"
+
+#: .\templates\order.html:334
+msgid "Unpaid"
+msgstr "Не оплачены"
+
+#: .\templates\order.html:335
+msgid "Active"
+msgstr "Активные"
+
+#: .\templates\order.html:348
+msgid "No orders yet"
+msgstr "Заказов пока нет"
+
+#: .\templates\order.html:349
+msgid "You have no orders at the moment. Start shopping!"
+msgstr "У вас пока нет заказов. Начните покупки!"
+
+#: .\templates\order.html:351
+msgid "Go to shopping"
+msgstr "Перейти к покупкам"
+
+#: .\templates\order.html:352
+msgid "Back to home"
+msgstr "Вернуться на главную"
+
+#: .\templates\projects.html:280
+msgid "Our projects"
+msgstr "Наши проекты"
+
+#: .\templates\projects.html:281
+msgid "Ready solutions for any space"
+msgstr "Готовые решения для любого пространства"
+
+#: .\templates\projects.html:287
+msgid "Restaurant"
+msgstr "Ресторан"
+
+#: .\templates\projects.html:288
+msgid "Cafe"
+msgstr "Кафе"
+
+#: .\templates\projects.html:289
+msgid "Hotel"
+msgstr "Отель"
+
+#: .\templates\projects.html:290
+msgid "Other"
+msgstr "Другое"
+
+#: .\templates\reviews.html:328
+msgid "My Reviews"
+msgstr "Мои отзывы"
+
+#: .\templates\reviews.html:331
+msgid "All reviews"
+msgstr "Все отзывы"
+
+#: .\templates\reviews.html:332
+msgid "Pending"
+msgstr "На модерации"
+
+#: .\templates\reviews.html:333
+msgid "Published"
+msgstr "Опубликованные"
+
+#: .\templates\search.html:283 .\templates\shop_details.html:279
+msgid "Back"
+msgstr "Назад"
+
+#: .\templates\search.html:287
+msgid "Search Results"
+msgstr "Результаты поиска"
+
+#: .\templates\search.html:292
+msgid "Search results for"
+msgstr "Результаты поиска по запросу"
+
+#: .\templates\search.html:316
+msgid " Price"
+msgstr "Цена"
+
+#: .\templates\settings.html:337
+msgid "Personal information"
+msgstr "Личная информация"
+
+#: .\templates\settings.html:345
+msgid "First Name "
+msgstr "Имя"
+
+#: .\templates\settings.html:369
+msgid "Email "
+msgstr "Электронная почта"
+
+#: .\templates\settings.html:393
+msgid "Date of Birth "
+msgstr "Дата рождения"
+
+#: .\templates\settings.html:404
+msgid "Gender"
+msgstr "Пол"
+
+#: .\templates\settings.html:410
+msgid "Select gender"
+msgstr "Выберите пол"
+
+#: .\templates\settings.html:411
+msgid "Male"
+msgstr "Мужской"
+
+#: .\templates\settings.html:412
+msgid "Female"
+msgstr "Женский"
+
+#: .\templates\settings.html:419
+msgid "Save"
+msgstr "Сохранить"
+
+#: .\templates\settings.html:430
+msgid "Sign out of account"
+msgstr "Выйти из аккаунта"
+
+#: .\templates\settings.html:432
+msgid "Sign out of your account on this device"
+msgstr "Выйти из аккаунта на этом устройстве"
+
+#: .\templates\settings.html:437
+msgid "Sign out"
+msgstr "Выйти"
+
+#: .\templates\shop_details.html:353
+msgid "In stock"
+msgstr "В наличии"
+
+#: .\templates\shop_details.html:364
+msgid "Colors:"
+msgstr "Цвета:"
+
+#: .\templates\shop_details.html:392
+msgid "Buy in 1 click"
+msgstr "Купить в 1 клик"
+
+#: .\templates\shop_details.html:396
+msgid "Courier delivery:"
+msgstr "Курьерская доставка:"
+
+#: .\templates\shop_details.html:397 .\templates\shop_details.html:401
+msgid "Free"
+msgstr "Бесплатно"
+
+#: .\templates\shop_details.html:400
+msgid "Pickup:"
+msgstr "Самовывоз:"
+
+#: .\templates\shop_details.html:404
+msgid "Warranty:"
+msgstr "Гарантия:"
+
+#: .\templates\shop_details.html:405
+msgid "2 years"
+msgstr "2 года"
+
+#: .\templates\shop_details.html:429
+msgid "Total for 12 months:"
+msgstr "Всего за 12 месяцев:"
+
+#: .\templates\shop_details.html:441
+msgid "Available"
+msgstr "В наличии"
+
+#: .\templates\shop_details.html:450
+msgid "Main specifications"
+msgstr "Основные характеристики"
+
+#: .\templates\shop_details.html:454
+msgid "Article:"
+msgstr "Артикул:"
+
+#: .\templates\shop_details.html:458
+msgid "Category:"
+msgstr "Категория:"
+
+#: .\templates\shop_details.html:462
+msgid "Rating:"
+msgstr "Рейтинг:"
+
+#: .\templates\shop_details.html:467 .\templates\shop_details.html:663
+msgid "Sizes:"
+msgstr "Размеры:"
+
+#: .\templates\shop_details.html:477
+msgid "Discount:"
+msgstr "Скидка:"
+
+#: .\templates\shop_details.html:483
+msgid "Delivery information"
+msgstr "Информация о доставке"
+
+#: .\templates\shop_details.html:498
+msgid "Courier delivery"
+msgstr "Курьерская доставка"
+
+#: .\templates\shop_details.html:505
+msgid "Delivery right to your apartment door"
+msgstr "Доставка прямо до двери квартиры"
+
+#: .\templates\shop_details.html:507
+msgid "Delivery within 2 days"
+msgstr "Доставка в течение 2 дней"
+
+#: .\templates\shop_details.html:508
+msgid "Delivery from 10:00 to 20:00"
+msgstr "Доставка с 10:00 до 20:00"
+
+#: .\templates\shop_details.html:509
+msgid "Warning call one hour ago"
+msgstr "Предупредительный звонок за час"
+
+#: .\templates\shop_details.html:510
+msgid "Floor lifting service"
+msgstr "Услуга подъёма на этаж"
+
+#: .\templates\shop_details.html:528
+msgid "Furniture assembly"
+msgstr "Сборка мебели"
+
+#: .\templates\shop_details.html:529
+msgid "Floor lifting"
+msgstr "Подъём на этаж"
+
+#: .\templates\shop_details.html:530
+msgid "Furniture packaging"
+msgstr "Упаковка мебели"
+
+#: .\templates\shop_details.html:543 .\templates\shop_details.html:552
+msgid "Ready for pickup: within 2 days"
+msgstr "Готово к выдаче: в течение 2 дней"
+
+#: .\templates\shop_details.html:550
+msgid "Pick up the item from the pickup point"
+msgstr "Заберите товар из пункта выдачи"
+
+#: .\templates\shop_details.html:553
+msgid "Working hours: 10:00 - 20:00"
+msgstr "Часы работы: 10:00 - 20:00"
+
+#: .\templates\shop_details.html:554
+msgid "Storage for 1 week"
+msgstr "Хранение в течение 1 недели"
+
+#: .\templates\shop_details.html:571
+msgid "Specifications"
+msgstr "Характеристики"
+
+#: .\templates\shop_details.html:573
+msgid "Instructions"
+msgstr "Инструкции"
+
+#: .\templates\shop_details.html:580
+msgid "Reviews "
+msgstr "Отзывы"
+
+#: .\templates\shop_details.html:582 .\templates\shop_details.html:719
+msgid "Write a review"
+msgstr "Написать отзыв"
+
+#: .\templates\shop_details.html:615
+msgid "Reply"
+msgstr "Ответить"
+
+#: .\templates\shop_details.html:652
+msgid "No reviews yet. Be the first to write one!"
+msgstr "Отзывов пока нет. Будьте первым, кто оставит отзыв!"
+
+#: .\templates\shop_details.html:672
+msgid "Material"
+msgstr "Материал"
+
+#: .\templates\shop_details.html:676
+msgid "Frame"
+msgstr "Каркас"
+
+#: .\templates\shop_details.html:677
+msgid "Metal"
+msgstr "Металл"
+
+#: .\templates\shop_details.html:692
+msgid "Weight"
+msgstr "Вес"
+
+#: .\templates\shop_details.html:696
+msgid "Article"
+msgstr "Артикул"
+
+#: .\templates\shop_details.html:704
+msgid ""
+"Delivery across Tashkent — Free. Delivery to other cities of Uzbekistan is "
+"discussed individually. Delivery is carried out by our employees who will "
+"also help lift and assemble the furniture."
+msgstr ""
+"Доставка по Ташкенту — бесплатно. Доставка в другие города Узбекистана "
+"обговаривается индивидуально. Доставка осуществляется нашими сотрудниками, "
+"которые также помогут поднять и собрать мебель."
+
+#: .\templates\shop_details.html:709
+msgid ""
+"Assembly instructions will be included in the package. You can also download"
+" the PDF guide below."
+msgstr ""
+"Инструкция по сборке будет вложена в упаковку. Вы также можете скачать PDF-"
+"руководство ниже."
+
+#: .\templates\shop_details.html:735
+msgid "Rating "
+msgstr "Рейтинг"
+
+#: .\templates\shop_details.html:752
+msgid "Your name "
+msgstr "Ваше имя"
+
+#: .\templates\shop_details.html:759
+msgid "Phone number "
+msgstr "Номер телефона"
+
+#: .\templates\shop_details.html:766
+msgid "Review "
+msgstr "Отзыв"
+
+#: .\templates\shop_details.html:777
+msgid "Click to upload images or drag here"
+msgstr "Нажмите, чтобы загрузить изображения, или перетащите их сюда"
+
+#: .\templates\shop_details.html:784
+msgid "Cancel"
+msgstr "Отмена"
+
+#: .\templates\shop_details.html:787
+msgid "Submit"
+msgstr "Отправить"
+
+#: .\templates\shop_details.html:800
+msgid "Similar Products"
+msgstr "Похожие товары"
+
+#: .\templates\shop_details.html:864
+msgid "Recently Viewed"
+msgstr "Недавно просмотренные"
+
+#: .\templates\shopping_cart.html:290
+msgid "Select all"
+msgstr "Выбрать все"
+
+#: .\templates\shopping_cart.html:363
+msgid "Discount"
+msgstr "Скидка"
+
+#: .\templates\shopping_cart.html:382
+msgid "Delivery Service"
+msgstr "Служба доставки"
+
+#: .\templates\shopping_cart.html:383
+msgid "Learn more"
+msgstr "Подробнее"
+
+#: .\templates\shopping_cart.html:387
+msgid "Checkout"
+msgstr "Оформить заказ"
+
+#: .\templates\shopping_cart.html:402
+msgid "Your cart is empty"
+msgstr "Ваша корзина пуста"
+
+#: .\templates\shopping_cart.html:403
+msgid "Add products to your cart to start shopping"
+msgstr "Добавьте товары в корзину, чтобы начать покупки"
+
+#: .\templates\shopping_cart.html:405 .\templates\wishlist.html:343
+msgid "Continue shopping"
+msgstr "Продолжить покупки"
+
+#: .\templates\shopping_cart.html:406 .\templates\wishlist.html:344
+msgid "Go to catalog"
+msgstr "Перейти в каталог"
+
+#: .\templates\shopping_cart.html:410
+msgid "Need help? "
+msgstr "Нужна помощь?"
+
+#: .\templates\shopping_cart.html:410 .\templates\wishlist.html:348
+msgid "Contact our support service"
+msgstr "Свяжитесь с нашей службой поддержки"
+
+#: .\templates\wishlist.html:283
+msgid " items"
+msgstr "товаров"
+
+#: .\templates\wishlist.html:340
+msgid "Your wishlist is empty"
+msgstr "Ваш список избранного пуст"
+
+#: .\templates\wishlist.html:341
+msgid "Add products to your wishlist to save them for future purchases"
+msgstr "Добавьте товары в избранное, чтобы сохранить их для будущих покупок"
+
+#: .\templates\wishlist.html:348
+msgid "Need help?"
+msgstr "Нужна помощь?"
+
+#: .\templates\workers.html:282
+msgid "Collaboration with designers"
+msgstr "Сотрудничество с дизайнерами"
+
+#: .\templates\workers.html:282
+msgid "and architects"
+msgstr "и архитекторов"
+
+#: .\templates\workers.html:283
+msgid ""
+"Chinar invites professional designers, decorators and architects to join the"
+" new Chinar Design program"
+msgstr ""
+"Chinar приглашает профессиональных дизайнеров, декораторов и архитекторов "
+"присоединиться к новой программе Chinar Design"
+
+#: .\templates\workers.html:292
+msgid "The production program includes:"
+msgstr "Производственная программа включает:"
+
+#: .\templates\workers.html:294
+msgid ""
+"Convenient location of branded salons, where you can meet with a client in a"
+" comfortable environment;"
+msgstr ""
+"Удобное расположение фирменных салонов, где вы можете встретиться с клиентом"
+" в комфортной обстановке;"
+
+#: .\templates\workers.html:295
+msgid "Agency agreement, valid for all salons;"
+msgstr "Агентский договор, действующий для всех салонов;"
+
+#: .\templates\workers.html:296
+msgid "One-stop-shop principle (contract, closing payments);"
+msgstr "Принцип «единого окна» (договор, закрывающие платежи);"
+
+#: .\templates\workers.html:297
+msgid "Promotions and contests for Partners;"
+msgstr "Акции и конкурсы для партнёров;"
+
+#: .\templates\workers.html:298
+msgid "Closed events for partners;"
+msgstr "Закрытые мероприятия для партнёров;"
+
+#: .\templates\workers.html:299
+msgid "Online sales;"
+msgstr "Онлайн-продажи;"
+
+#: .\templates\workers.html:300
+msgid "Regular update of collections/assortment;"
+msgstr "Регулярное обновление коллекций/ассортимента;"
+
+#: .\templates\workers.html:301
+msgid ""
+"Wide selection of furniture and accessories for bedrooms, living rooms and "
+"children's rooms;"
+msgstr ""
+"Широкий выбор мебели и аксессуаров для спален, гостиных и детских комнат;"
+
+#: .\templates\workers.html:302
+msgid "Monthly update of promotions for clients."
+msgstr "Ежемесячное обновление акций для клиентов."
+
+#: .\templates\workers.html:308
+msgid "Contact us"
+msgstr "Связаться с нами"
+
+#: .\templates\workers.html:309
+msgid "Send us your request and we will promptly respond to you."
+msgstr "Отправьте нам ваш запрос, и мы оперативно ответим вам."
+
+#: .\templates\workers.html:314
+msgid "First name:"
+msgstr "Имя:"
+
+#: .\templates\workers.html:318
+msgid "Last name:"
+msgstr "Фамилия:"
+
+#: .\templates\workers.html:322
+msgid "Phone:"
+msgstr "Телефон:"
+
+#: .\templates\workers.html:326
+msgid "Email:"
+msgstr "Электронная почта:"
+
+#: .\templates\workers.html:329
+msgid "Send"
+msgstr "Отправить"
+
+#: .\venv\Lib\site-packages\django\contrib\messages\apps.py:16
+msgid "Messages"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\sitemaps\apps.py:8
+msgid "Site Maps"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\staticfiles\apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\syndication\apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: .\venv\Lib\site-packages\django\core\paginator.py:33
+msgid "…"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:35
+msgid "That page number is not an integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:36
+msgid "That page number is less than 1"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:37
+msgid "That page contains no results"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:22
+msgid "Enter a valid value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:70
+msgid "Enter a valid domain name."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:153
+#: .\venv\Lib\site-packages\django\forms\fields.py:773
+msgid "Enter a valid URL."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:200
+msgid "Enter a valid integer."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:211
+msgid "Enter a valid email address."
+msgstr ""
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: .\venv\Lib\site-packages\django\core\validators.py:289
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:297
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or"
+" hyphens."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:309
+#: .\venv\Lib\site-packages\django\core\validators.py:318
+#: .\venv\Lib\site-packages\django\core\validators.py:332
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2220
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:311
+msgid "IPv4"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:320
+#: .\venv\Lib\site-packages\django\utils\ipv6.py:43
+msgid "IPv6"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:334
+msgid "IPv4 or IPv6"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:375
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:381
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:416
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:425
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:434
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:441
+#, python-format
+msgid ""
+"Ensure this value is a multiple of step size %(limit_value)s, starting from "
+"%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:473
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:491
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:514
+#: .\venv\Lib\site-packages\django\forms\fields.py:364
+#: .\venv\Lib\site-packages\django\forms\fields.py:403
+msgid "Enter a number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:516
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:521
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:526
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:597
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:659
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\base.py:1633
+#: .\venv\Lib\site-packages\django\forms\models.py:932
+msgid "and"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\base.py:1635
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\constraints.py:20
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:134
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:135
+msgid "This field cannot be null."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:136
+msgid "This field cannot be blank."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:137
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:141
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:180
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1161
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1162
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1164
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1214
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1216
+msgid "String (unlimited)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1325
+msgid "Comma-separated integers"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1426
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1430
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1565
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1434
+msgid "Date (without time)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1561
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1569
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1574
+msgid "Date (with time)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1701
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1703
+msgid "Decimal number"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1864
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1868
+msgid "Duration"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1920
+msgid "Email address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1945
+msgid "File path"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2023
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2025
+msgid "Floating point number"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2065
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2067
+msgid "Integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2163
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2180
+msgid "Small integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2188
+msgid "IPv4 address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2219
+msgid "IP address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2310
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2311
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2313
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2364
+msgid "Positive big integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2379
+msgid "Positive integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2394
+msgid "Positive small integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2410
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2446
+msgid "Text"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2526
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2530
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2534
+msgid "Time"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2642
+msgid "URL"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2666
+msgid "Raw binary data"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2731
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2733
+msgid "Universally unique identifier"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:244
+msgid "File"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:420
+msgid "Image"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\json.py:24
+msgid "A JSON object"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\json.py:26
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:974
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r is not a valid choice."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:977
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1271
+msgid "One-to-one relationship"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1328
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1330
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1378
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to
+#. the label
+#: .\venv\Lib\site-packages\django\forms\boundfield.py:188
+msgid ":?.!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:91
+msgid "This field is required."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:313
+msgid "Enter a whole number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:484
+#: .\venv\Lib\site-packages\django\forms\fields.py:1241
+msgid "Enter a valid date."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:507
+#: .\venv\Lib\site-packages\django\forms\fields.py:1242
+msgid "Enter a valid time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:534
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:568
+msgid "Enter a valid duration."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:569
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:638
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:639
+msgid "No file was submitted."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:640
+msgid "The submitted file is empty."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:642
+#, python-format
+msgid ""
+"Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:647
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:715
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:862
+#: .\venv\Lib\site-packages\django\forms\fields.py:949
+#: .\venv\Lib\site-packages\django\forms\models.py:1621
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:951
+#: .\venv\Lib\site-packages\django\forms\fields.py:1070
+#: .\venv\Lib\site-packages\django\forms\models.py:1619
+msgid "Enter a list of values."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1071
+msgid "Enter a complete value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1313
+msgid "Enter a valid UUID."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1343
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: .\venv\Lib\site-packages\django\forms\forms.py:97
+msgid ":"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\forms.py:239
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:61
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:65
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:70
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:499
+msgid "Delete"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:925
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:930
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:937
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:946
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1383
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1474
+msgid ""
+"Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1623
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\utils.py:229
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:528
+msgid "Clear"
+msgstr "Очистить"
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:529
+msgid "Currently"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:530
+msgid "Change"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:869
+msgid "Unknown"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:870
+msgid "Yes"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:871
+msgid "No"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\tasks\base.py:34
+msgctxt "Task"
+msgid "Ready"
+msgstr "Готовые"
+
+#: .\venv\Lib\site-packages\django\tasks\base.py:36
+msgctxt "Task"
+msgid "Running"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\tasks\base.py:38
+msgctxt "Task"
+msgid "Failed"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\tasks\base.py:40
+msgctxt "Task"
+msgid "Successful"
+msgstr ""
+
+#. Translators: Please do not add spaces around commas.
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:878
+msgid "yes,no,maybe"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:908
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:925
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:927
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:929
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:931
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:933
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:935
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:74
+msgid "p.m."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:75
+msgid "a.m."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:80
+msgid "PM"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:81
+msgid "AM"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:153
+msgid "midnight"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:155
+msgid "noon"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:7
+msgid "Monday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:8
+msgid "Tuesday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:9
+msgid "Wednesday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Thursday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:11
+msgid "Friday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:12
+msgid "Saturday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:13
+msgid "Sunday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:16
+msgid "Mon"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:17
+msgid "Tue"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:18
+msgid "Wed"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "Thu"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:20
+msgid "Fri"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:21
+msgid "Sat"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:22
+msgid "Sun"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:25
+msgid "January"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:26
+msgid "February"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:27
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:28
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:29
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:30
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:31
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:32
+msgid "August"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:33
+msgid "September"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:34
+msgid "October"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:35
+msgid "November"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:36
+msgid "December"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:39
+msgid "jan"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:40
+msgid "feb"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:41
+msgid "mar"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:42
+msgid "apr"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:43
+msgid "may"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:44
+msgid "jun"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:45
+msgid "jul"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:46
+msgid "aug"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:47
+msgid "sep"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:48
+msgid "oct"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:49
+msgid "nov"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:50
+msgid "dec"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:55
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:69
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:75
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:77
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:78
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\ipv6.py:20
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\text.py:76
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\text.py:282
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: .\venv\Lib\site-packages\django\utils\text.py:301
+#: .\venv\Lib\site-packages\django\utils\timesince.py:135
+msgid ", "
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:8
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:9
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:10
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:11
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:12
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:13
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:29
+msgid "Forbidden"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:30
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:34
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:40
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:45
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
+" including the “Referrer-Policy: no-referrer” header, please remove them. "
+"The CSRF protection requires the “Referer” header to do strict referer "
+"checking. If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:54
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:60
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:66
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:44
+msgid "No year specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:64
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:115
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:214
+msgid "Date out of range"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:94
+msgid "No month specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:147
+msgid "No day specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:194
+msgid "No week specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:353
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:384
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:680
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:720
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:173
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:49
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:51
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:68
+#: .\venv\Lib\site-packages\django\views\templates\directory_index.html:8
+#: .\venv\Lib\site-packages\django\views\templates\directory_index.html:11
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:7
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:204
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:208
+#, python-format
+msgid ""
+"You are seeing this page because <a "
+"href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+"target=\"_blank\" rel=\"noopener\">DEBUG=True</a> is in your settings file "
+"and you have not configured any URLs."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:217
+msgid "Django Documentation"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:218
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:226
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:227
+msgid "Get started with Django"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:235
+msgid "Django Community"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:236
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:14
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:94
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:102
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:112
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:122
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:126
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:158
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:177
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:406
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:411
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:421
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:441
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:458
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:477
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:483
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:500
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:512
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:520
+msgid "title"
+msgstr ""
+
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:18
+msgid "password"
+msgstr ""
+
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:287
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:306
+msgid "title a"
+msgstr ""
+
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:291
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:317
+msgid "title b"
+msgstr ""
+
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:295
+msgid "title c"
+msgstr ""
+
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:299
+msgid "title d"
+msgstr ""
+
+#: .\venv\Lib\site-packages\modeltranslation\tests\models.py:422
+msgid "visits"
+msgstr ""
+
+#: .\venv\Lib\site-packages\modeltranslation\tests\translation.py:74
+msgid "Sorry, translation is not available."
+msgstr ""
+
+#: .\venv\Lib\site-packages\modeltranslation\widgets.py:32
+msgid "None"
+msgstr ""
+
+msgid "FREE DELIVERY IN TASHKENT"
+msgstr "БЕСПЛАТНАЯ ДОСТАВКА ПО ТАШКЕНТУ"
+
+msgid "2 YEAR WARRANTY"
+msgstr "ГАРАНТИЯ 2 ГОДА"
+
+msgid "INSTALLMENT AVAILABLE"
+msgstr "ВОЗМОЖНА РАССРОЧКА"
+
+msgid "Garden and patio furniture"
+msgstr "Садовая и дачная мебель"
+
+msgid "Live in harmony"
+msgstr "Живите в гармонии"
+
+msgid "with nature"
+msgstr "с природой"
+
+msgid ""
+"Chinar — handwoven furniture that withstands sun, rain and years. We turn "
+"your garden into a living space."
+msgstr ""
+"Chinar — плетёная вручную мебель, которой не страшны солнце, дождь и годы. "
+"Превратим ваш сад в место для жизни."
+
+msgid "View catalog"
+msgstr "Смотреть каталог"
+
+msgid "and thousands of clients"
+msgstr "и тысячи клиентов"
+
+msgid "Free delivery"
+msgstr "Бесплатная доставка"
+
+msgid "Across Tashkent"
+msgstr "По Ташкенту"
+
+msgid "2 year warranty"
+msgstr "Гарантия 2 года"
+
+msgid "On all products"
+msgstr "На все товары"
+
+msgid "Up to 24 months"
+msgstr "До 24 месяцев"
+
+msgid "Weather resistant"
+msgstr "Устойчива к погоде"
+
+msgid "Outdoors all year round"
+msgstr "На улице круглый год"
+
+msgid "What are you"
+msgstr "Что вы"
+
+msgid "looking for?"
+msgstr "ищете?"
+
+msgid "See all"
+msgstr "Все"
+
+msgid "Customer"
+msgstr "Любимые"
+
+msgid "favorites"
+msgstr "товары"
+
+msgid "Monthly"
+msgstr "Скидки"
+
+msgid "discounts"
+msgstr "месяца"
+
+msgid "View all"
+msgstr "Смотреть все"
+
+msgid "Picked"
+msgstr "Выбрали"
+
+msgid "for you"
+msgstr "для вас"
+
+msgid "Crafted with love"
+msgstr "В каждом плетении"
+
+msgid "in every weave"
+msgstr "любовь мастеров"
+
+msgid ""
+"Chinar furniture is handwoven by experienced craftsmen from quality "
+"artificial rattan and durable fabrics. Weather-resistant materials mean your"
+" furniture serves for years like new."
+msgstr ""
+"Мебель Chinar плетут опытные мастера из качественного искусственного ротанга"
+" и прочных тканей. Стойкие к погоде материалы — мебель служит годами как "
+"новая."
+
+msgid "product types"
+msgstr "видов товаров"
+
+msgid "happy clients"
+msgstr "довольных клиентов"
+
+msgid ""
+"Your comfort is our goal. 15 years of experience in garden and patio "
+"furniture."
+msgstr "Ваш комфорт — наша цель. 15 лет опыта в садовой мебели."
+
+msgid "Contact"
+msgstr "Контакты"
+
+msgid "All rights reserved."
+msgstr "Все права защищены."
+
+msgid "items"
+msgstr "товаров"
+
+msgid "Newest"
+msgstr "Новинки"
+
+msgid "Cheapest first"
+msgstr "Сначала дешевле"
+
+msgid "Expensive first"
+msgstr "Сначала дороже"
+
+msgid "Empty for now"
+msgstr "Пока пусто"
+
+msgid "No products found in this category."
+msgstr "В этой категории товаров не найдено."
+
+msgid "Back to catalog"
+msgstr "Назад в каталог"
+
+msgid "Open catalog"
+msgstr "Открыть каталог"
+
+msgid "arrivals"
+msgstr "поступления"
+
+msgid "Nothing new yet"
+msgstr "Пока новинок нет"
+
+msgid "New products are coming soon."
+msgstr "Скоро появятся новые товары."
+
+msgid "No discounts right now"
+msgstr "Скидок пока нет"
+
+msgid "New promotions are coming soon!"
+msgstr "Скоро начнутся новые акции!"
+
+msgid "results found"
+msgstr "результатов найдено"
+
+msgid "Nothing found"
+msgstr "Ничего не найдено"
+
+msgid "no products found. Try another word."
+msgstr "товаров не найдено. Попробуйте другое слово."
+
+msgid "Favorite"
+msgstr "Избранные"
+
+msgid "Favorites are empty"
+msgstr "В избранном пусто"
+
+msgid "Save products you like with the heart icon."
+msgstr "Сохраняйте понравившиеся товары сердечком."
+
+msgid "Your order"
+msgstr "Ваш заказ"
+
+msgid "Products"
+msgstr "Товары"
+
+msgid "Cart is empty"
+msgstr "Корзина пуста"
+
+msgid "Choose furniture you like from the catalog."
+msgstr "Выберите мебель из каталога."
+
+msgid "Remove"
+msgstr "Удалить"
+
+msgid "Free (Tashkent)"
+msgstr "Бесплатно (Ташкент)"
+
+msgid "Warranty"
+msgstr "Гарантия"
+
+msgid "Payment"
+msgstr "Оплата"
+
+msgid "Cash / card / installment"
+msgstr "Наличные / карта / рассрочка"
+
+msgid "Category"
+msgstr "Категория"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "Similar"
+msgstr "Похожие"
+
+msgid "Go to cart"
+msgstr "В корзину"
+
+msgid "Journal"
+msgstr "Журнал"
+
+msgid "Track order status in Telegram"
+msgstr "Отслеживайте статус заказа в Telegram"
+
+msgid "Place your"
+msgstr "Оформление"
+
+msgid "order"
+msgstr "заказа"
+
+msgid "Contact details"
+msgstr "Контактные данные"
+
+msgid "Delivery (free)"
+msgstr "Доставка (бесплатно)"
+
+msgid "Pickup from store"
+msgstr "Самовывоз из магазина"
+
+msgid "Choose a district"
+msgstr "Выберите район"
+
+msgid "For example: Yunusobod 13th block"
+msgstr "Например: Юнусабад 13-й квартал"
+
+msgid "Floor / landmark"
+msgstr "Этаж / ориентир"
+
+msgid "Payment method"
+msgstr "Способ оплаты"
+
+msgid "Cash"
+msgstr "Наличные"
+
+msgid "Place order"
+msgstr "Оформить заказ"
+
+msgid "Promo code"
+msgstr "Промокод"
+
+msgid "Choose a product before checkout."
+msgstr "Сначала выберите товар для оформления."
+
+msgid "My"
+msgstr "Мои"
+
+msgid "orders"
+msgstr "заказы"
+
+msgid "Go to the catalog to place your first order."
+msgstr "Перейдите в каталог, чтобы оформить первый заказ."
+
+msgid "Inspiring"
+msgstr "Вдохновляющие"
+
+msgid "ideas"
+msgstr "идеи"
+
+msgid "Tap the dots on the photo to see the product"
+msgstr "Нажмите на точки на фото, чтобы увидеть товар"
+
+msgid "View product"
+msgstr "Перейти к товару"
+
+msgid "No ideas yet"
+msgstr "Идей пока нет"
+
+msgid "New interior ideas are coming soon."
+msgstr "Скоро появятся новые идеи интерьера."
+
+msgid "No reviews yet"
+msgstr "Отзывов пока нет"
+
+msgid "Leave a review for products you bought."
+msgstr "Оставьте отзыв о купленных товарах."
+
+msgid "settings"
+msgstr "настройки"
+
+msgid "Birth date"
+msgstr "Дата рождения"
+
+msgid "Coming soon"
+msgstr "Скоро"
+
+msgid "Garden furnishing tips and news will appear here."
+msgstr "Здесь появятся советы и новости по обустройству сада."
+
+msgid "Our"
+msgstr "Наш"
+
+msgid "showroom"
+msgstr "шоурум"
+
+msgid "Tashkent city"
+msgstr "город Ташкент"
+
+msgid "Daily 9:00 — 19:00"
+msgstr "Ежедневно 9:00 — 19:00"
+
+msgid "Call us"
+msgstr "Позвонить"
+
+msgid "Completed"
+msgstr "Реализованные"
+
+msgid "projects"
+msgstr "проекты"
+
+msgid "Your space —"
+msgstr "Ваша территория —"
+
+msgid "our project"
+msgstr "наш проект"
+
+msgid "Start a project"
+msgstr "Начать проект"
+
+msgid "services"
+msgstr "услуги"
+
+msgid "Delivery and installation"
+msgstr "Доставка и установка"
+
+msgid "Free delivery across Tashkent, assembled and installed on site."
+msgstr "Бесплатная доставка по Ташкенту, сборка и установка на месте."
+
+msgid "Space design"
+msgstr "Дизайн территории"
+
+msgid "We plan the furniture layout for your garden or yard for free."
+msgstr "Бесплатно спланируем расстановку мебели для вашего сада или двора."
+
+msgid "Custom weaving"
+msgstr "Плетение на заказ"
+
+msgid ""
+"Choose the size, shape and color — our craftsmen weave it just for you."
+msgstr "Выберите размер, форму и цвет — наши мастера сплетут именно для вас."
+
+msgid "Repair"
+msgstr "Ремонт"
+
+msgid "Re-weaving and renewal service for Chinar furniture."
+msgstr "Услуга переплетения и обновления мебели Chinar."
+
+msgid "Installments up to 24 months — arranged with no extra charge."
+msgstr "Рассрочка до 24 месяцев — оформим без переплаты."
+
+msgid "For business"
+msgstr "Для бизнеса"
+
+msgid "Furnishing for cafes, restaurants and hotels at wholesale prices."
+msgstr "Оснащение кафе, ресторанов и гостиниц по оптовым ценам."
+
+msgid "For designers"
+msgstr "Для дизайнеров"
+
+msgid "Let's create"
+msgstr "Давайте создадим"
+
+msgid "a project together"
+msgstr "проект вместе"
+
+msgid "Special prices"
+msgstr "Специальные цены"
+
+msgid "Discounts for regular partners"
+msgstr "Скидки для постоянных партнёров"
+
+msgid "Tailored to the project"
+msgstr "Адаптация под проект"
+
+msgid "Individual solutions for size and color"
+msgstr "Индивидуальные решения по размеру и цвету"
+
+msgid "Delivery to site"
+msgstr "Доставка на объект"
+
+msgid "Straight to the project address"
+msgstr "Прямо на адрес проекта"
+
+msgid "Contact:"
+msgstr "Связаться:"
+
+msgid "Delivery and"
+msgstr "Доставка и"
+
+msgid "payment"
+msgstr "оплата"
+
+msgid "Free across Tashkent."
+msgstr "По Ташкенту — бесплатно."
+
+msgid "Delivered within 1–3 business days after confirmation."
+msgstr "Доставим за 1–3 рабочих дня после подтверждения заказа."
+
+msgid "Delivery to regions is priced by distance."
+msgstr "Стоимость доставки в регионы зависит от расстояния."
+
+msgid "The courier will contact you before delivery."
+msgstr "Перед доставкой курьер свяжется с вами."
+
+msgid ""
+"You can pick up your order from our showroom — free and without queues. "
+"Address: Tashkent, Chinar showroom. Call before visiting: +998 (99) "
+"659-55-55."
+msgstr ""
+"Вы можете забрать заказ из нашего шоурума — бесплатно и без очередей. Адрес:"
+" Ташкент, шоурум Chinar. Позвоните перед визитом: +998 (99) 659-55-55."
+
+msgid "Payment methods"
+msgstr "Способы оплаты"
+
+msgid "secure online payment."
+msgstr "онлайн, безопасная оплата."
+
+msgid "upon receiving the order."
+msgstr "при получении заказа."
+
+msgid "payment terms up to 24 months."
+msgstr "рассрочка до 24 месяцев."
+
+msgid "Warranty and returns"
+msgstr "Гарантия и возврат"
+
+msgid ""
+"All products come with a 2-year warranty. If a factory defect is found, we "
+"repair or replace the product for free. Questions: +998 (99) 659-55-55."
+msgstr ""
+"На все товары гарантия 2 года. При обнаружении заводского брака бесплатно "
+"отремонтируем или заменим товар. Вопросы: +998 (99) 659-55-55."
+
+msgid "About"
+msgstr "О компании"
+
+msgid "Creating"
+msgstr "Создаём"
+
+msgid "comfort"
+msgstr "комфорт"
+
+msgid "for 15 years"
+msgstr "уже 15 лет"
+
+msgid ""
+"Chinar is one of the leading garden and patio furniture makers in "
+"Uzbekistan. Every chair, table and sofa is woven by our experienced "
+"craftsmen from quality synthetic rattan and durable fabrics."
+msgstr ""
+"Chinar — один из ведущих производителей садовой мебели в Узбекистане. Каждый"
+" стул, стол и диван плетётся руками наших опытных мастеров из качественного "
+"искусственного ротанга и прочных тканей."
+
+msgid ""
+"Our products withstand sun, rain and cold — designed to stay outdoors all "
+"year round. That is why every product comes with a 2-year warranty."
+msgstr ""
+"Наша мебель устойчива к солнцу, дождю и холоду — рассчитана на "
+"круглогодичное пребывание на улице. Поэтому на каждый товар мы даём гарантию"
+" 2 года."
+
+msgid "happy customers"
+msgstr "довольных клиентов"
+
+msgid "Visit our showroom"
+msgstr "Приходите в шоурум"
+
+msgid "Why"
+msgstr "Почему именно"
+
+msgid "Handcrafted"
+msgstr "Ручная работа"
+
+msgid "Every weave made by craftsmen"
+msgstr "Каждое плетение — руками мастеров"
+
+msgid "Weatherproof"
+msgstr "Устойчива к погоде"
+
+msgid "Resistant to UV and moisture"
+msgstr "Устойчива к УФ и влаге"
+
+msgid "Tashkent, Chinar showroom"
+msgstr "Ташкент, шоурум Chinar"
+
+msgid "Your comfort is our goal!"
+msgstr "Ваш комфорт — наша цель!"
+
+msgid "garden and patio furniture"
+msgstr "садовая мебель"
+
+msgid "Tap on it"
+msgstr "Нажмите на него"
+
+msgid "Welcome to Chinar"
+msgstr "Добро пожаловать в Chinar"
+
+msgid "Enter your"
+msgstr "Введите ваш"
+
+msgid "phone number"
+msgstr "номер телефона"
+
+msgid "We will send a confirmation code via SMS"
+msgstr "Мы отправим код подтверждения по SMS"
+
+msgid "GET CODE"
+msgstr "ПОЛУЧИТЬ КОД"
+
+msgid "Enter the code"
+msgstr "Введите код"
+
+msgid "We sent a 6-digit code to your phone via SMS"
+msgstr "Мы отправили 6-значный код на ваш телефон по SMS"
+
+msgid "CONFIRM"
+msgstr "ПОДТВЕРДИТЬ"
+
+msgid "Did not receive the code?"
+msgstr "Не получили код?"
+
+msgid "Send again"
+msgstr "Отправить ещё раз"
+
+msgid ""
+"We have furnished dozens of spaces with Chinar furniture — private yards, "
+"cafes, restaurants and hotels. A project gallery will appear here soon."
+msgstr ""
+"Мы обустроили мебелью Chinar десятки пространств — частные дворы, кафе, "
+"рестораны и гостиницы. Галерея проектов скоро появится здесь."
+
+msgid ""
+"Want to start your own project? Contact us for a free consultation and a "
+"layout plan."
+msgstr ""
+"Хотите начать свой проект? Свяжитесь с нами для бесплатной консультации и "
+"плана расстановки."
+
+msgid "Let's start"
+msgstr "Начнём"
+
+msgid "your project"
+msgstr "ваш проект"
+
+msgid ""
+"Our specialist will offer a free consultation, take measurements and prepare"
+" a furniture layout for your space."
+msgstr ""
+"Наш специалист бесплатно проконсультирует, снимет замеры и подготовит план "
+"расстановки мебели для вашего пространства."
+
+msgid "Write on Telegram"
+msgstr "Написать в Telegram"
+
+msgid "journal"
+msgstr "журнал"
+
+msgid "Flip through our catalog — drag the page corner or use the arrows"
+msgstr ""
+"Листайте наш каталог — потяните за уголок страницы или используйте стрелки"
+
+msgid "Fullscreen"
+msgstr "Полный экран"
+
+msgid "Menu"
+msgstr "Меню"
+
+msgid "Search furniture..."
+msgstr "Поиск мебели..."
+
+msgid "Recently"
+msgstr "Недавно"
+
+msgid "viewed"
+msgstr "просмотренные"
+
+msgid "Your rating:"
+msgstr "Ваша оценка:"
+
+msgid "Your name"
+msgstr "Ваше имя"
+
+msgid "Share your experience with this product..."
+msgstr "Поделитесь впечатлением о товаре..."
+
+msgid "Add a photo"
+msgstr "Добавить фото"
+
+msgid "Submit review"
+msgstr "Отправить отзыв"
+
+msgid "No reviews yet. Be the first to review this product!"
+msgstr "Отзывов пока нет. Станьте первым, кто оставит отзыв!"
+
+msgid "Phone"
+msgstr "Телефон"
+
+msgid "Click to zoom"
+msgstr "Нажмите для увеличения"
+
+msgid "Click the image to zoom · scroll to zoom more"
+msgstr "Нажмите на фото для увеличения · колёсиком можно приблизить сильнее"
+
+msgid "Cash / card"
+msgstr "Наличные / карта"
+
+msgid ""
+"The product is made to order and will be ready in 6–7 days. You can pick it "
+"up or we will deliver it."
+msgstr ""
+"Товар изготавливается на заказ — будет готов через 6–7 дней. Возможен "
+"самовывоз или доставка."
+
+msgid "Production time"
+msgstr "Срок изготовления"
+
+msgid "6–7 days"
+msgstr "6–7 дней"
+
+msgid "Material:"
+msgstr "Материал:"
+
+msgid "Cancel order"
+msgstr "Отменить заказ"
+
+msgid "Cancel the order?"
+msgstr "Отменить заказ?"
+
+msgid "Are you sure? This action cannot be undone."
+msgstr "Вы уверены? Это действие нельзя отменить."
+
+msgid "I changed my mind"
+msgstr "Я передумал(а)"
+
+msgid "I chose another product"
+msgstr "Выбрал(а) другой товар"
+
+msgid "The price did not suit me"
+msgstr "Не устроила цена"
+
+msgid "Waiting time is too long"
+msgstr "Долгий срок ожидания"
+
+msgid "Other reason"
+msgstr "Другая причина"
+
+msgid "Comment (optional)"
+msgstr "Комментарий (необязательно)"
+
+msgid "Yes, cancel the order"
+msgstr "Да, отменить"
+
+msgid "No, keep it"
+msgstr "Нет, оставить"
+
+msgid "Copy"
+msgstr "Копировать"
+
+msgid "Our partners"
+msgstr "Наши партнёры"
+
+msgid "Reply to review"
+msgstr "Ответ на отзыв"
+
+msgid "This will be shown as a reply"
+msgstr "Это будет показано как ответ"
+
+msgid "Rating"
+msgstr "Оценка"
+
+msgid "Review"
+msgstr "Отзыв"
+
+msgid "Phone number"
+msgstr "Номер телефона"
+
+msgid "Click to upload or drag images here"
+msgstr "Нажмите, чтобы загрузить фото"
+
+msgid "Pickup point"
+msgstr "Пункт самовывоза"
+
+msgid "Tashkent, CHINAR furniture workshop"
+msgstr "Ташкент, мебельный цех CHINAR"
+
+msgid "Open in Google Maps"
+msgstr "Открыть в Google Maps"
+
+msgid "Working hours"
+msgstr "Время работы"
+
+msgid "Every day 9:00 – 18:00"
+msgstr "Ежедневно 9:00 – 18:00"
+
+msgid "Color:"
+msgstr "Цвет:"
+
+msgid "First name"
+msgstr "Имя"
+
+msgid "Last name"
+msgstr "Фамилия"
+
+msgid "Region"
+msgstr "Область"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Delivery address"
+msgstr "Адрес доставки"
+
+msgid "Log out"
+msgstr "Выйти"
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "Size:"
+msgstr "Размер:"
+
+msgid "% Monthly discounts"
+msgstr "% Ежемесячные скидки"
+
+msgid "Awaiting confirmation"
+msgstr "Ожидает подтверждения"
+
+msgid "Confirmed"
+msgstr "Подтверждён"
+
+msgid "In delivery"
+msgstr "В доставке"
+
+msgid "Canceled"
+msgstr "Отменён"
+
+msgid "Processing"
+msgstr "Обрабатывается"
+
+msgid "Paid"
+msgstr "Оплачен"
+
+msgid "Not paid"
+msgstr "Не оплачен"
+
+msgid "Product added to cart"
+msgstr "Товар добавлен в корзину"
+
+msgid "Product removed from cart"
+msgstr "Товар удалён из корзины"
+
+msgid "Your order has been received!"
+msgstr "Ваш заказ принят!"
+
+msgid "Order canceled."
+msgstr "Заказ отменён."
+
+msgid "This order is already confirmed. To cancel it, call +998 99 659 55 55."
+msgstr ""
+"Этот заказ уже подтверждён. Чтобы отменить его, позвоните по номеру +998 99 "
+"659 55 55."
+
+msgid "Your recent searches"
+msgstr "Вы недавно искали"
+
+msgid "We recommend"
+msgstr "Рекомендуем"
+
+msgid "Leave your number and we will call you back shortly"
+msgstr "Оставьте номер — мы перезвоним вам в ближайшее время"
+
+msgid "Call me back"
+msgstr "Перезвоните мне"
+
+msgid "Thank you!"
+msgstr "Спасибо!"
+
+msgid "We received your number and will call you back soon"
+msgstr "Мы получили ваш номер и скоро перезвоним"
+
+msgid "Enter a valid phone number"
+msgstr "Введите корректный номер телефона"
+
+msgid "Enter your phone number — we will call you back and confirm the order"
+msgstr "Введите номер телефона — мы перезвоним и подтвердим заказ"
+
+msgid "Your order has been received — we will call you back shortly"
+msgstr "Ваш заказ принят — мы скоро вам перезвоним"
+
+msgid "Buy now"
+msgstr "Купить сейчас"
+
+msgid "View"
+msgstr "Смотреть"
+
+msgid "Drag to rotate"
+msgstr "Потяните, чтобы повернуть"
+
+msgid "bundles"
+msgstr "комплекты"
+
+msgid "Details"
+msgstr "Подробнее"
+
+msgid "Bundle price"
+msgstr "Цена комплекта"
+
+msgid "Ready-made"
+msgstr "Готовые"
+
+msgid "Choose an option"
+msgstr "Выберите вариант"
+
+msgid "New arrivals"
+msgstr "Новинки"
+
+msgid "Our services"
+msgstr "Услуги"
+
+msgid "Want the same for your space?"
+msgstr "Хотите так же на своей территории?"
+
+msgid "Free consultation, measurements and a furniture layout plan."
+msgstr "Бесплатная консультация, замер и план расстановки мебели."
+
+msgid "Scroll to zoom · hold and drag to move · 0 to reset"
+msgstr "Колёсико — приблизить · зажмите и тяните · 0 — сброс"
+
+msgid ""
+"Chinar — rattan garden and patio furniture. Made in Tashkent: free delivery,"
+" 2-year warranty, showroom."
+msgstr ""
+"Chinar — ротанговая мебель для сада и двора. Ташкент: бесплатная доставка, "
+"гарантия 2 года, шоурум."
+
+msgid "Free delivery in Tashkent, 2-year warranty."
+msgstr "Бесплатная доставка по Ташкенту, гарантия 2 года."
+
+msgid "Page not found"
+msgstr "Страница не найдена"
+
+msgid ""
+"The page you are looking for doesn't exist or has been moved. But our "
+"furniture is right where it should be."
+msgstr "Страница не существует или была перемещена. Но наша мебель на месте!"
+
+msgid "Go to home page"
+msgstr "На главную"
+
+msgid "Temporarily out"
+msgstr "Временно нет"
+
+msgid "Temporarily out of stock"
+msgstr "Временно нет в наличии"
+
+msgid ""
+"This model is not available right now. Leave your number — we will call you "
+"as soon as it arrives."
+msgstr ""
+"Этой модели сейчас нет. Оставьте номер — позвоним, как только поступит."
+
+msgid "Request a call"
+msgstr "Заказать звонок"
+
+msgid "This product is temporarily out of stock"
+msgstr "Этот товар временно отсутствует"
+
+msgctxt "count"
+msgid "reviews"
+msgstr "отзывов"

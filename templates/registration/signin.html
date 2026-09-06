@@ -1,0 +1,343 @@
+{% load static %}
+{% load i18n %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    {% include 'cn/meta.html' %}
+    <title>Chinar — Login</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: 'Poppins', sans-serif;
+        min-height: 100vh;
+        background: #f4f1ec;
+        display: flex; align-items: center; justify-content: center;
+        padding: 22px; position: relative;
+        overflow: clip; /* blob'lar sahifani kengaytirib yubormasin (markazlash buziladi) */
+      }
+      /* Sayt uslubidagi yumshoq bej dog'lar — viewportni kengaytirmasligi uchun o'ralgan */
+      .blob-wrap { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+      .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: .55; pointer-events: none; }
+      .blob-1 { width: 440px; height: 440px; background: #e7d7c2; top: -120px; left: -90px; animation: drift1 16s ease-in-out infinite alternate; }
+      .blob-2 { width: 380px; height: 380px; background: #dccdb6; bottom: -140px; right: -70px; animation: drift2 19s ease-in-out infinite alternate; }
+      @keyframes drift1 { to { transform: translate(60px, 40px) scale(1.1); } }
+      @keyframes drift2 { to { transform: translate(-50px, -35px) scale(1.07); } }
+
+      .auth-shell {
+        display: flex; width: 100%; max-width: 920px;
+        border-radius: 26px; overflow: hidden;
+        background: #fff;
+        border: 1px solid #ece5d9;
+        box-shadow: 0 26px 60px rgba(120, 95, 65, .18);
+        position: relative; z-index: 2;
+        animation: cardIn .55s cubic-bezier(.2, .8, .25, 1);
+      }
+      @keyframes cardIn { from { opacity: 0; transform: translateY(24px) scale(.985); } to { opacity: 1; transform: none; } }
+
+      /* ── Chap: zarrachalar animatsiyasi ── */
+      .auth-left {
+        flex: 1.08;
+        background: linear-gradient(165deg, #faf8f4 0%, #f0e9dd 100%);
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        padding: 34px 20px 26px; position: relative; overflow: hidden;
+        border-right: 1px solid #f0e9dd;
+      }
+      #particles {
+        width: 100%; max-width: 400px; height: 340px;
+        display: block; cursor: pointer;
+      }
+      .auth-left h3 {
+        color: #3d3229; font-size: 16.5px; font-weight: 700;
+        margin-top: 8px; text-align: center; letter-spacing: .4px;
+      }
+      .auth-left p { color: #9a8d7d; font-size: 12px; margin-top: 4px; text-align: center; }
+      .hint {
+        margin-top: 12px; font-size: 11px; color: #b5895a;
+        background: rgba(181, 137, 90, .1);
+        padding: 5px 14px; border-radius: 999px;
+        animation: hintPulse 2.4s ease-in-out infinite;
+      }
+      @keyframes hintPulse { 0%,100% { opacity: .75; } 50% { opacity: 1; } }
+
+      /* ── O'ng: forma ── */
+      .auth-card {
+        flex: 1; background: #fff;
+        padding: 44px 42px 30px;
+        display: flex; flex-direction: column; justify-content: center;
+      }
+      .auth-back {
+        display: inline-flex; align-items: center; gap: 6px;
+        text-decoration: none; width: fit-content;
+        color: #9a8d7d; font-size: 13px; margin-bottom: 18px;
+        transition: color .15s, transform .15s;
+      }
+      .auth-back:hover { color: #b5895a; transform: translateX(-3px); }
+      .auth-eyebrow {
+        font-size: 11px; font-weight: 700; letter-spacing: 3px;
+        text-transform: uppercase; color: #b5895a;
+      }
+      .auth-title {
+        font-size: 26px; font-weight: 800; color: #2b241d;
+        margin-top: 6px; line-height: 1.25;
+      }
+      .auth-sub { font-size: 13px; color: #9a8d7d; margin: 8px 0 24px; }
+      .auth-error {
+        background: #fdeaea; color: #b3261e;
+        border: 1px solid #f3c1bd; border-radius: 12px;
+        font-size: 13.5px; padding: 11px 15px; margin-bottom: 16px;
+      }
+      .fld {
+        display: flex; align-items: center; gap: 12px;
+        background: #f7f4ef; border: 1.5px solid transparent;
+        border-radius: 14px; padding: 15px 18px;
+        transition: border-color .18s, background .18s, box-shadow .18s;
+      }
+      .fld:focus-within {
+        border-color: #b5895a; background: #fff;
+        box-shadow: 0 0 0 4px rgba(181, 137, 90, .14);
+      }
+      .fld svg { flex: 0 0 20px; color: #b5895a; }
+      .fld input {
+        border: none; outline: none; background: none;
+        font-family: inherit; font-size: 16.5px; font-weight: 500;
+        color: #2b241d; width: 100%; letter-spacing: .5px;
+      }
+      .auth-btn {
+        width: 100%; margin-top: 18px;
+        background: linear-gradient(135deg, #b5895a, #8a6440);
+        color: #fff; border: none; border-radius: 14px;
+        padding: 16px; font-family: inherit;
+        font-size: 14.5px; font-weight: 700; letter-spacing: 2px;
+        cursor: pointer;
+        display: flex; align-items: center; justify-content: center; gap: 10px;
+        transition: transform .18s, box-shadow .18s;
+        box-shadow: 0 10px 24px rgba(181, 137, 90, .3);
+      }
+      .auth-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(181, 137, 90, .42); }
+      .auth-btn:active { transform: translateY(0); }
+      .auth-btn .arr { transition: transform .18s; }
+      .auth-btn:hover .arr { transform: translateX(4px); }
+      .btn-ring {
+        display: none;
+        width: 18px; height: 18px; border-radius: 50%;
+        border: 3px solid rgba(255,255,255,.35); border-top-color: #fff;
+        animation: spin .8s linear infinite;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      .auth-btn.loading .btn-ring { display: inline-block; }
+      .auth-btn.loading .arr { display: none; }
+      .auth-legal {
+        font-size: 11px; color: #b3a793; line-height: 1.6;
+        margin-top: 20px; text-align: center;
+      }
+
+      .auth-logo-m { display: block; height: 40px; width: auto; align-self: flex-start; margin-bottom: 16px; }
+
+      @media (max-width: 740px) {
+        .auth-shell { flex-direction: column; max-width: 440px; }
+        .auth-left { padding: 22px 14px 16px; border-right: none; border-bottom: 1px solid #f0e9dd; }
+        #particles { height: 220px; }
+        .auth-card { padding: 30px 26px 24px; }
+        .auth-title { font-size: 22px; }
+      }
+      /* Har doim markazda tursin */
+      .auth-shell { margin: auto; width: 100%; }
+
+      /* Telefonda: tepada zarrachali "Chinar", ostida forma */
+      @media (max-width: 560px) {
+        body { padding: 14px; }
+        .auth-shell { max-width: 100%; border-radius: 22px; }
+        .auth-left {
+          background: #fff; border-bottom: none;
+          padding: 34px 30px 0;
+        }
+        #particles { height: 140px; }
+        .auth-left h3, .auth-left p, .hint { display: none; }
+        .auth-logo-m { display: block; height: 34px; align-self: center; margin: 0 0 12px; }
+        .auth-card { padding: 8px 22px 22px; }
+        .auth-eyebrow { text-align: center; }
+        .auth-title { text-align: center; font-size: 23px; }
+        .auth-sub { text-align: center; }
+        .auth-back { position: absolute; top: 16px; left: 18px; z-index: 3; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blob-wrap">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+    </div>
+
+    <div class="auth-shell">
+      <div class="auth-left">
+        <canvas id="particles"></canvas>
+        <h3>{% trans "Your comfort is our goal!" %}</h3>
+        <p>Chinar — {% trans "garden and patio furniture" %}</p>
+        <div class="hint">✨ {% trans "Tap on it" %}</div>
+      </div>
+
+      <div class="auth-card">
+        <a class="auth-back" href="{% url 'pages:home' %}">← {% trans "Back" %}</a>
+        <img src="{% static 'images/chinar-logo.png' %}" alt="Chinar" class="auth-logo-m">
+        <div class="auth-eyebrow">{% trans "Welcome to Chinar" %}</div>
+        <h2 class="auth-title">{% trans "Enter your" %}<br>{% trans "phone number" %}</h2>
+        <p class="auth-sub">{% trans "We will send a confirmation code via SMS" %}</p>
+
+        {% if error %}
+        <div class="auth-error">{{ error }}</div>
+        {% endif %}
+
+        <form method="post" action="{% url 'pages:send_code' %}" id="authForm">
+          {% csrf_token %}
+          <div class="fld">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <input type="tel" name="phone" placeholder="+998 90 000 00 00" value="+998" autocomplete="tel">
+          </div>
+          <button type="submit" class="auth-btn" id="authBtn">
+            <span>{% trans "GET CODE" %}</span><span class="arr">→</span><span class="btn-ring"></span>
+          </button>
+        </form>
+
+        <p class="auth-legal">
+          By logging into your account, you accept the user agreement and
+          privacy policy, and consent to the processing of your personal data,
+          including its transfer.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('authForm').addEventListener('submit', function () {
+        document.getElementById('authBtn').classList.add('loading');
+      });
+
+      /* ═══ Zarrachalar animatsiyasi: "Chinar" yozuvi ═══
+         - zarrachalar yozuvni hosil qiladi
+         - sichqoncha yaqinlashsa qochadi
+         - bosilsa portlab, yana yig'iladi                 */
+      (function () {
+        var canvas = document.getElementById('particles');
+        var ctx = canvas.getContext('2d');
+        var DPR = Math.min(window.devicePixelRatio || 1, 2);
+        var W, H;
+
+        function sizeCanvas() {
+          var r = canvas.getBoundingClientRect();
+          // MUHIM: butun songa yaxlitlaymiz — Windows masshtabi (125%) kasr o'lcham beradi
+          W = Math.max(1, Math.round(r.width));
+          H = Math.max(1, Math.round(r.height));
+          canvas.width = Math.round(W * DPR);
+          canvas.height = Math.round(H * DPR);
+          ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+        }
+        sizeCanvas();
+
+        var COLORS = ['#b5895a', '#8a6440', '#3d3229', '#c9a06e', '#6f4f31'];
+        var particles = [];
+
+        function targetsFromText() {
+          var off = document.createElement('canvas');
+          off.width = W; off.height = H;
+          var oc = off.getContext('2d');
+          var fs = Math.min(W / 3.4, 110);
+          oc.font = '800 ' + fs + 'px Poppins, sans-serif';
+          oc.textAlign = 'center';
+          oc.textBaseline = 'middle';
+          oc.fillText('Chinar', W / 2, H / 2);
+          var data = oc.getImageData(0, 0, W, H).data;
+          var pts = [];
+          var gap = 3;
+          for (var y = 0; y < H; y += gap) {
+            for (var x = 0; x < W; x += gap) {
+              if (data[(y * W + x) * 4 + 3] > 128) pts.push({ x: x, y: y });
+            }
+          }
+          return pts;
+        }
+
+        function build() {
+          var pts = targetsFromText();
+          if (!pts.length) {                 // himoya: nuqta topilmasa 0.6s dan keyin qayta urinamiz
+            setTimeout(function () {
+              sizeCanvas();
+              var p2 = targetsFromText();
+              if (p2.length) makeParticles(p2);
+            }, 600);
+            return;
+          }
+          makeParticles(pts);
+        }
+        function makeParticles(pts) {
+          particles = pts.map(function (p) {
+            return {
+              x: Math.random() * W, y: Math.random() * H,
+              vx: 0, vy: 0,
+              tx: p.x, ty: p.y,
+              r: Math.random() * 1.4 + 0.9,
+              c: COLORS[(Math.random() * COLORS.length) | 0]
+            };
+          });
+        }
+        build();
+
+        var mouse = { x: -9999, y: -9999 };
+        canvas.addEventListener('pointermove', function (e) {
+          var r = canvas.getBoundingClientRect();
+          mouse.x = e.clientX - r.left;
+          mouse.y = e.clientY - r.top;
+        });
+        canvas.addEventListener('pointerleave', function () {
+          mouse.x = -9999; mouse.y = -9999;
+        });
+        // Bosilganda: portlash
+        canvas.addEventListener('pointerdown', function () {
+          particles.forEach(function (p) {
+            var a = Math.random() * Math.PI * 2;
+            var f = Math.random() * 16 + 6;
+            p.vx += Math.cos(a) * f;
+            p.vy += Math.sin(a) * f;
+          });
+        });
+
+        window.addEventListener('resize', function () {
+          sizeCanvas(); build();
+        });
+
+        function tick() {
+          ctx.clearRect(0, 0, W, H);
+          for (var i = 0; i < particles.length; i++) {
+            var p = particles[i];
+            // maqsad tomon tortilish
+            p.vx += (p.tx - p.x) * 0.045;
+            p.vy += (p.ty - p.y) * 0.045;
+            // sichqonchadan qochish
+            var dx = p.x - mouse.x, dy = p.y - mouse.y;
+            var d2 = dx * dx + dy * dy;
+            if (d2 < 4900) {
+              var d = Math.sqrt(d2) || 1;
+              var f = (70 - d) / 70 * 5;
+              p.vx += dx / d * f;
+              p.vy += dy / d * f;
+            }
+            p.vx *= 0.86; p.vy *= 0.86;
+            p.x += p.vx; p.y += p.vy;
+            ctx.fillStyle = p.c;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, 6.2832);
+            ctx.fill();
+          }
+          requestAnimationFrame(tick);
+        }
+        // Shrift yuklangach qayta quramiz (aniq shakl uchun)
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(function () { build(); });
+        }
+        tick();
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+{% load i18n %}<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Chinar</title>
+    <meta name="robots" content="noindex">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #f6f3ec; color: #1f2a22;
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            padding: 24px; text-align: center;
+        }
+        .k { max-width: 520px; }
+        .n {
+            font-size: 120px; font-weight: 800; line-height: 1;
+            color: #3f9142; letter-spacing: -4px; margin-bottom: 6px;
+        }
+        .n span { color: #c4633e; }
+        h1 { font-size: 26px; margin-bottom: 10px; }
+        p { color: #6b7568; font-size: 15.5px; line-height: 1.55; margin-bottom: 26px; }
+        .b {
+            display: inline-block; margin: 0 6px 10px;
+            padding: 13px 26px; border-radius: 999px;
+            font-weight: 700; font-size: 14.5px; text-decoration: none;
+            background: #3f9142; color: #fff; border: 2px solid #3f9142;
+        }
+        .b.g { background: transparent; color: #3f9142; }
+        .leaf { font-size: 34px; margin-bottom: 12px; }
+    </style>
+</head>
+<body>
+<div class="k">
+    <div class="leaf">🌿</div>
+    <div class="n">4<span>0</span>4</div>
+    <h1>{% trans "Page not found" %}</h1>
+    <p>{% trans "The page you are looking for doesn't exist or has been moved. But our furniture is right where it should be." %}</p>
+    <a class="b" href="/">{% trans "Go to home page" %}</a>
+    <a class="b g" href="/uz/category/">{% trans "Open catalog" %}</a>
+</div>
+</body>
+</html>
